@@ -3,12 +3,12 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
-import NavBar from './components/NavBar';
+import NavBar from './components/NavBar/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
-import UsersList from './components/UsersList';
-import User from './components/User';
+import UsersList from './components/NavBar/UsersList';
+import User from './components/NavBar/User';
 import { authenticate } from './store/session';
-
+import AllEvents from './components/Events/AllEvents'
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
@@ -40,8 +40,20 @@ function App() {
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
-        <ProtectedRoute path='/' exact={true} >
-          <h1>My Home Page</h1>
+        <Route path='/' exact={true} >
+          {/* <AllEvents /> */}
+        </Route>
+        <Route path='/all-events'>
+          <AllEvents />
+        </Route>
+        <ProtectedRoute path='/create-event'>
+          {/* <CreateEvent /> */}
+        </ProtectedRoute>
+        <Route exact={true} path='/events/:eventId'>
+          {/* <EventDetails /> */}
+        </Route>
+        <ProtectedRoute  exact={true} path='/events/:eventId/edit'>
+          {/* <EditEvent /> */}
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

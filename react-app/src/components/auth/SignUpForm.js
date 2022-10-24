@@ -8,6 +8,8 @@ const SignUpForm = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [first_name, setFirstName] = useState('')
+  const [last_name, setLastName] = useState('')
   const [repeatPassword, setRepeatPassword] = useState('');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
@@ -50,10 +52,34 @@ const SignUpForm = () => {
         ))}
       </div>
       <div>
+        <label>First Name</label>
+        <input
+          type='text'
+          name='first_name'
+          required
+          placeholder='First Name'
+          onChange={(e) => setFirstName(e.target.value)}
+          value={first_name}
+        ></input>
+      </div>
+      <div>
+        <label>Last Name</label>
+        <input
+          type='text'
+          name='last_name'
+          placeholder='Last Name'
+          required
+          onChange={(e) => setLastName(e.target.value)}
+          value={last_name}
+        ></input>
+      </div>
+      <div>
         <label>User Name</label>
         <input
           type='text'
           name='username'
+          placeholder='User Name'
+          required
           onChange={updateUsername}
           value={username}
         ></input>
@@ -63,8 +89,10 @@ const SignUpForm = () => {
         <input
           type='text'
           name='email'
+          placeholder='Email'
           onChange={updateEmail}
           value={email}
+          required
         ></input>
       </div>
       <div>
@@ -72,6 +100,8 @@ const SignUpForm = () => {
         <input
           type='password'
           name='password'
+          placeholder='Password'
+          required={true}
           onChange={updatePassword}
           value={password}
         ></input>
@@ -81,6 +111,7 @@ const SignUpForm = () => {
         <input
           type='password'
           name='repeat_password'
+          placeholder='Repeat Password'
           onChange={updateRepeatPassword}
           value={repeatPassword}
           required={true}
