@@ -1,16 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField, TimeField, SubmitField, DateField, BooleanField
-from wtforms.validators import DataRequired, ValidationError
-from app.models import Event
+from wtforms.validators import DataRequired
 
-
-# def valid_end_check (form, field):
-#     if field.data < form.data['start_time']:
-#         raise ValidationError('End time must be after start time.')
-
-# def valid_start_check (form, field):
-#     if field.data > form.data['end_time']:
-#         raise ValidationError('Start time must be before end time.')
 
 
 class CreateEventForm(FlaskForm):
@@ -29,3 +20,5 @@ class CreateEventForm(FlaskForm):
     end_time = TimeField('End Time', validators=[DataRequired()])
     refund_policy = StringField('Refund Policy', validators=[DataRequired()])
     submit = SubmitField('Submit')
+
+#
