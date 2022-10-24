@@ -1,4 +1,7 @@
 from flask.cli import AppGroup
+from app.seeds.comments import seed_comments
+
+from app.seeds.events import seed_events
 from .users import seed_users, undo_users
 
 # Creates a seed group to hold our commands
@@ -10,6 +13,8 @@ seed_commands = AppGroup('seed')
 @seed_commands.command('all')
 def seed():
     seed_users()
+    seed_events()
+    seed_comments()
     # Add other seed functions here
 
 
