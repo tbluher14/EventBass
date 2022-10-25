@@ -20,7 +20,7 @@ const SplashPage = () => {
                     className='all-events-button'
                     onClick={() => history.push('/all-events')}
                     >
-                        View All Events
+                        Find Your Next Event
                     </button>
                 </div>
             </div>

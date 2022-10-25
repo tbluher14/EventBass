@@ -45,20 +45,37 @@ const EventDetails = () => {
         }
         return `${hour}:${minutes} ${amPm}`
     }
-    const sDate = new Date(currentEvent?.start_date)
-    const eventArr = sDate.toString().split(' ')
-    const startDate = eventArr[0] + ", " + eventArr[1] + " " + eventArr[2] + ", " + eventArr[3]
-    const startTime = formatTime(currentEvent?.start_time)
-    const endTime = formatTime(currentEvent?.end_time)
-    const eDate = new Date(currentEvent?.end_date)
-    const eventArr2 = eDate.toString().split(' ')
-    const endDate = eventArr2[0] + ", " + eventArr2[1] + " " + eventArr2[2] + ", " + eventArr2[3]
+    const formatDate = (date) => {
+        if (isLoaded){
+            const datesArray = date.split('-')
+            const monthArr = {"01": 'January', "02":'February', "03": 'March', "04": 'April', "05": 'May', "06":'June', "07":'July', "08": 'August', "09": 'September', "10": 'October', "11":'November', "12":'December'}
+            const year = datesArray[0]
+            const month = monthArr[datesArray[1]].slice(0,3)
+            const day = datesArray[2]
+            return (
+                <>
+                {month} {day}
+                </>
+            )
+        }
+    }
+
+        // const sDate = new Date(currentEvent?.start_date)
+        // const eventArr = sDate.toString().split(' ')
+        // const startDate = eventArr[0] + ", " + eventArr[1] + " " + eventArr[2] + ", " + eventArr[3]
+        // const startTime = formatTime(currentEvent?.start_time)
+        // const endTime = formatTime(currentEvent?.end_time)
+        // const eDate = new Date(currentEvent?.end_date)
+        // const eventArr2 = eDate.toString().split(' ')
+        // const endDate = eventArr2[0] + ", " + eventArr2[1] + " " + eventArr2[2] + ", " + eventArr2[3]
+
 
 
     useEffect(() => {
         dispatch(getAllEventsThunk())
         dispatch(getAllCommentsThunk())
-        dispatch(getAllUsersThunk())
+        dispatch(getAllUsersThunk()).then(setIsLoaded(true))
+
     }, [])
 
     const refundLogic = () => {
@@ -82,7 +99,7 @@ const EventDetails = () => {
     }
 
     return (
-        <div className='event-detail-container'>
+        isLoaded && <div className='event-detail-container'>
             <div className='event-detail-inner-container'>
                 <div className='event-detail-image'>
                     <img
@@ -91,7 +108,7 @@ const EventDetails = () => {
                     className='event-detail-image'
                     />
                 <div className='event-details-header-info-container'>
-                <div className='event-details-header-date'>{eventArr[1]} {eventArr[2]}</div>
+                <div className='event-details-header-date'>{formatDate(currentEvent?.start_date)}</div>
                 <div className='event-details-header-name'>{currentEvent?.name}</div>
                 <div className='event-details-header-description'>{currentEvent?.description}</div>
                 <div>
@@ -102,22 +119,25 @@ const EventDetails = () => {
                     <button className="event-deatils-delete-button" onClick={deleteEvent(currentEvent?.id)}>Delete My Event</button>
                     )}
                  </div>
-                 <div className='event-details-event-owner'>
+                 <h3 className='event-details-event-owner'>
                     Hosted By: {eventOwner[0]?.username}
-                 </div>
+                 </h3>
                 <h2 className="event-details-when-and-where-h2">When And Where:</h2>
                 <div className='event-details-when-and-where-container'>
                     <div className='event-details-when-and-where-left'>
                         <div className='when-and-where-header-container'>
                     <i class="fa-regular fa-calendar"></i><h3 className='date-and-time-header'>Date And Time:</h3>
                         </div>
-                        <div className='event-details-when-and-where-start-date'>{startDate} {startTime} - </div>
-                        <div className='event-details-when-and-where-end-time'>{endDate} {endTime} </div>
+                        <div className='event-details-when-and-where-start-date'>{formatDate(currentEvent?.start_date)} - {formatTime(currentEvent?.start_time)} - </div>
+                        <div className='event-details-when-and-where-end-time'>{formatDate(currentEvent?.end_date)} - {formatTime(currentEvent?.end_time)}</div>
 
                     </div>
                     <div className='event-details-when-and-where-right'>
-                        <h3> Location: </h3>
-                        <div className='event-details-when-and-where-address'>{currentEvent?.address}</div>
+                        <div className='location-header'>
+                        <i class="fa-solid fa-map-pin"></i><h3 className='location-header-text'> Location: </h3>
+                        </div>
+                        <div className="event-details-location">{currentEvent?.venue_name}</div>
+                        {/* <div className='event-details-when-and-where-address'>{currentEvent?.address}</div> */}
                         <div className='event-details-when-and-where-city'>{currentEvent?.city}</div>
                         <div className='event-details-when-and-where-state'>{currentEvent?.state}</div>
                     </div>

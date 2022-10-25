@@ -1,11 +1,8 @@
-.create-event-button{
-    width: 150px;
-    height: 20px;
-}
+
 .navbar-logo{
-    width: 80px;
+    width: 60px;
     cursor: pointer;
-    height: 80px;
+    height: 60px;
 }
 
 .navbar-logo-container{
@@ -38,15 +35,15 @@
 }
 .navbar-myevents{
     margin-right: 20px;
-    padding: 5px;
+    font-size: 14px;
+    /* padding: 5px; */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .navbar-myevents:hover{
-    background-color: lightgray;
-    border-radius: 5px;
+    background-color: whitesmoke;
 }
 .outter-nav-bar-container{
     display: flex;
@@ -59,17 +56,25 @@
     align-items: center;
     justify-content: flex-end;
     flex-direction: row;
-    margin-right: 25px;
+    margin-right: 20px;
 }
 
-    /* left: 650px; */
 
 
 .create-event-button{
-    padding: 5px;
+    /* padding: 5px; */
+    height: 100%;
+    width: 130px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 1px;
+}
+
+.create-event-button:hover{
+    background-color: whitesmoke;
+
 }
 
 
@@ -80,28 +85,29 @@
 }
 
 #navbar-login-button{
-    width: 70px;
-    height: 30px;
-    margin-left: 10px;
+    width: 110%;
+    height: 75px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 #navbar-login-button:hover{
-    background-color: lightgray;
+    background-color: whitesmoke;
     cursor: pointer;
 }
 #navbar-signup-button{
-    width: 70px;
-    height: 30px;
-    margin-left: 10px;
+    width: 160px;
+    height: 75px;
+
     cursor: pointer;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 #navbar-signup-button:hover{
-    background-color: lightgray;
+    background-color: whitesmoke;
+    cursor: pointer;
 
 }

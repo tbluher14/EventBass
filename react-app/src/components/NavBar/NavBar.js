@@ -33,8 +33,8 @@ const NavBar = () => {
         </div>
 
       <div className="nav-bar-right">
-          <button className="create-event-button" onClick={() => history.push('/create-event')}>
-          Create An Event</button>
+          <div className="create-event-button" onClick={() => history.push('/create-event')}>
+          Create An Event</div>
             {
               !sessionUser && (
                 <div className='navbar-event-login-signup-container'>
@@ -47,7 +47,7 @@ const NavBar = () => {
       {
         sessionUser && (
           <div className='navbar-loggedin-container'>
-            <div className='navbar-myevents' onClick={ () => history.push('/my-events')}> My Events </div>
+            <div className='navbar-myevents' onClick={ () => history.push('/my-events')}>My Events</div>
             <div className='navbar-logged-out-button'>
               <LogoutButton/>
             </div>
