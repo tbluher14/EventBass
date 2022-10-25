@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { deleteEventThunk, editEventAV, getAllEventsThunk } from '../../store/event';
 import './EventDetails.css'
+import { getAllCommentsThunk } from '../../store/comment';
+import CommentCard from '../Comments/CommentCard'
 
 
 
@@ -15,10 +17,18 @@ const EventDetails = () => {
     const [isLoaded, setIsLoaded] = useState(false)
 
     const currentEvent = useSelector(state => state.events[eventId])
-    // console.log("currentEvent", currentEvent.id)
+
+
+    //Comments Section:
+    const eventComments = useSelector(state => state.comments)
+    const commentsArr = Object.values(eventComments)
+    const specificComments = commentsArr.filter(comment => comment?.event_id == eventId)
+    console.log(specificComments)
+
 
     useEffect(() => {
         dispatch(getAllEventsThunk())
+        dispatch(getAllCommentsThunk())
     }, [])
 
     const refundLogic = () => {
@@ -79,6 +89,14 @@ const EventDetails = () => {
                 <div className='event-details-about-container'>
                     <h2 className="event-details-About-This-Event-h2">About This Event:</h2>
                     <div className='event-details-about-this-event-descripton'>{currentEvent?.description}</div>
+                </div>
+                <div className='event-details-comments-container'>
+                    <h2 className="event-details-Comments-h2">Comments:</h2>
+                    {specificComments?.map((comment) => (
+                        <div className='event-details-comments'>
+                            <CommentCard key={comment.id} comment = {comment}></CommentCard>
+                        </div>
+                     ))}
                 </div>
             </div>
             </div>
