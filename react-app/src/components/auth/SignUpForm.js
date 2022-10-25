@@ -94,17 +94,17 @@ const SignUpForm = () => {
   return (
     <div className='form-outer-container'>
       <form onSubmit={onSignUp}>
-        <div className='form-header'>Sign Up and Host Your Next Event on eventBass</div>
-        <div className='form-container'>
-          <div className='errors_container'>
+        <div className='signup-form-header'>Sign Up and Host Your Next Event on eventBass</div>
+        <div className='form-input-container'>
+          <div className='create_errors'>
             {submitted && errors.map((error, ind) => (
-              <div className="errorMessageContainer" key={ind}>
-                <div className="errorMessage">{error}</div>
+              <div className="error-message-container" key={ind}>
+                <div className="error-message">{error}</div>
               </div>
             ))}
           </div>
-          <div>
-            <label className='form-field-labels'>First Name:</label>
+          <div className='input-container'>
+            <label className='form-label'>First Name:</label>
             <input
               type='text'
               className="form-field"
@@ -115,7 +115,7 @@ const SignUpForm = () => {
             ></input>
           </div>
           <div>
-            <label className='form-field-labels'>Last Name:</label>
+            <label className='form-label'>Last Name:</label>
             <input
               type='text'
               className="form-field"
@@ -126,7 +126,7 @@ const SignUpForm = () => {
             ></input>
           </div>
           <div>
-            <label className='form-field-labels'>Username:</label>
+            <label className='form-label'>Username:</label>
             <input
               type='text'
               className="form-field"
@@ -137,7 +137,7 @@ const SignUpForm = () => {
             ></input>
           </div>
           <div>
-            <label className='form-field-labels'>Email:</label>
+            <label className='form-label'>Email:</label>
             <input
               type='text'
               className="form-field"
@@ -148,7 +148,7 @@ const SignUpForm = () => {
             ></input>
           </div>
           <div>
-            <label className='form-field-labels'>Password:</label>
+            <label className='form-label'>Password:</label>
             <input
               type='password'
               className="form-field"
@@ -159,7 +159,7 @@ const SignUpForm = () => {
             ></input>
           </div>
           <div>
-            <label className='form-field-labels'>Confirm Password:</label>
+            <label className='form-label'>Confirm Password:</label>
             <input
               type='password'
               className="form-field"
@@ -169,7 +169,7 @@ const SignUpForm = () => {
               required
             ></input>
           </div>
-          <button type='submit' className='form-button'>Sign Up</button>
+          <button type='submit' className='signup_button'>Sign Up</button>
         </div>
       </form>
     </div>
