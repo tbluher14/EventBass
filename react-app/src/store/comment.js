@@ -1,6 +1,7 @@
 
 // Actions:
 const GET_ALL_COMMENTS = 'comments/GET_ALL_COMMENTS';
+const CREATE_COMMENT = 'comments/CREATE_COMMENT';
 
 
 // Action Creators:
@@ -8,6 +9,11 @@ const GET_ALL_COMMENTS = 'comments/GET_ALL_COMMENTS';
 export const getAllCommentsAC = (comments) => ({
     type: GET_ALL_COMMENTS,
     payload: comments
+})
+
+export const createCommentAC = (comment) => ({
+    type: CREATE_COMMENT,
+    payload: comment
 })
 
 
@@ -18,6 +24,19 @@ export const getAllCommentsThunk = () => async (dispatch) => {
     if (res.ok) {
         const data = await res.json();
         dispatch(getAllCommentsAC(data.comments));
+        return data
+    }
+}
+
+export const createCommentThunk = (comment) => async (dispatch) => {
+    const res = await fetch(`/api/comments/`, {
+        method: 'POST',
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(comment)
+    })
+    if (res.ok){
+        const data = await res.json();
+        dispatch(createCommentAC(data.comment));
         return data
     }
 }
@@ -34,6 +53,9 @@ const commentReducer = (state = initialState, action) => {
             action.payload.forEach(comment => {
                 newState[comment.id] = comment
             })
+            return newState
+        case CREATE_COMMENT:
+            newState = {...state}
             return newState
         default:
             return state;

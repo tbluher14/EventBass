@@ -23,7 +23,7 @@ const CommentCard = ({ comment }) => {
                             {comment.User.username}
                         </div>
                         <div className='comment-card-user-image'>
-                            <img src={comment.User.profileImage} alt="profile" />
+                            
                         </div>
                     </div>
                     <div className='comment-card-date'>
