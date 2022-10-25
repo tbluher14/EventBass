@@ -2,7 +2,7 @@ import React, { useEffect,useState } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 import { createEventThunk } from '../../store/event';
-
+import '../../index.css'
 
 
 const CreateEvent = () => {
@@ -110,8 +110,7 @@ const CreateEvent = () => {
                         <div className='form-container'>
                             <div className='form-input-container'>
                                 <div className='create_errors'>
-                                    {/* {submitted && errors.map((error, ind) => ( */}
-                                    {errors.map((error, ind) => (
+                                    {submitted && errors.map((error, ind) => (
                                         <div
                                         key={ind}
                                         className='error-message-container'
@@ -221,7 +220,7 @@ const CreateEvent = () => {
                                     </div>
                                     <div className='input-container'>
                                         <label htmlFor='Event Start Date' className='form-label'>Start Date </label>
-                                        <input className='form-field'
+                                        <input className='form-field-date'
                                         name="Event Start Date"
                                         type="date"
                                         value={start_date}
@@ -232,7 +231,7 @@ const CreateEvent = () => {
                                     </div>
                                     <div className='input-container'>
                                         <label htmlFor='Event Start Time' className='form-label'>Start Time</label>
-                                        <input className='form-field'
+                                        <input className='form-field-date'
                                         name="Event Start Time"
                                         type="time"
                                         value={start_time}
@@ -243,7 +242,7 @@ const CreateEvent = () => {
                                     </div>
                                     <div className='input-container'>
                                         <label htmlFor='Event End Date' className='form-label'>End Date</label>
-                                        <input className='form-field'
+                                        <input className='form-field-date'
                                         name="Event End Date"
                                         type="date"
                                         value={end_date}
@@ -254,7 +253,7 @@ const CreateEvent = () => {
                                     </div>
                                     <div className='input-container'>
                                         <label htmlFor='Event End Time' className='form-label'>End Time</label>
-                                        <input className='form-field'
+                                        <input className='form-field-date'
                                         name="Event End Time"
                                         type="time"
                                         value={end_time}
