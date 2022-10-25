@@ -26,6 +26,7 @@ def create_event():
             owner_id=current_user.id,
             name=form.data['name'],
             description=form.data['description'],
+            venue_name=form.data['venue_name'],
             address=form.data['address'],
             city=form.data['city'],
             state=form.data['state'],
@@ -56,6 +57,7 @@ def update_event(event_id):
         event.owner_id=current_user.id
         event.name=form.data['name']
         event.description=form.data['description']
+        event.venue_name=form.data['venue_name']
         event.address=form.data['address']
         event.city=form.data['city']
         event.state=form.data['state']

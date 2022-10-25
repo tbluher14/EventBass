@@ -14,6 +14,7 @@ const CreateEvent = () => {
 
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
+    const [venue_name, setVenueName] = useState('');
     const [address, setAddress] = useState('');
     const [city, setCity] = useState('');
     const [state, setState] = useState('');
@@ -74,6 +75,7 @@ const CreateEvent = () => {
                 owner_id: user.id,
                 name,
                 description,
+                venue_name,
                 address,
                 city,
                 state,
@@ -117,6 +119,17 @@ const CreateEvent = () => {
                                         value={name}
                                         placeholder='Event Name'
                                         onChange={(e) => setName(e.target.value)}
+                                        required
+                                        />
+                                    </div>
+                                    <div className='input-container'>
+                                        <label htmlFor='Venue Name' className='form-label'>Venue Name</label>
+                                        <input className='form-field'
+                                        name="Venue Name"
+                                        type="text"
+                                        value={venue_name}
+                                        placeholder='Venue Name'
+                                        onChange={(e) => setVenueName(e.target.value)}
                                         required
                                         />
                                     </div>

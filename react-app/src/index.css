@@ -26,6 +26,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 340px;
 }
 
 
@@ -37,13 +38,51 @@
 
 .event-card-inner-container{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     margin: 10px;
+
+}
+.event-card-header{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+.event-card-address{
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
 }
 
+.event-card-date{
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
 
+.event-card-time{
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.event-car-inner-container-right{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+
+}
 .all-events-card-container{
     display: flex;
     flex-direction: column;

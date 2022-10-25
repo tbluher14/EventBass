@@ -5,6 +5,7 @@ def seed_events():
     event1 = Event (
         name='Liquid Stranger',
         description='In an ever-evolving universe, the art of maintaining complete and total fluidity is the most necessary key for survival. Renowned for his metamorphic capabilities and expertly crafted sonic adventures, Liquid Stranger has mastered his ability to slip in and out of genres all while honing his own personal style. Liquid Stranger has earned his reputation for exuding incommensurable talent and taking audiences on a soul-stirring aural journey of genre-bending beats on the dance floor.',
+        venue_name='Mission Ballroom',
         address='4242 Wynkoop St',
         city='Denver',
         state='Colorado',
@@ -21,6 +22,7 @@ def seed_events():
     event2 = Event (
         name='Duke Dumont',
         description='A dynamo whose has produced a stunning back catalogue that includes international chart No.1 hits , Multi Grammy nominations and bumpin’ Chicago-influenced underground productions, Duke Dumont is a contemporary electronic music powerhouse. Deeply committed to creating high quality music imbued with emotional depth,  Dumont is versatile, extremely adept and hard working.',
+        venue_name='Mission Ballroom',
         address='4242 Wynkoop Street',
         city='Denver',
         state='Colorado',
@@ -36,6 +38,7 @@ def seed_events():
     )
     event3 = Event (
         name='dirtmonkey w/ Space Wizard & Kilamanzego & Green Matter',
+        venue_name='Mission Ballroom',
         description='Based out of Boulder, Patrick Dirt Monkey Megeath has been producing for nearly 10 years, starting with hip-hop and breaks before recently trying his hand at dubstep. With a keen ear for bass and a vast knowledge of music production, he has quickly exploded onto the scene with his innovative original productions and energetic stage presence.',
         address='4242 Wynkoop Street',
         city='Denver',
@@ -53,6 +56,7 @@ def seed_events():
     event4 = Event (
         name='Mersiv Rocks w/ Daily Bread & Astrolizard & Smoakland & Honeycomb',
         description='AEG Presents are thrilled to announce MERSIV live with Daily Bread, Astrolizard (debut), Smoakland present Liquid Smoak, and Honeycomb at Red Rocks Amphitheatre Thursday, April 6th, 2023. ',
+        venue_name="Red Rocks Amphitheatre",
         address='18300 W Alameda Pkwy',
         city='Morrison',
         state='Colorado',

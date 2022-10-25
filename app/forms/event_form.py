@@ -7,6 +7,7 @@ from wtforms.validators import DataRequired
 class CreateEventForm(FlaskForm):
     owner_id = IntegerField('owner_id', validators=[DataRequired()])
     name = StringField('Name', validators=[DataRequired()])
+    venue_name = StringField('Venue Name', validators=[DataRequired()])
     description = StringField('Description', validators=[DataRequired()])
     address = StringField('Address', validators=[DataRequired()])
     city = StringField('City', validators=[DataRequired()])

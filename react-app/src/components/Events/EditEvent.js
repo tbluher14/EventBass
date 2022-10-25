@@ -24,6 +24,7 @@ const EditEvent = () => {
     const [end_date, setEnd_date] = useState(currentEvent?.end_date || "")
     const [end_time, setEnd_time] = useState(currentEvent?.end_time )
     const [refunds, setRefunds] = useState(currentEvent?.refunds || "")
+    const [venue_name, setVenueName] = useState(currentEvent?.venue_name || "")
 
     const [submitted, setSubmitted] = useState(false)
     const [errors, setErrors] = useState([])
@@ -38,6 +39,7 @@ const EditEvent = () => {
             owner_id: currentEvent.owner_id,
             name,
             description,
+            venue_name,
             address,
             city,
             state,
@@ -80,6 +82,17 @@ const EditEvent = () => {
                                         value={name}
                                         placeholder='Event Name'
                                         onChange={(e) => setName(e.target.value)}
+                                        required
+                                        />
+                                    </div>
+                                    <div className='input-container'>
+                                        <label htmlFor='Venue Name' className='form-label'>Venue Name</label>
+                                        <input className='form-field'
+                                        name="Venue Name"
+                                        type="text"
+                                        value={venue_name}
+                                        placeholder='Venue Name'
+                                        onChange={(e) => setVenueName(e.target.value)}
                                         required
                                         />
                                     </div>
