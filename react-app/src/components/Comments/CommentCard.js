@@ -23,7 +23,7 @@ const CommentCard = ({ comment }) => {
                             {comment.User.username}
                         </div>
                         <div className='comment-card-user-image'>
-                            
+
                         </div>
                     </div>
                     <div className='comment-card-date'>
@@ -35,7 +35,7 @@ const CommentCard = ({ comment }) => {
                 </div>
                 {sessionUser && sessionUser.id === comment.userId && (
                     <div className='comment-card-delete'>
-                        <button onClick={handleDelete}>Delete</button>
+                        {/* <button onClick={handleDelete}>Delete</button> */}
                     </div>
                 )}
             </div>

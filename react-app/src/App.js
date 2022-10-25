@@ -14,6 +14,9 @@ import EventDetails from './components/Events/EventDetails';
 import EditEvent from './components/Events/EditEvent';
 import MyEvents from './components/Events/MyEvents';
 import SplashPage from './components/SplashPage';
+import CreateComment from './components/Comments/CreateComment';
+
+
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
@@ -62,6 +65,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute exact={true} path='/my-events'>
             <MyEvents />
+        </ProtectedRoute>
+        <ProtectedRoute exact={true} path='/:eventId/create-comment'>
+            <CreateComment />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
