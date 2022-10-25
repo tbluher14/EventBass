@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import splashImage from '../components/assets/splashimage.jpeg'
 import './SplashPage.css'
-
+//
 
 const SplashPage = () => {
 
