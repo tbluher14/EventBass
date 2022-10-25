@@ -47,20 +47,28 @@ const CreateEvent = () => {
           setErrors(errors)
         }
         else {
-        if (name.length < 1) errors.push('Please enter a name for your event');
-        if (description.length < 1) errors.push('Please enter a description for your event');
-        if (address.length < 1) errors.push('Please enter an address for your event');
-        if (city.length < 1) errors.push('Please enter a city for your event');
-        if (state.length < 1) errors.push('Please enter a state for your event');
-        if (zip_code.length < 1) errors.push('Please enter a zip code for your event');
-        if (image_url.length < 1 || !image_url.split('?')[0].match(imageRegX)) errors.push('Please enter a valid image url for your event (jpg, jpeg, png, svg)');
+        if (name.length < 1) errors.push('Please enter a Name for your Event');
+        if (description.length < 1) errors.push('Please enter a Description for your Event');
+        if (address.length < 1) errors.push('Please enter an Address for your Event');
+        if (city.length < 1) errors.push('Please enter a City for your Event');
+        if (state.length < 1) errors.push('Please enter a State for your Event');
+        if (zip_code.length < 1) errors.push('Please enter a Zip Code for your Event');
+        if (zip_code.length !== 5) errors.push('Please enter a valid 5 digit Zip Code for your Event');
+        if (image_url.length < 1 || !image_url.split('?')[0].match(imageRegX)) errors.push('Please enter a valid Image Url for your Event (jpg, jpeg, png, svg)');
         if (website.length < 1 || /^https:\/\//.test(website) === false && /^http:\/\//.test(website) === false){
-             errors.push('Please enter a website for your event (https or http)');
+             errors.push('Please enter a Website for your Event (https or http)');
             }
-        if (start_date.length < 1) errors.push('Please enter a start date for your event');
-        if (start_time.length < 1) errors.push('Please enter a start time for your event');
-        if (end_date.length < 1) errors.push('Please enter an end date for your event');
-        if (end_time.length < 1) errors.push('Please enter an end time for your event');
+        if (start_date.length < 1) errors.push('Please enter a Start Date for your Event');
+        if (start_time>end_time && start_date == end_date) errors.push('Please enter a Start Time before the Event End Time');
+
+
+        if (start_date.length > 10) errors.push("Please Enter a Valid Start Date (MM-DD-YYYY")
+        if (end_date.length > 10) errors.push("Please Enter a Valid End Date (MM-DD-YYYY")
+        if (start_date>end_date) errors.push('Please enter a Start Date before the Event End Date');
+
+        if (start_time.length < 1) errors.push('Please enter a Start Time for your Event');
+        if (end_date.length < 1) errors.push('Please enter an End Date for your Event');
+        if (end_time.length < 1) errors.push('Please enter an End Time for your Event');
         setErrors(errors);
     }
  }, [name, description, address, city, state, zip_code, image_url, website, start_date, start_time, end_date, end_time])
@@ -88,7 +96,7 @@ const CreateEvent = () => {
                 end_time,
                 refund_policy: refunds,
             }
-            console.log(event)
+
             return await dispatch(createEventThunk(event))
             .then((res)=> history.push(`/events/${res.id}`))
 
@@ -102,7 +110,8 @@ const CreateEvent = () => {
                         <div className='form-container'>
                             <div className='form-input-container'>
                                 <div className='create_errors'>
-                                    {submitted && errors.map((error, ind) => (
+                                    {/* {submitted && errors.map((error, ind) => ( */}
+                                    {errors.map((error, ind) => (
                                         <div
                                         key={ind}
                                         className='error-message-container'

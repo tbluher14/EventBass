@@ -34,6 +34,17 @@ const EventDetails = () => {
     const specificComments = commentsArr.filter(comment => comment?.event_id == eventId)
 
     // Date Rendering:
+    const formatTime = (time) => {
+        let timeArr = time.split(":")
+        let hour = timeArr[0]
+        let minutes = timeArr[1]
+        let amPm = "AM"
+        if (hour > 12) {
+            hour = hour - 12
+            amPm = "PM"
+        }
+        return `${hour}:${minutes} ${amPm}`
+    }
     const sDate = new Date(currentEvent?.start_date)
     const eventArr = sDate.toString().split(' ')
     const startDate = eventArr[0] + ", " + eventArr[1] + " " + eventArr[2] + ", " + eventArr[3]
