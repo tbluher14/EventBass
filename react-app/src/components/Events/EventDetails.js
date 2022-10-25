@@ -6,6 +6,7 @@ import { deleteEventThunk, editEventAV, getAllEventsThunk } from '../../store/ev
 import './EventDetails.css'
 import { getAllCommentsThunk } from '../../store/comment';
 import CommentCard from '../Comments/CommentCard'
+import { getAllUsersThunk } from '../../store/users';
 
 
 
@@ -17,7 +18,13 @@ const EventDetails = () => {
     const [isLoaded, setIsLoaded] = useState(false)
 
     const currentEvent = useSelector(state => state.events[eventId])
+
+    // Event Owner Logic:
     const sessionUser = useSelector(state => state.session.user)
+    const allUsers = useSelector(state => state.users)
+    const userArr = Object.values(allUsers)
+    const eventOwner = userArr.filter(user => user.id == currentEvent?.owner_id)
+
 
 
     //Comments Section:
@@ -30,10 +37,10 @@ const EventDetails = () => {
     const eventArr = eventDate.toString().split(' ')
 
 
-
     useEffect(() => {
         dispatch(getAllEventsThunk())
         dispatch(getAllCommentsThunk())
+        dispatch(getAllUsersThunk())
     }, [])
 
     const refundLogic = () => {
@@ -76,6 +83,9 @@ const EventDetails = () => {
                 {sessionUser?.id === currentEvent?.owner_id && (
                     <button className="event-deatils-delete-button" onClick={deleteEvent(currentEvent?.id)}>Delete My Event</button>
                     )}
+                 </div>
+                 <div className='event-details-event-owner'>
+                    Hosted By: {eventOwner[0]?.username}
                  </div>
                 <h2 className="event-details-when-and-where-h2">When And Where:</h2>
                 <div className='event-details-when-and-where-container'>
