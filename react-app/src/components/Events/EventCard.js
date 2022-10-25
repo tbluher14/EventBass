@@ -21,8 +21,8 @@ const EventCard = ({ event }) => {
                         </div>
                         <div className="event-card-inner-container-right">
                             <div className="event-card-header">{event?.name}</div>
-                            <div className="event-card-address">{event?.venue_name}</div>
                             <div className="event-card-date">{date}</div>
+                            <div className="event-card-address">{event?.venue_name}</div>
                         </div>
                     </div>
                 </div>

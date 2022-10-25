@@ -35,3 +35,45 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.event-details-when-and-where-left{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+.when-and-where-header-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.event-details-when-and-where-right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.event-details-when-and-where-container{
+    display: flex;
+    flex-direction: row;
+}
+.event-details-when-and-where-start-date{
+    font-size: 18px;
+
+}
+.event-details-when-and-where-end-time{
+    font-size: 18px;
+
+    margin-top: 6px;
+}
+
+.date-and-time-header{
+    font-size: 18px;
+
+    margin-left: 10px;
+}

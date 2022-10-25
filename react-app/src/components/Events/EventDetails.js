@@ -7,6 +7,7 @@ import './EventDetails.css'
 import { getAllCommentsThunk } from '../../store/comment';
 import CommentCard from '../Comments/CommentCard'
 import { getAllUsersThunk } from '../../store/users';
+import { formatTime } from '../dateTimeRendering/timeRendering';
 
 
 
@@ -33,8 +34,14 @@ const EventDetails = () => {
     const specificComments = commentsArr.filter(comment => comment?.event_id == eventId)
 
     // Date Rendering:
-    const eventDate = new Date(currentEvent?.start_date)
-    const eventArr = eventDate.toString().split(' ')
+    const sDate = new Date(currentEvent?.start_date)
+    const eventArr = sDate.toString().split(' ')
+    const startDate = eventArr[0] + ", " + eventArr[1] + " " + eventArr[2] + ", " + eventArr[3]
+    const startTime = formatTime(currentEvent?.start_time)
+    const endTime = formatTime(currentEvent?.end_time)
+    const eDate = new Date(currentEvent?.end_date)
+    const eventArr2 = eDate.toString().split(' ')
+    const endDate = eventArr2[0] + ", " + eventArr2[1] + " " + eventArr2[2] + ", " + eventArr2[3]
 
 
     useEffect(() => {
@@ -90,11 +97,12 @@ const EventDetails = () => {
                 <h2 className="event-details-when-and-where-h2">When And Where:</h2>
                 <div className='event-details-when-and-where-container'>
                     <div className='event-details-when-and-where-left'>
-                        <h3>Date And Time:</h3>
-                        <div className='event-details-when-and-where-start-date'>{currentEvent?.start_date}</div>
-                        <div className='event-details-when-and-where-start-time'>{currentEvent?.start_time}</div>
-                        <div className='event-details-when-and-where-end-time'>{currentEvent?.end_time}</div>
-                        <div className='event-details-when-and-where-end-date'>{currentEvent?.end_date}</div>
+                        <div className='when-and-where-header-container'>
+                    <i class="fa-regular fa-calendar"></i><h3 className='date-and-time-header'>Date And Time:</h3>
+                        </div>
+                        <div className='event-details-when-and-where-start-date'>{startDate} {startTime} - </div>
+                        <div className='event-details-when-and-where-end-time'>{endDate} {endTime} </div>
+
                     </div>
                     <div className='event-details-when-and-where-right'>
                         <h3> Location: </h3>
