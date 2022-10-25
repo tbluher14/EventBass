@@ -27,7 +27,7 @@ const NavBar = () => {
           <h2
           className='navbar-eventbass'
           onClick={() => history.push('/')} >
-          EventBass
+          eventBass
           </h2>
         </div>
       <div className="nav-bar-right">

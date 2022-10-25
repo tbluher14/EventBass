@@ -31,6 +31,9 @@
 
 .navbar-eventbass{
     cursor: pointer;
+    color:rgba(245, 63, 0, 0.97);
+    text-shadow: .5 .5 .5 black;
+    
 }
 .navbar-myevents{
     margin-right: 20px;
