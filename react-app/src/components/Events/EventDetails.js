@@ -17,13 +17,18 @@ const EventDetails = () => {
     const [isLoaded, setIsLoaded] = useState(false)
 
     const currentEvent = useSelector(state => state.events[eventId])
+    const sessionUser = useSelector(state => state.session.user)
 
 
     //Comments Section:
     const eventComments = useSelector(state => state.comments)
     const commentsArr = Object.values(eventComments)
     const specificComments = commentsArr.filter(comment => comment?.event_id == eventId)
-    console.log(specificComments)
+
+    // Date Rendering:
+    const eventDate = new Date(currentEvent?.start_date)
+    const eventArr = eventDate.toString().split(' ')
+
 
 
     useEffect(() => {
@@ -61,11 +66,17 @@ const EventDetails = () => {
                     className='event-detail-image'
                     />
                 <div className='event-details-header-info-container'>
-                <div className='event-details-header-date'>{currentEvent?.start_date}</div>
+                <div className='event-details-header-date'>{eventArr[1]} {eventArr[2]}</div>
                 <div className='event-details-header-name'>{currentEvent?.name}</div>
                 <div className='event-details-header-description'>{currentEvent?.description}</div>
-                <button className='event-details-edit-button' onClick={editEvent(currentEvent?.id)}>Edit Event</button>
-                <button className="event-deatils-delete-button" onClick={deleteEvent(currentEvent?.id)}>Delete</button>
+                <div>
+                {sessionUser?.id === currentEvent?.owner_id && (
+                    <button className='event-details-edit-button' onClick={editEvent(currentEvent?.id)}>Edit My Event</button>
+                    )}
+                {sessionUser?.id === currentEvent?.owner_id && (
+                    <button className="event-deatils-delete-button" onClick={deleteEvent(currentEvent?.id)}>Delete My Event</button>
+                    )}
+                 </div>
                 <h2 className="event-details-when-and-where-h2">When And Where:</h2>
                 <div className='event-details-when-and-where-container'>
                     <div className='event-details-when-and-where-left'>

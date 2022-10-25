@@ -1,8 +1,37 @@
 
 .event-detail-image{
-    width: 250px;
-    height: 250px;
+    width: 1000px;
+    height: 450px;
     object-fit: cover;
+    margin-top: 25px;
+    border-radius: 10px;
 }
 
+.event-detail-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.event-details-header-date{
+    font-size: 20px;
+    margin-top: 25px;
+}
+
+.event-details-header-name{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.event-deatils-header-description{
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.event-details-edit-button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
