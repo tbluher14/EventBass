@@ -2,6 +2,7 @@ import { NavLink, useHistory, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react';
 import { getAllUsersThunk } from '../../store/users';
+import { deleteCommentThunk } from '../../store/comment';
 
 const CommentCard = ({ comment }) => {
     const dispatch = useDispatch()
@@ -12,12 +13,7 @@ const CommentCard = ({ comment }) => {
 
     const { eventId } = useParams()
 
-    const handleDelete = async (e) => {
-        e.preventDefault()
-        // await dispatch(deleteCommentThunk(comment.id))
-        history.push(`/events/${eventId}`)
-    }
-
+    console.log("this is comment id", comment.id)
     useEffect(() => {
         dispatch(getAllUsersThunk())
     }, [])
@@ -35,9 +31,9 @@ const CommentCard = ({ comment }) => {
                 <div className='comment-card-body'>
                     {comment?.comment}
                 </div>
-                {sessionUser && sessionUser.id === comment.userId && (
+                {sessionUser && sessionUser.id == comment?.user_id && (
                     <div className='comment-card-delete'>
-                        {/* <button onClick={handleDelete}>Delete</button> */}
+                        <button onClick={()=> dispatch(deleteCommentThunk(comment.id))}>Delete</button>
                     </div>
                 )}
             </div>

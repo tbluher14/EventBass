@@ -50,8 +50,8 @@ def update_comment(comment_id):
 
 @comment_routes.route('/<int:id>', methods=['DELETE'])
 @login_required
-def delete_comment(comment_id):
-    commentData = Comment.query.get(comment_id)
+def delete_comment(id):
+    commentData = Comment.query.get(id)
     db.session.delete(commentData)
     db.session.commit()
     return {'message': 'Comment deleted successfully'}, 200
