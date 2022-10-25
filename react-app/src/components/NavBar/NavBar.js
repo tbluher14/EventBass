@@ -19,6 +19,7 @@ const NavBar = () => {
     <nav className='nav-container'>
       <div className='nav-bar-container'>
 
+        <div className='outter-nav-bar-container'>
       <div className="navbar-logo-container">
           <img
           className='navbar-logo'
@@ -30,6 +31,7 @@ const NavBar = () => {
           eventBass
           </h2>
         </div>
+
       <div className="nav-bar-right">
           <button className="create-event-button" onClick={() => history.push('/create-event')}>
           Create An Event</button>
@@ -52,6 +54,7 @@ const NavBar = () => {
          </div>
         )
       }
+      </div>
       </div>
     </div>
     </nav>
