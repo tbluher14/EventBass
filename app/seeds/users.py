@@ -3,16 +3,19 @@ from app.models import db, User
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():
-    demo = User(
-        username='Demo',first_name='demo', last_name="user", email='demo@aa.io', password='password')
-    marnie = User(
-        username='marnie',first_name="demo", last_name="user", email='marnie@aa.io', password='password')
-    bobbie = User(
-        username='bobbie', first_name="demo", last_name="user", email='bobbie@aa.io', password='password')
+    waakan = User(
+        username='Waakan Music Group',first_name='Waakan', last_name="Group", email='demo@aa.io', password='password')
+    production = User(
+        username='128 Productions',first_name="AP", last_name="Amber", email='marnie@aa.io', password='password')
+    wormhole = User(
+        username='Wormhole Music Group', first_name="Dirt", last_name="Monkey", email='bobbie@aa.io', password='password')
+    Philos = User(
+        username='Philos Records', first_name="Philo", last_name="Beats", email='bobbie2@aa.io', password='password')
 
-    db.session.add(demo)
-    db.session.add(marnie)
-    db.session.add(bobbie)
+    db.session.add(waakan)
+    db.session.add(production)
+    db.session.add(wormhole)
+    db.session.add(Philos)
 
     db.session.commit()
 

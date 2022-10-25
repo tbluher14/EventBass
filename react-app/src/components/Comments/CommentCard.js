@@ -1,4 +1,4 @@
-import { NavLink, useHistory, useParams } from 'react-router-dom'
+
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react';
 import { getAllUsersThunk } from '../../store/users';
@@ -6,14 +6,13 @@ import { deleteCommentThunk } from '../../store/comment';
 
 const CommentCard = ({ comment }) => {
     const dispatch = useDispatch()
-    const history = useHistory()
+
     const sessionUser = useSelector(state => state.session.user)
     const allUsers = useSelector(state => state.users)
     const commmentUser = allUsers[comment?.user_id]
 
-    const { eventId } = useParams()
 
-    console.log("this is comment id", comment.id)
+
     useEffect(() => {
         dispatch(getAllUsersThunk())
     }, [])
@@ -24,7 +23,8 @@ const CommentCard = ({ comment }) => {
                 <div className='comment-card-header'>
                     <div className='comment-card-user'>
                         <div className='comment-card-user-name'>
-                            {commmentUser?.first_name} {commmentUser?.last_name}
+                        <i class="fa-solid fa-user" id='comment-section-user-icon'></i>
+                             {commmentUser?.first_name} {commmentUser?.last_name}
                         </div>
                     </div>
                 </div>

@@ -6,8 +6,8 @@
 
 
 .event-card-image{
-    width: 250px;
-    height: 250px;
+    width: 320px;
+    height: 300px;
     object-fit: cover;
     align-items: center;
     display: flex;
