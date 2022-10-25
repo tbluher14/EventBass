@@ -1,0 +1,21 @@
+.splash-image{
+    width: 100%;
+    height: 700px;
+    margin-top: 30px;
+}
+
+.all-events-button{
+    left: 80%;
+    bottom: 45%;
+    height: 50px;
+    width: 180px;
+    position: absolute;
+    background-color: lightgreen;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.all-events-button:hover{
+    box-shadow: .6px .6px .6px .6px lightgray;
+}

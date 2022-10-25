@@ -3,7 +3,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import { useHistory } from 'react-router-dom';
-// import './NavBar.css';
+import './NavBar.css';
 import logo from './logo.png'
 import { useSelector } from 'react-redux';
 
@@ -16,26 +16,32 @@ const NavBar = () => {
 
 
   return (
-    <div className="nav-container">
     <nav className='nav-container'>
-      <div className='nav-bar'>
+      <div className='nav-bar-container'>
+
       <div className="navbar-logo-container">
-          <img className='navbar-logo' src={logo} alt="logo" />
-          <h2>
+          <img
+          className='navbar-logo'
+          src={logo} alt="logo"
+          onClick={() => history.push('/')} />
+          <h2
+          className='navbar-eventbass'
+          onClick={() => history.push('/')} >
           EventBass
           </h2>
-      </div>
+        </div>
       <div className="nav-bar-right">
           <button className="create-event-button" onClick={() => history.push('/create-event')}>
           Create An Event</button>
             {
-        !sessionUser && (
-          <div className='navbar-event-login-signup-container'>
+              !sessionUser && (
+                <div className='navbar-event-login-signup-container'>
             <div id='navbar-login-button' onClick={() => history.push(`/login`)}>Log In</div>
             <div id='navbar-signup-button' onClick={() => history.push(`/sign-up`)}>Sign Up</div>
           </div>
         )
       }
+
       {
         sessionUser && (
           <div className='navbar-loggedin-container'>
@@ -47,9 +53,8 @@ const NavBar = () => {
         )
       }
       </div>
-      </div>
-    </nav>
     </div>
+    </nav>
   );
 }
 

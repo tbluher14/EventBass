@@ -9,6 +9,11 @@ import UsersList from './components/NavBar/UsersList';
 import User from './components/NavBar/User';
 import { authenticate } from './store/session';
 import AllEvents from './components/Events/AllEvents'
+import CreateEvent from './components/Events/CreateEvent';
+import EventDetails from './components/Events/EventDetails';
+import EditEvent from './components/Events/EditEvent';
+import MyEvents from './components/Events/MyEvents';
+import SplashPage from './components/SplashPage';
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
@@ -41,19 +46,22 @@ function App() {
           <User />
         </ProtectedRoute>
         <Route path='/' exact={true} >
-          {/* <AllEvents /> */}
+          < SplashPage/>
         </Route>
         <Route path='/all-events'>
           <AllEvents />
         </Route>
         <ProtectedRoute path='/create-event'>
-          {/* <CreateEvent /> */}
+          <CreateEvent />
         </ProtectedRoute>
         <Route exact={true} path='/events/:eventId'>
-          {/* <EventDetails /> */}
+          <EventDetails />
         </Route>
         <ProtectedRoute  exact={true} path='/events/:eventId/edit'>
-          {/* <EditEvent /> */}
+          <EditEvent/>
+        </ProtectedRoute>
+        <ProtectedRoute exact={true} path='/my-events'>
+            <MyEvents />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

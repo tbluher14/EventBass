@@ -9,7 +9,7 @@ const AllEvents = () => {
     const dispatch = useDispatch();
 
     const events = useSelector(state => (state.events));
-    console.log(events)
+
 
     useEffect(() => {
         dispatch(getAllEventsThunk())
