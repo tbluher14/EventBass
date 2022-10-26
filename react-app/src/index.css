@@ -242,3 +242,77 @@
 }
 
 /* ************************************************************ */
+
+.my_events_container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 20px;
+    margin-bottom: 20px; */
+}
+
+.my_events_cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* .event-card-inner-container:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+} */
+
+.event-card:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
+
+
+/* ************************************************************ */
+.create-event-form-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 520px;
+    height: 40px;
+    font-weight: 550;
+    text-shadow: .3px .3px .3px black;
+    font-size: 18px;
+    color: white;
+    background-color:rgba(245, 63, 0, 0.97);
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-field-date{
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 8px;
+    width: 150px;
+    height: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.select-form-field-time{
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-left: 10px;
+    /* padding: 8px; */
+    width: 150px;
+    height: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.info-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}

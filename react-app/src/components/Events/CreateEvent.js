@@ -104,7 +104,8 @@ const CreateEvent = () => {
         return (
             <div className='form-outer-container'>
                 <form onSubmit={handleSubmit}>
-                    <div className='form-header'>Please Fill Out The Form Below To Create An Event</div>
+                    <div className='form-header'></div>
+                    <h2>Please Fill Out The Form Below To Create An Event:</h2>
                         <div className='form-container'>
                             <div className='form-input-container'>
                                 <div className='create_errors'>
@@ -118,6 +119,9 @@ const CreateEvent = () => {
                                     ))}
                                 </div>
                                     <div className='input-container'>
+                                        <div className='info-header'>
+                                        <h2>What is it? </h2> 
+                                        </div>
                                         <label htmlFor='Event Name' className='form-label'>Event Name</label>
                                         <input className='form-field'
                                         name="Event Name"
@@ -128,6 +132,18 @@ const CreateEvent = () => {
                                         required
                                         />
                                     </div>
+                                    <div className='input-container'>
+                                        <label htmlFor='Event Description' className='form-label'>Description</label>
+                                        <input className='form-field'
+                                        name="Event Description"
+                                        type="text"
+                                        value={description}
+                                        placeholder='Event Description'
+                                        onChange={(e) => setDescription(e.target.value)}
+                                        required
+                                        />
+                                    </div>
+                                        <h2>Where is it?</h2>
                                     <div className='input-container'>
                                         <label htmlFor='Venue Name' className='form-label'>Venue Name</label>
                                         <input className='form-field'
@@ -183,39 +199,7 @@ const CreateEvent = () => {
                                         required
                                         />
                                     </div>
-                                    <div className='input-container'>
-                                        <label htmlFor='Event Image URL' className='form-label'>Image URL</label>
-                                        <input className='form-field'
-                                        name="Event Image URL"
-                                        type="text"
-                                        value={image_url}
-                                        placeholder='Event Image URL'
-                                        onChange={(e) => setImage_url(e.target.value)}
-                                        required
-                                        />
-                                    </div>
-                                    <div className='input-container'>
-                                        <label htmlFor='Event Website' className='form-label'>Event Website</label>
-                                        <input className='form-field'
-                                        name="Event Website"
-                                        type="text"
-                                        value={website}
-                                        placeholder='Event Website'
-                                        onChange={(e) => setWebsite(e.target.value)}
-                                        required
-                                        />
-                                    </div>
-                                    <div className='input-container'>
-                                        <label htmlFor='Event Description' className='form-label'>Description</label>
-                                        <input className='form-field'
-                                        name="Event Description"
-                                        type="text"
-                                        value={description}
-                                        placeholder='Event Description'
-                                        onChange={(e) => setDescription(e.target.value)}
-                                        required
-                                        />
-                                    </div>
+                                        <h2> When Is It? </h2>
                                     <div className='input-container'>
                                         <label htmlFor='Event Start Date' className='form-label'>Start Date </label>
                                         <input className='form-field-date'
@@ -260,6 +244,29 @@ const CreateEvent = () => {
                                         required
                                         />
                                     </div>
+                                    <h2> Additional Details: </h2>
+                                    <div className='input-container'>
+                                        <label htmlFor='Event Image URL' className='form-label'>Event Image URL</label>
+                                        <input className='form-field'
+                                        name="Event Image URL"
+                                        type="text"
+                                        value={image_url}
+                                        placeholder='Event Image URL'
+                                        onChange={(e) => setImage_url(e.target.value)}
+                                        required
+                                        />
+                                    </div>
+                                    <div className='input-container'>
+                                        <label htmlFor='Event Website' className='form-label'>Event Website</label>
+                                        <input className='form-field'
+                                        name="Event Website"
+                                        type="text"
+                                        value={website}
+                                        placeholder='Event Website'
+                                        onChange={(e) => setWebsite(e.target.value)}
+                                        required
+                                        />
+                                    </div>
                                     <div className='input-container'>
 
                                     <label htmlFor='Open Time & Close Time' className='form-field-labels'>Refunds Offered?</label>
@@ -269,7 +276,7 @@ const CreateEvent = () => {
                                     </select>
                                     </div>
                                     <div className='create-event-button-container'>
-                                        <button className='create-event-button' type='submit'>Create Event</button>
+                                        <button className='create-event-form-button' type='submit'>Create Event</button>
                                     </div>
                                         </div>
                                     </div>

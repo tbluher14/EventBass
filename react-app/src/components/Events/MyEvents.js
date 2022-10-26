@@ -21,9 +21,9 @@ const MyEvents = () => {
 
     return (
         <div className='my-events-container'>
-            <h2>Events</h2>
+            <h2>My Events</h2>
            {userEvents?.map(event => (
-             <div>
+             <div className='my_events_cards'>
                 <EventCard event={event} />
             </div>
            ))
