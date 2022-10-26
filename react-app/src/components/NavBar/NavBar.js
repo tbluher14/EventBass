@@ -33,8 +33,10 @@ const NavBar = () => {
         </div>
 
       <div className="nav-bar-right">
-          <div className="create-event-button" onClick={() => history.push('/create-event')}>
+         {sessionUser && (
+         <div className="create-event-button" onClick={() => history.push('/create-event')}>
           Create An Event</div>
+         )}
             {
               !sessionUser && (
                 <div className='navbar-event-login-signup-container'>

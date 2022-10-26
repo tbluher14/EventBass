@@ -31,26 +31,28 @@ const LoginForm = () => {
   }
 
   return (
-    <div className='form-outer-container'>
+    <div className='login-form-outer-container'>
     <form onSubmit={onLogin}>
+    <div className='login-form-container'>
+   <div className='login-form'>
     <div className='login-form-header'>Log In</div>
       <div className='create_errors'>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
-        ))}
+          ))}
       </div>
-      <div className='input-container'>
+      <div className='login-input-container'>
         <label htmlFor='email' className='form-label'>Email</label>
         <input
         className='form-field'
-          name='email'
-          type='text'
-          placeholder='Email'
-          value={email}
-          onChange={updateEmail}
+        name='email'
+        type='text'
+        placeholder='Email'
+        value={email}
+        onChange={updateEmail}
         />
       </div>
-      <div className='input-container'>
+      <div className='login-input-container'>
         <label htmlFor='password' className="form-label">Password</label>
         <input
           className='form-field'
@@ -59,9 +61,15 @@ const LoginForm = () => {
           placeholder='Password'
           value={password}
           onChange={updatePassword}
-        />
+          />
         <button type='submit' className='login_button'>Login</button>
       </div>
+      </div>
+    <img src='https://media2.westword.com/den/imager/u/original/11506458/img_3696.jpg'
+    className='login-image'
+    alt='login-pic'
+    />
+        </div>
     </form>
     </div>
   );
