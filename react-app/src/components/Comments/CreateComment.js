@@ -11,7 +11,7 @@ const CreateComment = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const sessionUser = useSelector(state => state.session.user);
-    console.log(Number(sessionUser.id))
+
     const { eventId } = useParams();
 
     const specificEvent = useSelector(state => state.events[eventId]);

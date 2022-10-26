@@ -15,6 +15,7 @@ import EditEvent from './components/Events/EditEvent';
 import MyEvents from './components/Events/MyEvents';
 import SplashPage from './components/SplashPage';
 import CreateComment from './components/Comments/CreateComment';
+import EditComment from './components/Comments/EditComment';
 
 
 function App() {
@@ -68,6 +69,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute exact={true} path='/:eventId/create_comment'>
             <CreateComment />
+        </ProtectedRoute>
+        <ProtectedRoute exact={true} path='/comments/:commentId/edit'>
+            <EditComment />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react';
 import { getAllUsersThunk } from '../../store/users';
 import { deleteCommentThunk } from '../../store/comment';
+import { useHistory } from 'react-router-dom';
 
 const CommentCard = ({ comment }) => {
     const dispatch = useDispatch()
@@ -10,6 +11,7 @@ const CommentCard = ({ comment }) => {
     const sessionUser = useSelector(state => state.session.user)
     const allUsers = useSelector(state => state.users)
     const commmentUser = allUsers[comment?.user_id]
+    const history = useHistory()
 
 
 
@@ -27,9 +29,14 @@ const CommentCard = ({ comment }) => {
                              {commmentUser?.username}
                         </div>
                         <div className='comment-card-delete-container'>
-                        {sessionUser && sessionUser.id == comment?.user_id && (
+                        {sessionUser && sessionUser?.id == comment?.user_id && (
                         <div className='comment-card-delete'>
-                            <button onClick={()=> dispatch(deleteCommentThunk(comment.id))} className='comment-card-delete'>Delete</button>
+                            <button onClick={()=> dispatch(deleteCommentThunk(comment?.id))} className='comment-card-delete'>Delete</button>
+                        </div>
+                            )}
+                        {sessionUser && sessionUser?.id == comment?.user_id && (
+                        <div className='comment-card-edit'>
+                            <button className='comment-card-edit' onClick={() => history.push(`/comments/${comment?.id}/edit`)}>Edit</button>
                         </div>
                         )}
                         </div>

@@ -3,6 +3,7 @@
 const GET_ALL_COMMENTS = 'comments/GET_ALL_COMMENTS';
 const CREATE_COMMENT = 'comments/CREATE_COMMENT';
 const DELETE_COMMENT  = 'comments/DELETE_COMMENT';
+const EDIT_COMMENT = 'comments/EDIT_COMMENT';
 
 
 // Action Creators:
@@ -20,6 +21,11 @@ export const createCommentAC = (comment) => ({
 export const deleteCommentAC = (commentId) => ({
     type: DELETE_COMMENT,
     payload: commentId
+})
+
+export const editCommentAC = (comment) => ({
+    type: EDIT_COMMENT,
+    payload: comment
 })
 
 
@@ -49,6 +55,19 @@ export const createCommentThunk = (comment) => async (dispatch) => {
     }
 }
 
+export const editCommentThunk = (comment, commentId) => async (dispatch) => {
+    const res = await fetch(`/api/comments/${commentId}`, {
+        method: 'PUT',
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(comment)
+    })
+    if (res.ok){
+        const data = await res.json();
+        dispatch(editCommentAC(data));
+        return res
+    }
+}
+
 export const deleteCommentThunk = (comment_id) => async (dispatch) => {
     const res = await fetch(`/api/comments/${comment_id}`, {
         method: 'DELETE',
@@ -73,6 +92,10 @@ const commentReducer = (state = initialState, action) => {
             return newState
         case CREATE_COMMENT:
             newState = {...state}
+            return newState
+        case EDIT_COMMENT:
+            newState = {...state}
+            newState[action.payload.id] = action.payload
             return newState
         case DELETE_COMMENT:
             newState = {...state}
