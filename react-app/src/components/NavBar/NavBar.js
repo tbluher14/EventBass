@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom';
 import './NavBar.css';
 import logo from './logo.png'
 import { useSelector } from 'react-redux';
+import ProfileButton from './ProfileButton';
 
 
 
@@ -46,7 +47,7 @@ const NavBar = () => {
         )
       }
 
-      {
+      {/* {
         sessionUser && (
           <div className='navbar-loggedin-container'>
             <div className='navbar-myevents' onClick={ () => history.push('/my-events')}>My Events</div>
@@ -55,7 +56,15 @@ const NavBar = () => {
             </div>
          </div>
         )
-      }
+      } */}
+
+      {sessionUser && (
+        <>
+        <div className='navbar-loggedin-container'>
+        <ProfileButton user={sessionUser} ></ProfileButton>
+        </div>
+        </>
+      )}
       </div>
       </div>
     </div>

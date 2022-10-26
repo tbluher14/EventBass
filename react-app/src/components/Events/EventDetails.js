@@ -134,7 +134,7 @@ const EventDetails = () => {
                     </div>
                     <div className='event-details-when-and-where-right'>
                         <div className='location-header'>
-                        <i class="fa-solid fa-map-pin"></i><h3 className='location-header-text'> Location: </h3>
+                        <i className="fa-solid fa-map-pin"></i><h3 className='location-header-text'> Location: </h3>
                         </div>
                         <div className="event-details-location">{currentEvent?.venue_name}</div>
                         <div className='event-details-when-and-where-city'>{currentEvent?.city}, {currentEvent?.state}</div>
@@ -151,6 +151,7 @@ const EventDetails = () => {
                 </div>
                 <div className='event-details-comments-container'>
                     <h2 className="event-details-Comments-h2">Comments:</h2>
+                    <button className='add-comment' onClick={() => history.push(`/${currentEvent.id}/create-comment`)}>Add Comment</button>
                     {specificComments?.map((comment) => (
                         <div className='event-details-comments'>
                             <CommentCard key={comment.id} comment = {comment}></CommentCard>

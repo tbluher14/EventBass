@@ -18,7 +18,7 @@ def create_comment():
 
     if form.validate_on_submit():
         commentData = Comment(
-            user_id=current_user.id,
+            user_id=form.data['user_id'],
             event_id=form.data['event_id'],
             comment=form.data['comment']
         )
