@@ -22,13 +22,14 @@ const EditComment = () => {
 
 
     const handleSubmit = (e) => {
-        e.prenventDefault();
+        e.preventDefault();
 
         const commentData = {
                 user_id: userId,
                 event_id: eventId,
                 comment: comment
             }
+
             return dispatch(editCommentThunk(commentData, commentId))
             .then(history.push(`/events/${specificComment?.event_id}`))
 

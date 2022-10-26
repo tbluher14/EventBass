@@ -35,9 +35,9 @@ const CreateComment = () => {
     }, [])
 
 
-    const handleSubmit = () => {
-        // e.prenventDefault();
-        // setSubmitted(true)
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setSubmitted(true)
         const commentData = {
                 user_id: sessionUser.id,
                 event_id: eventId,
