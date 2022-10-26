@@ -135,3 +135,78 @@
 .event-details-when-and-where-h2{
     padding: 0px;
 }
+
+
+/* COMMENT SECTION */
+
+.add-comment{
+    width: 140px;
+    height: 30px;
+    font-weight: 550;
+    text-shadow: .3px .3px .3px black;
+    font-size: 16px;
+    color: white;
+    background-color:rgba(245, 63, 0, 0.97);
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 5px;
+    margin-bottom: 25px;
+
+}
+
+
+.event-details-comments{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 25px;
+
+}
+
+.comment-card-container{
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.comment-card{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    /* align-items: right; */
+}
+
+.comment-card-header{
+    margin-bottom: 10px;
+}
+
+.comment-card-user{
+    display: flex;
+    flex-direction: row;
+}
+
+.comment-card-header{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-evenly; */
+}
+
+.comment-card-user-name{
+    justify-content: flex-start;
+
+}
+
+.comment-card-delete-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.comment-card-delete{
+    display: flex;
+    flex-direction: row;
+}

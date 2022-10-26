@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
-import { createCommentThunk } from '../../store/comment'
+import { createCommentThunk, getAllCommentsThunk } from '../../store/comment'
 import {getAllEventsThunk} from "../../store/event";
 
 
@@ -31,6 +31,7 @@ const CreateComment = () => {
 
     useEffect( ()   => {
         dispatch(getAllEventsThunk())
+        dispatch(getAllCommentsThunk())
     }, [])
 
 
