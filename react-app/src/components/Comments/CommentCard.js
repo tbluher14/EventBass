@@ -24,7 +24,7 @@ const CommentCard = ({ comment }) => {
                     <div className='comment-card-user'>
                         <div className='comment-card-user-name'>
                         <i class="fa-solid fa-user" id='comment-section-user-icon'></i>
-                             {commmentUser?.first_name} {commmentUser?.last_name}
+                             {commmentUser?.username}
                         </div>
                     </div>
                 </div>

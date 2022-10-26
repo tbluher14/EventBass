@@ -11,6 +11,7 @@ const CreateComment = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const sessionUser = useSelector(state => state.session.user);
+    console.log(Number(sessionUser.id))
     const { eventId } = useParams();
 
     const specificEvent = useSelector(state => state.events[eventId]);
@@ -19,34 +20,34 @@ const CreateComment = () => {
     const [submitted, setSubmitted] = useState(false);
     const [errors, setErrors] = useState([]);
 
-    // useEffect(() => {
-    //     const errors = []
-    //     if (comment.length < 2 || comment.length  > 500) {
-    //         errors.push('Please enter a comment between 2 and 500 characters.')
-    //     }
-    //     setErrors(errors)
+    useEffect(() => {
+        const errors = []
+        if (comment.length < 2 || comment.length  > 500) {
+            errors.push('Please enter a comment between 2 and 500 characters.')
+        }
+        setErrors(errors)
 
-    // }, [comment])
+    }, [comment])
 
     useEffect( ()   => {
         dispatch(getAllEventsThunk())
     }, [])
 
 
-    const handleSubmit = async (e) => {
-        e.prenventDefault();
+    const handleSubmit = () => {
+        // e.prenventDefault();
         // setSubmitted(true)
         const commentData = {
-                user_id: Number(sessionUser.id),
-                event_id: Number(specificEvent.id),
+                user_id: sessionUser.id,
+                event_id: eventId,
                 comment: comment
             }
 
             console.log(commentData)
-            // if (comment.length>2 && comment.length < 500) {
+            if (comment.length>2 && comment.length < 500) {
             return dispatch(createCommentThunk(commentData))
-            // history.push(`/events/${specificEvent.id}`)
-            // }
+            .then(history.push(`/events/${specificEvent.id}`))
+            }
         }
 
 
@@ -73,7 +74,7 @@ const CreateComment = () => {
                     onChange={(e) => setComment(e.target.value)} />
                 </div>
                 <div className="comment-button">
-                    <button className="create-comment-button" type="submit">Create Comment</button>
+                    <button className="create-comment-button" type="submit">Add Comment</button>
                 </div>
             </div>
             </form>

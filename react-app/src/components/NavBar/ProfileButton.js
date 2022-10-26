@@ -1,13 +1,15 @@
 
 import React, { useState, useEffect } from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
+import {getAllUsersThunk} from '../../store/users'
 import {useHistory} from 'react-router-dom'
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   const history = useHistory()
+  const sessionUser = useSelector(state => state.session.user);
 
   const openMenu = () => {
     if (showMenu) return;
@@ -16,15 +18,16 @@ function ProfileButton({ user }) {
 
   useEffect(() => {
     if (!showMenu) return;
-
     const closeMenu = () => {
       setShowMenu(false);
     };
-
     document.addEventListener('click', closeMenu);
-
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
+
+  useEffect(() => {
+    dispatch(getAllUsersThunk())
+  })
 
   const logout = (e) => {
     e.preventDefault();
@@ -40,10 +43,11 @@ function ProfileButton({ user }) {
   return (
     <>
     <div>
-      <button className="loggedIn_menu" onClick={openMenu}>
-        <i className="fas fa-bars nav_bars_icon"></i>
-        <i className="fas fa-user-circle user_icon"></i>
-      </button>
+      <div className="loggedIn_menu" onClick={openMenu}>
+        <i className="fas fa-user-circle user_icon"> </i>
+        {sessionUser.email}
+        <i class="fa-solid fa-angle-down"></i>
+      </div>
       <div className="menu_modal">
       {showMenu && (
         <div className="menu_container">

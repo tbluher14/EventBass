@@ -66,7 +66,7 @@ function App() {
         <ProtectedRoute exact={true} path='/my-events'>
             <MyEvents />
         </ProtectedRoute>
-        <ProtectedRoute exact={true} path='/:eventId/create-comment'>
+        <ProtectedRoute exact={true} path='/:eventId/create_comment'>
             <CreateComment />
         </ProtectedRoute>
       </Switch>

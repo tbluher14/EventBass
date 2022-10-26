@@ -112,3 +112,64 @@
     cursor: pointer;
 
 }
+
+
+/* Menu Drop Down */
+.menu {
+    background-color: white;
+    display: inline-flex;
+    position: fixed;
+    z-index: 10;
+    top: 60px;
+    right: 35px;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-evenly;
+    /* align-content: space-evenly; */
+    border-radius: 15px;
+    padding: 15px;
+    border: 1px solid black;
+    width: 150px;
+    height: 100px;
+    box-shadow: 0 0 .2px;
+  }
+
+  .my_events_button{
+    background-color: white;
+    border: none;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 3px;
+    padding: 5px;
+  }
+
+  .my_events_button:hover{
+    background-color: 	#DCDCDC;
+  }
+
+  .profile_logout_button{
+    background-color: white;
+    border: none;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 3px;
+    padding: 5px;
+  }
+
+  .profile_logout_button:hover{
+    background-color: 	#DCDCDC;
+  }
+
+  .navbar-loggedin-container{
+    padding: 5px;
+
+  }
+
+  .loggedIn_menu{
+    width: 100px;
+    display: flex;
+    margin-right: 20px;
+    align-items: flex-end;
+    justify-content: flex-start;
+    cursor: pointer;
+  }

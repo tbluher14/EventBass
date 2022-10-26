@@ -15,17 +15,19 @@ def get_all_comments():
 def create_comment():
     form = CreateCommentForm()
     form['csrf_token'].data = request.cookies['csrf_token']
-
+    print("this is form", form)
     if form.validate_on_submit():
         commentData = Comment(
             user_id=form.data['user_id'],
             event_id=form.data['event_id'],
             comment=form.data['comment']
         )
+        print("this is comment data", commentData)
         db.session.add(commentData)
         db.session.commit()
         return jsonify(commentData.to_dict()), 200
     else:
+        print("this is form errors", form)
         return {'errors': form.errors}, 401
 
 
