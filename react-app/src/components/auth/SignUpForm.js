@@ -54,6 +54,7 @@ const SignUpForm = () => {
     setSubmitted(true);
 
     if (errors.length > 0) return
+    console.log(username,email,password,first_name,last_name)
 
     if (password === confirmPassword) {
       const data = await dispatch(signUp(username, email, password, first_name, last_name));

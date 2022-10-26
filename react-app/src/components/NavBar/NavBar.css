@@ -120,8 +120,8 @@
     display: inline-flex;
     position: fixed;
     z-index: 10;
-    top: 60px;
-    right: 35px;
+    top: 65px;
+    right: 45px;
     flex-direction: column;
     /* align-items: center; */
     justify-content: space-evenly;
@@ -141,10 +141,12 @@
     font-family: 'Montserrat', sans-serif;
     border-radius: 3px;
     padding: 5px;
+    /* border-bottom: 1px solid lightgray; */
   }
 
   .my_events_button:hover{
     background-color: 	#DCDCDC;
+    cursor: pointer;
   }
 
   .profile_logout_button{
@@ -158,6 +160,7 @@
 
   .profile_logout_button:hover{
     background-color: 	#DCDCDC;
+    cursor: pointer;
   }
 
   .navbar-loggedin-container{
@@ -166,10 +169,36 @@
   }
 
   .loggedIn_menu{
-    width: 100px;
+    width: 100%;
     display: flex;
-    margin-right: 20px;
+    margin-right: 10px;
     align-items: flex-end;
     justify-content: flex-start;
+    cursor: pointer;
+  }
+
+  .loggedIn_menu:hover{
+    background-color: whitesmoke;
+  }
+
+  .profile-icon{
+    margin-right: 5px;
+  }
+
+  .down-arrow{
+    margin-left: 5px;
+  }
+
+  .browse-events{
+    background-color: white;
+    border: none;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 3px;
+    padding: 5px;
+  }
+
+  .browse-events:hover{
+    background-color: 	#DCDCDC;
     cursor: pointer;
   }

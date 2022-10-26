@@ -44,15 +44,20 @@ function ProfileButton({ user }) {
     <>
     <div>
       <div className="loggedIn_menu" onClick={openMenu}>
-        <i className="fas fa-user-circle user_icon"> </i>
+        <div className="profile-icon">
+        <i className="fas fa-user-circle user_icon" id="profile-icon-id"> </i>
+        </div>
         {sessionUser.email}
+        <div className="down-arrow">
         <i class="fa-solid fa-angle-down"></i>
+        </div>
       </div>
       <div className="menu_modal">
       {showMenu && (
         <div className="menu_container">
         <div className="menu">
           {/* <button onClick={showUsersReviews} className="userReviews_button">My Reviews</button> */}
+          <button onClick={() => history.push('/all-events')} className='browse-events'>Browse Events</button>
           <button onClick={showUsersEvents} className="my_events_button">Manage My Events</button>
           <button onClick={logout} className="profile_logout_button">
             Log Out
