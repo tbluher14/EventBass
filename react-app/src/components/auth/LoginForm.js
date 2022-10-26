@@ -63,6 +63,7 @@ const LoginForm = () => {
           onChange={updatePassword}
           />
         <button type='submit' className='login_button'>Login</button>
+        <button onClick={() => dispatch(login('demo@aa.io', 'password'))} className='demo_user_button'>Demo User</button>
       </div>
       </div>
     <img src='https://media2.westword.com/den/imager/u/original/11506458/img_3696.jpg'

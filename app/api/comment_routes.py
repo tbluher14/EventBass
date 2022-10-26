@@ -31,19 +31,15 @@ def create_comment():
         return {'errors': form.errors}, 401
 
 
-@comment_routes.route('/<int:id>', methods=['PUT'])
+@comment_routes.route('/<int:comment_id>', methods=['PUT'])
 @login_required
 def update_comment(comment_id):
     form = CreateCommentForm()
     form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():
-        commentData = Comment(
-            user_id=current_user.id,
-            event_id=form.data['event_id'],
-            comment=form.data['comment']
-        )
-        db.session.add(commentData)
+        commentData = Comment.query.get(comment_id)
+        commentData.comment = form.data['comment']
         db.session.commit()
         return jsonify(commentData.to_dict()), 200
     else:
