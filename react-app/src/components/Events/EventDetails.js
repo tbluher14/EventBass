@@ -112,16 +112,16 @@ const EventDetails = () => {
                 <div className='event-details-header-name'>{currentEvent?.name}</div>
                 <div className='event-details-header-description'>{currentEvent?.description}</div>
                 <div>
+                 <h3 className='event-details-event-owner'>
+                    Hosted By: {eventOwner[0]?.username}
+                 </h3>
                 {sessionUser?.id === currentEvent?.owner_id && (
                     <button className='event-details-edit-button' onClick={editEvent(currentEvent?.id)}>Edit My Event</button>
                     )}
                 {sessionUser?.id === currentEvent?.owner_id && (
-                    <button className="event-deatils-delete-button" onClick={deleteEvent(currentEvent?.id)}>Delete My Event</button>
+                    <button className="event-details-delete-button" onClick={deleteEvent(currentEvent?.id)}>Delete My Event</button>
                     )}
                  </div>
-                 <h3 className='event-details-event-owner'>
-                    Hosted By: {eventOwner[0]?.username}
-                 </h3>
                 <h2 className="event-details-when-and-where-h2">When And Where:</h2>
                 <div className='event-details-when-and-where-container'>
                     <div className='event-details-when-and-where-left'>
