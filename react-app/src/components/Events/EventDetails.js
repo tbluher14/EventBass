@@ -60,23 +60,19 @@ const EventDetails = () => {
         }
     }
 
-        // const sDate = new Date(currentEvent?.start_date)
-        // const eventArr = sDate.toString().split(' ')
-        // const startDate = eventArr[0] + ", " + eventArr[1] + " " + eventArr[2] + ", " + eventArr[3]
-        // const startTime = formatTime(currentEvent?.start_time)
-        // const endTime = formatTime(currentEvent?.end_time)
-        // const eDate = new Date(currentEvent?.end_date)
-        // const eventArr2 = eDate.toString().split(' ')
-        // const endDate = eventArr2[0] + ", " + eventArr2[1] + " " + eventArr2[2] + ", " + eventArr2[3]
-
-
-
     useEffect(() => {
-        dispatch(getAllEventsThunk())
-        dispatch(getAllCommentsThunk())
-        dispatch(getAllUsersThunk()).then(setIsLoaded(true))
 
+        (async () => {
+        await dispatch(getAllEventsThunk())
+        await dispatch(getAllCommentsThunk())
+        await setIsLoaded(true)
+        await dispatch(getAllUsersThunk())
+        })()
     }, [])
+
+    if (!isLoaded) {
+        return null
+    }
 
     const refundLogic = () => {
         if (currentEvent?.refunds === "true") {
