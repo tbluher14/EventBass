@@ -28,16 +28,13 @@ const CommentCard = ({ comment }) => {
                         <i class="fa-solid fa-user" id='comment-section-user-icon'></i>
                              {commmentUser?.username}
                         </div>
+                        <div className='edit-delete-comment-container'>
                             {sessionUser && sessionUser?.id == comment?.user_id && (
-                            <div className='comment-card-edit'>
                                 <button className='comment-card-edit' onClick={() => history.push(`/comments/${comment?.id}/edit`)}>Edit</button>
-                            </div>
                             )}
-                        <div className='comment-card-delete-container'>
-                        {sessionUser && sessionUser?.id == comment?.user_id && (
-                        <div className='comment-card-delete'>
+
+                        {   sessionUser && sessionUser?.id == comment?.user_id && (
                             <button onClick={()=> dispatch(deleteCommentThunk(comment?.id))} className='comment-card-delete'>Delete</button>
-                        </div>
                             )}
                         </div>
                     </div>
