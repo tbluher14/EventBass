@@ -14,7 +14,7 @@ def seed_events():
         website='https://www.redrocksonline.com/events/slander-11-9-442527/',
         start_date='2022-11-09',
         start_time=time(17, 00),
-        end_date='2023-11-10',
+        end_date='2022-11-10',
         end_time=time(1,00),
         owner_id=3,
         refunds=True
@@ -63,11 +63,28 @@ def seed_events():
         zip_code='80218',
         image_url='https://i.ytimg.com/vi/GTCgZOA6UnA/maxresdefault.jpg',
         website='https://www.ogdentheatre.com/events/detail/448775',
-        start_date='2023-12-10',
+        start_date='2022-12-10',
         start_time=time(20, 00),
-        end_date='2023-12-11',
+        end_date='2022-12-11',
         end_time=time(2,00),
         owner_id=1,
+        refunds=False
+    )
+    boombox = Event (
+        name='Boombox Featuring Backbeat Brass',
+        venue_name='Ogden Theater',
+        description="A little house, a little blues, a little funk, a little rock, and a whole lot of soul blast through BoomBox. Since first emerging in 2004, founder, songwriter, producer, and multi-instrumentalist Zion Rock Godchaux has been quietly seasoning and simmering this recipe to perfection. At the same time, the Muscle Shoals, AL native stays true to what attracted countless fans in the first place.",
+        address='935 E Colfax Ave',
+        city='Denver',
+        state='Colorado',
+        zip_code='80218',
+        image_url='https://edm.com/.image/t_share/MTUyOTU2NzQ2MDExMjU1ODE1/markusschulz-laser-lightshow.jpg',
+        website='https://www.ogdentheatre.com/events/detail/443067',
+        start_date='2022-12-31',
+        start_time=time(20, 00),
+        end_date='2023-01-01',
+        end_time=time(2,00),
+        owner_id=3,
         refunds=False
     )
     event3 = Event (
