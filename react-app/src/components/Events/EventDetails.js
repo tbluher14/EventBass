@@ -24,6 +24,7 @@ const EventDetails = () => {
     const sessionUser = useSelector(state => state.session.user)
     const allUsers = useSelector(state => state.users)
     const userArr = Object.values(allUsers)
+    console.log(userArr)
     const eventOwner = userArr.filter(user => user.id == currentEvent?.owner_id)
 
 
@@ -94,6 +95,7 @@ const EventDetails = () => {
         e.preventDefault()
         history.push(`/events/${eventId}/edit`)
     }
+    console.log(eventOwner)
 
     return (
         isLoaded && <div className='event-detail-container'>
