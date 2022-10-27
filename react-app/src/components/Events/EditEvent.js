@@ -91,11 +91,11 @@ const EditEvent = () => {
     return (
         <div className='form-outer-container'>
                 <form onSubmit={handleSubmit}>
-                    <div className='edit-form-header'>To Make Edits To Your Event, Please Fill Out The Following:</div>
-                        <div className='form-container'>
+                <div className='form-container'>
+                    <h2>Edit Your Event: </h2>
                             <div className='form-input-container'>
                                 <div className='create_errors'>
-                                    {errors.map((error, ind) => (
+                                    {submitted && errors.map((error, ind) => (
                                         <div
                                         key={ind}
                                         className='error-message-container'
@@ -105,6 +105,9 @@ const EditEvent = () => {
                                     ))}
                                 </div>
                                     <div className='input-container'>
+                                        <div className='info-header'>
+                                        <h2>What is it? </h2>
+                                        </div>
                                         <label htmlFor='Event Name' className='form-label'>Event Name</label>
                                         <input className='form-field'
                                         name="Event Name"
@@ -115,6 +118,18 @@ const EditEvent = () => {
                                         required
                                         />
                                     </div>
+                                    <div className='input-container'>
+                                        <label htmlFor='Event Description' className='form-label'>Description</label>
+                                        <input className='form-field'
+                                        name="Event Description"
+                                        type="text"
+                                        value={description}
+                                        placeholder='Event Description'
+                                        onChange={(e) => setDescription(e.target.value)}
+                                        required
+                                        />
+                                    </div>
+                                        <h2>Where is it?</h2>
                                     <div className='input-container'>
                                         <label htmlFor='Venue Name' className='form-label'>Venue Name</label>
                                         <input className='form-field'
@@ -170,8 +185,54 @@ const EditEvent = () => {
                                         required
                                         />
                                     </div>
+                                        <h2> When Is It? </h2>
                                     <div className='input-container'>
-                                        <label htmlFor='Event Image URL' className='form-label'>Image URL</label>
+                                        <label htmlFor='Event Start Date' className='form-label'>Start Date </label>
+                                        <input className='form-field-date'
+                                        name="Event Start Date"
+                                        type="date"
+                                        value={start_date}
+                                        placeholder='Event Start Date'
+                                        onChange={(e) => setStart_date(e.target.value)}
+                                        required
+                                        />
+                                    </div>
+                                    <div className='input-container'>
+                                        <label htmlFor='Event Start Time' className='form-label'>Start Time</label>
+                                        <input className='form-field-date'
+                                        name="Event Start Time"
+                                        type="time"
+                                        value={start_time}
+                                        placeholder='Start Time'
+                                        onChange={(e) => setStart_time(e.target.value)}
+                                        required
+                                        />
+                                    </div>
+                                    <div className='input-container'>
+                                        <label htmlFor='Event End Date' className='form-label'>End Date</label>
+                                        <input className='form-field-date'
+                                        name="Event End Date"
+                                        type="date"
+                                        value={end_date}
+                                        placeholder='End Date'
+                                        onChange={(e) => setEnd_date(e.target.value)}
+                                        required
+                                        />
+                                    </div>
+                                    <div className='input-container'>
+                                        <label htmlFor='Event End Time' className='form-label'>End Time</label>
+                                        <input className='form-field-date'
+                                        name="Event End Time"
+                                        type="time"
+                                        value={end_time}
+                                        placeholder='End Time'
+                                        onChange={(e) => setEnd_time(e.target.value)}
+                                        required
+                                        />
+                                    </div>
+                                    <h2> Additional Details: </h2>
+                                    <div className='input-container'>
+                                        <label htmlFor='Event Image URL' className='form-label'>Event Image URL</label>
                                         <input className='form-field'
                                         name="Event Image URL"
                                         type="text"
@@ -193,61 +254,6 @@ const EditEvent = () => {
                                         />
                                     </div>
                                     <div className='input-container'>
-                                        <label htmlFor='Event Description' className='form-label'>Description</label>
-                                        <input className='form-field'
-                                        name="Event Description"
-                                        type="text"
-                                        value={description}
-                                        placeholder='Event Description'
-                                        onChange={(e) => setDescription(e.target.value)}
-                                        required
-                                        />
-                                    </div>
-                                    <div className='input-container'>
-                                        <label htmlFor='Event Start Date' className='form-label'>Start Date </label>
-                                        <input className='form-field'
-                                        name="Event Start Date"
-                                        type="date"
-                                        value={start_date}
-                                        placeholder='Event Start Date'
-                                        onChange={(e) => setStart_date(e.target.value)}
-                                        required
-                                        />
-                                    </div>
-                                    <div className='input-container'>
-                                        <label htmlFor='Event Start Time' className='form-label'>Start Time</label>
-                                        <input className='form-field'
-                                        name="Event Start Time"
-                                        type="time"
-                                        value={start_time}
-                                        placeholder='Start Time'
-                                        onChange={(e) => setStart_time(e.target.value)}
-                                        required
-                                        />
-                                    </div>
-                                    <div className='input-container'>
-                                        <label htmlFor='Event End Date' className='form-label'>End Date</label>
-                                        <input className='form-field'
-                                        name="Event End Date"
-                                        type="date"
-                                        value={end_date}
-                                        placeholder='End Date'
-                                        onChange={(e) => setEnd_date(e.target.value)}
-                                        required
-                                        />
-                                    </div>
-                                    <div className='input-container'>
-                                        <label htmlFor='Event End Time' className='form-label'>End Time</label>
-                                        <input className='form-field'
-                                        name="Event End Time"
-                                        type="time"
-                                        value={end_time}
-                                        placeholder='End Time'
-                                        onChange={(e) => setEnd_time(e.target.value)}
-                                        required
-                                        />
-                                    </div>
-                                    <div className='input-container'>
 
                                     <label htmlFor='Open Time & Close Time' className='form-field-labels'>Refunds Offered?</label>
                                     <select className="select-form-field-time" value={refunds} onChange={(e) => setRefunds(e.target.value)} placeholder="refunds" required>
@@ -256,7 +262,7 @@ const EditEvent = () => {
                                     </select>
                                     </div>
                                     <div className='create-event-button-container'>
-                                        <button className='create-event-button' type='submit'>Edit Event</button>
+                                        <button className='create-event-form-button' type='submit'>Create Event</button>
                                     </div>
                                         </div>
                                     </div>

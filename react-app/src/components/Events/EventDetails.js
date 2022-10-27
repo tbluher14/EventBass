@@ -86,7 +86,8 @@ const EventDetails = () => {
         e.preventDefault()
         history.push('/all-events')
         const res = await dispatch(deleteEventThunk(eventId))
-        return res
+        .then(dispatch(getAllEventsThunk()))
+        // return res
     }
 
     const editEvent = (eventId) => async (e) => {
