@@ -95,7 +95,7 @@ const EventDetails = () => {
         e.preventDefault()
         history.push(`/events/${eventId}/edit`)
     }
-    console.log(eventOwner)
+   
 
     return (
         isLoaded && <div className='event-detail-container'>

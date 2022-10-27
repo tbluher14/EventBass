@@ -25,9 +25,35 @@ const EditEvent = () => {
     const [end_time, setEnd_time] = useState(currentEvent?.end_time )
     const [refunds, setRefunds] = useState(currentEvent?.refunds || "")
     const [venue_name, setVenueName] = useState(currentEvent?.venue_name || "")
-
+    const [isLoaded, setIsLoaded] = useState(false)
     const [submitted, setSubmitted] = useState(false)
     const [errors, setErrors] = useState([])
+
+
+    useEffect(() => {
+        dispatch(getAllEventsThunk()).then(setIsLoaded(true))
+    },[])
+
+    useEffect(() => {
+        if (currentEvent){
+            setIsLoaded(true)
+            setName(currentEvent.name)
+            setDescription(currentEvent.description)
+            setAddress(currentEvent.address)
+            setCity(currentEvent.city)
+            setState(currentEvent.state)
+            setZipCode(currentEvent.zip_code)
+            setImage_url(currentEvent.image_url)
+            setAddress(currentEvent.website)
+            setStart_date(currentEvent.start_date)
+            setStart_time(currentEvent.start_time)
+            setEnd_date(currentEvent.end_date)
+            setEnd_time(currentEvent.end_time)
+            setRefunds(currentEvent.refunds)
+            setVenueName(currentEvent.venue_name)
+
+        }
+    },[currentEvent])
 
     const imageRegX = /\.(jpeg|jpg|png|svg)$/
     const timeRegX = /^(0?[1-9]|1[0-2]):[0-5][0-9]$/
@@ -89,7 +115,7 @@ const EditEvent = () => {
         }
 
     return (
-        <div className='form-outer-container'>
+       isLoaded && <div className='form-outer-container'>
                 <form onSubmit={handleSubmit}>
                 <div className='form-container'>
                     <h2>Edit Your Event: </h2>
