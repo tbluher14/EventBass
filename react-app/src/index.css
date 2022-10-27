@@ -1,9 +1,12 @@
 /* TODO Add site wide styles */
 /* TODO Add site wide styles */
 #root{
-   font-family: 'Montserrat', sans-serif
+   font-family: 'Montserrat', sans-serif;
+   margin: 0px;
 }
-
+#body{
+    margin: 0px;
+}
 /* EVENT CARDS (ALL EVENTS PAGE)  */
 .event-card-image{
     width: 320px;
@@ -209,6 +212,14 @@
     font-size: 20px;
 
 }
+.create_errors{
+    margin-bottom: 5px;
+    color: red;
+}
+.error-message{
+    color: red;
+    margin-left: 20px;
+}
 
 .login-form-header{
     display: flex;
@@ -217,9 +228,14 @@
     justify-content: center;
     font-size: 30px;
     font-weight: 600;
-
 }
-
+.login-errors{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-right: 20px;
+}
 
 .login_button{
     margin-top: 25px;
