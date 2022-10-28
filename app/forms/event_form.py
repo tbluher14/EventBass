@@ -22,4 +22,4 @@ class CreateEventForm(FlaskForm):
     refund_policy = StringField('Refund Policy', validators=[DataRequired()])
     submit = SubmitField('Submit')
 
-#
+# 

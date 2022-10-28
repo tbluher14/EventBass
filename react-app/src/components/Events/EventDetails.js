@@ -36,6 +36,7 @@ const EventDetails = () => {
     // Date Rendering:
     const formatTime = (time) => {
         let timeArr = time.split(":")
+        console.log('this is time', time)
         let hour = timeArr[0]
         let minutes = timeArr[1]
         let amPm = "AM"
@@ -48,6 +49,7 @@ const EventDetails = () => {
     const formatDate = (date) => {
         if (isLoaded){
             const datesArray = date.split('-')
+
             const monthArr = {"01": 'January', "02":'February', "03": 'March', "04": 'April', "05": 'May', "06":'June', "07":'July', "08": 'August', "09": 'September', "10": 'October', "11":'November', "12":'December'}
             const year = datesArray[0]
             const month = monthArr[datesArray[1]].slice(0,3)
