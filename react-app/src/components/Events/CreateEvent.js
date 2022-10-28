@@ -41,6 +41,9 @@ const CreateEvent = () => {
 
     useEffect(()=> {
         const errors = [];
+        const currentTime = new Date().toString().slice(16,21)
+
+        
 
         if (!user) {
           errors.push("User must be logged in")
@@ -66,7 +69,9 @@ const CreateEvent = () => {
         if (start_time.length < 1) errors.push('Please enter a Start Time for your Event');
         if (end_date.length < 1) errors.push('Please enter an End Date for your Event');
         if (end_time.length < 1) errors.push('Please enter an End Time for your Event');
-        if (start_date < new Date().toISOString().slice(0,10)) errors.push('Please enter a Start Date after today');
+        // if (start_date < new Date().toISOString().slice(0,10)) errors.push('Please enter a Start Date after today');
+        if (start_time<currentTime) errors.push('Please enter a Start Time in the future.')
+
         setErrors(errors);
     }
  }, [name, description, address, city, state, zip_code, image_url, website, start_date, start_time, end_date, end_time])
@@ -120,7 +125,7 @@ const CreateEvent = () => {
                                 </div>
                                     <div className='input-container'>
                                         <div className='info-header'>
-                                        <h2>What is it? </h2> 
+                                        <h2>What is it? </h2>
                                         </div>
                                         <label htmlFor='Event Name' className='form-label'>Event Name</label>
                                         <input className='form-field'

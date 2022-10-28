@@ -95,7 +95,7 @@ const EventDetails = () => {
         e.preventDefault()
         history.push(`/events/${eventId}/edit`)
     }
-   
+
 
     return (
         isLoaded && <div className='event-detail-container'>
@@ -146,7 +146,7 @@ const EventDetails = () => {
                 </div>
                 <div className='event-details-about-container'>
                     <h2 className="event-details-About-This-Event-h2">About This Event:</h2>
-                    <div className='event-details-about-this-event-descripton'>{currentEvent?.description}</div>
+                    <div className='event-details-about-this-event-descripton'>{currentEvent?.website}</div>
                 </div>
                 <div className='event-details-comments-container'>
                     <h2 className="event-details-Comments-h2">Comments:</h2>
