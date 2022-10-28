@@ -23,25 +23,25 @@ const SignUpForm = () => {
     let errors = [];
 
     if (first_name.length < 2 || first_name.length > 50) {
-      errors.push("first name: must be between 2 and 50 characters.")
+      errors.push("First Name must be between 2 and 50 characters.")
     }
     if (last_name.length < 2 || last_name.length > 50) {
-      errors.push("last name: must be between 2 and 50 characters.")
+      errors.push("Last Name must be between 2 and 50 characters.")
     }
     if (username.length < 2 || username.length > 50) {
-      errors.push("username: must be between 2 and 50 characters.")
+      errors.push("Username must be between 2 and 50 characters.")
     }
     if (!email.match(emailRegX)) {
-      errors.push("email: must be valid email address ( example@ex.com ).")
+      errors.push("Email must be valid email address ( example@ex.com ).")
     }
     if (email.length < 2 || email.length > 50) {
-      errors.push("email: must be between 2 and 50 characters.")
+      errors.push("Email must be between 2 and 50 characters.")
     }
     if (password.length < 6 || password.length > 50) {
-      errors.push('password: must be between 6 and 50 characters.');
+      errors.push('Password must be between 6 and 50 characters.');
     }
     if (password !== confirmPassword) {
-      errors.push('password: passwords must match.');
+      errors.push('Passwords must match.');
     }
 
     setErrors(errors);

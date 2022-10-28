@@ -33,23 +33,30 @@ const CreateEvent = () => {
 
 
     const imageRegX = /\.(jpeg|jpg|png|svg)$/
-    const timeRegX = /^(0?[1-9]|1[0-2]):[0-5][0-9]$/
-    const phoneRegX = /^\d{10}$/
-    const zipRegX = /^\d{5}$/
+
 
 
 
     useEffect(()=> {
         const errors = [];
         const currentTime = new Date().toString().slice(16,21)
+        console.log(start_time, end_time)
 
-        
 
         if (!user) {
           errors.push("User must be logged in")
           setErrors(errors)
         }
         else {
+        if (start_date.length < 1) errors.push('Please enter a Start Date for your Event');
+        if (start_time > end_time && start_date === end_date) errors.push('Please enter a Start Time before the Event End Time');
+        if (start_date.length > 10) errors.push("Please Enter a Valid Start Date (MM-DD-YYYY)")
+        if (end_date.length > 10) errors.push("Please Enter a Valid End Date (MM-DD-YYYY)")
+        if (start_date>end_date) errors.push('Please enter a Start Date before the Event End Date');
+        if (start_time.length < 1) errors.push('Please enter a Start Time for your Event');
+        if (end_date.length < 1) errors.push('Please enter an End Date for your Event');
+        if (end_time.length < 1) errors.push('Please enter an End Time for your Event');
+        if (start_time<currentTime) errors.push('Please enter a Start Time in the future.')
         if (name.length < 2 || name.length>255) errors.push('Please enter a Name for your Event between 2 and 255 Characters');
         if (venue_name < 2 || venue_name > 255) errors.push('Please enter a Venue Name between 2 and 255 Characters');
         if (description.length < 1 || description.length>500) errors.push('Please enter a Description for your Event between 2 and 255 Characters');
@@ -61,17 +68,8 @@ const CreateEvent = () => {
         if (website.length < 1 || /^https:\/\//.test(website) === false && /^http:\/\//.test(website) === false){
              errors.push('Please enter a Website for your Event (https or http)');
             }
-        if (start_date.length < 1) errors.push('Please enter a Start Date for your Event');
-        if (start_time>end_time && start_date == end_date) errors.push('Please enter a Start Time before the Event End Time');
-        if (start_date.length > 10) errors.push("Please Enter a Valid Start Date (MM-DD-YYYY)")
-        if (end_date.length > 10) errors.push("Please Enter a Valid End Date (MM-DD-YYYY)")
-        if (start_date>end_date) errors.push('Please enter a Start Date before the Event End Date');
-        if (start_time.length < 1) errors.push('Please enter a Start Time for your Event');
-        if (end_date.length < 1) errors.push('Please enter an End Date for your Event');
-        if (end_time.length < 1) errors.push('Please enter an End Time for your Event');
         // if (start_date < new Date().toISOString().slice(0,10)) errors.push('Please enter a Start Date after today');
-        if (start_time<currentTime) errors.push('Please enter a Start Time in the future.')
-
+            console.log(errors)
         setErrors(errors);
     }
  }, [name, description, address, city, state, zip_code, image_url, website, start_date, start_time, end_date, end_time])
