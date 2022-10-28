@@ -107,6 +107,11 @@ const EventDetails = () => {
                     alt='event-detail-img'
                     className='event-detail-image'
                     />
+                    <img
+                    src={currentEvent?.image_url}
+                    alt='event-detail-img'
+                    className='event-blur-image'
+                    />
                 <div className='event-details-header-info-container'>
                 <div className='event-details-header-date'>{formatDate(currentEvent?.start_date)}</div>
                 <div className='event-details-header-name'>{currentEvent?.name}</div>

@@ -34,20 +34,33 @@ const CreateEvent = () => {
 
     const imageRegX = /\.(jpeg|jpg|png|svg)$/
 
+    const eventInFuture = (sTime, eTime) => {
+        sTime = new Date(sTime)
+        eTime = new Date(sTime)
+        return sTime.getTime() >= eTime.getTime()
+    }
 
+    const currentDate = () => {
+        const currentDate = new Date()
+        const day = currentDate.getDate().toString().padStart(2, '0')
+        const month = (currentDate.getMonth()+ 1).toString().padStart(2, '0')
+        const year = currentDate.getFullYear()
+        return year + '-'+ month + '-' + day
+    }
 
 
     useEffect(()=> {
         const errors = [];
         const currentTime = new Date().toString().slice(16,21)
-        console.log(start_time, end_time)
-
 
         if (!user) {
           errors.push("User must be logged in")
           setErrors(errors)
         }
         else {
+        if (eventInFuture(start_date, currentDate()) == false){
+            errors.push("Event Must Happen in the Future")
+        }
         if (start_date.length < 1) errors.push('Please enter a Start Date for your Event');
         if (start_time > end_time && start_date === end_date) errors.push('Please enter a Start Time before the Event End Time');
         if (start_date.length > 10) errors.push("Please Enter a Valid Start Date (MM-DD-YYYY)")
@@ -68,8 +81,7 @@ const CreateEvent = () => {
         if (website.length < 1 || /^https:\/\//.test(website) === false && /^http:\/\//.test(website) === false){
              errors.push('Please enter a Website for your Event (https or http)');
             }
-        // if (start_date < new Date().toISOString().slice(0,10)) errors.push('Please enter a Start Date after today');
-            console.log(errors)
+
         setErrors(errors);
     }
  }, [name, description, address, city, state, zip_code, image_url, website, start_date, start_time, end_date, end_time])

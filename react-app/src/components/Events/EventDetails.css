@@ -2,9 +2,20 @@
 .event-detail-image{
     width: 1000px;
     height: 450px;
-    object-fit: cover;
+    object-fit: fill;
     margin-top: 25px;
     border-radius: 10px;
+}
+
+.event-blur-image{
+    width: 1100px;
+    height: 480px;
+    position: absolute;
+    right: 250px;
+    bottom: 240px;
+    filter: blur(1em);
+    z-index: -1;
+
 }
 
 .event-detail-container{
@@ -79,6 +90,13 @@
 
 }
 
+.event-details-refund-container{
+    border-bottom: 1px solid lightgray;
+}
+.event-details-refund-policy{
+    margin-bottom: 10px;
+}
+
 .location-header-text{
     margin-left: 10px;
 }
@@ -113,6 +131,7 @@
     flex-direction: row;
     align-items: space-between;
     justify-content: space-around;
+    border-bottom: 1px solid lightgray;
 }
 
 .event-details-when-and-where-start-date{
@@ -134,6 +153,8 @@
 
 .event-details-when-and-where-h2{
     padding: 0px;
+    margin-bottom: -10px;
+    border-top: 1px solid lightgray;
 }
 
 .event-details-website-url{
