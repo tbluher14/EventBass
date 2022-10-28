@@ -11,30 +11,31 @@ const EditEvent = () => {
     const events = useSelector(state => state.events)
     const currentEvent = events[eventId]
 
-    const [name, setName] = useState(currentEvent?.name || "")
-    const [description, setDescription] = useState(currentEvent?.description || "")
-    const [address, setAddress] = useState(currentEvent?.address || "")
-    const [city, setCity] = useState(currentEvent?.city || "")
-    const [state, setState] = useState(currentEvent?.state || "")
-    const [zip_code, setZipCode] = useState(currentEvent?.zip_code || "")
-    const [image_url, setImage_url] = useState(currentEvent?.image_url || "")
-    const [website, setWebsite] = useState(currentEvent?.website || "")
-    const [start_date, setStart_date] = useState(currentEvent?.start_date || "")
+    const [name, setName] = useState(currentEvent?.name)
+    const [description, setDescription] = useState(currentEvent?.description)
+    const [address, setAddress] = useState(currentEvent?.address)
+    const [city, setCity] = useState(currentEvent?.city )
+    const [state, setState] = useState(currentEvent?.state)
+    const [zip_code, setZipCode] = useState(currentEvent?.zip_code)
+    const [image_url, setImage_url] = useState(currentEvent?.image_url )
+    const [website, setWebsite] = useState(currentEvent?.website )
+    const [start_date, setStart_date] = useState(currentEvent?.start_date)
     const [start_time, setStart_time] = useState(currentEvent?.start_time)
-    const [end_date, setEnd_date] = useState(currentEvent?.end_date || "")
+    const [end_date, setEnd_date] = useState(currentEvent?.end_date )
     const [end_time, setEnd_time] = useState(currentEvent?.end_time )
-    const [refunds, setRefunds] = useState(currentEvent?.refunds || "")
-    const [venue_name, setVenueName] = useState(currentEvent?.venue_name || "")
+    const [refunds, setRefunds] = useState(currentEvent?.refunds )
+    const [venue_name, setVenueName] = useState(currentEvent?.venue_name)
     const [isLoaded, setIsLoaded] = useState(false)
     const [submitted, setSubmitted] = useState(false)
     const [errors, setErrors] = useState([])
 
 
     useEffect(() => {
-        dispatch(getAllEventsThunk()).then(setIsLoaded(true))
-    },[])
+        dispatch(getAllEventsThunk())
+    },[dispatch])
 
     useEffect(() => {
+        console.log(currentEvent)
         if (currentEvent){
             setIsLoaded(true)
             setName(currentEvent.name)
@@ -51,17 +52,14 @@ const EditEvent = () => {
             setEnd_time(currentEvent.end_time)
             setRefunds(currentEvent.refunds)
             setVenueName(currentEvent.venue_name)
-
         }
     },[currentEvent])
 
     const imageRegX = /\.(jpeg|jpg|png|svg)$/
-    const timeRegX = /^(0?[1-9]|1[0-2]):[0-5][0-9]$/
-    const phoneRegX = /^\d{10}$/
-    const zipRegX = /^\d{5}$/
 
     useEffect (( ) => {
         const errors = []
+        const currentTime = new Date().toString().slice(16,21)
         if (name.length < 2 || name.length>255) errors.push('Please enter a Name for your Event between 2 and 255 Characters');
         if (venue_name < 2 || venue_name > 255) errors.push('Please enter a Venue Name between 2 and 255 Characters');
         if (description.length < 1 || description.length>500) errors.push('Please enter a Description for your Event between 2 and 255 Characters');
@@ -81,7 +79,7 @@ const EditEvent = () => {
         if (start_time.length < 1) errors.push('Please enter a Start Time for your Event');
         if (end_date.length < 1) errors.push('Please enter an End Date for your Event');
         if (end_time.length < 1) errors.push('Please enter an End Time for your Event');
-        if (start_date < new Date().toISOString().slice(0,10)) errors.push('Please enter a Start Date after today');
+        if (start_time<currentTime) errors.push('Please enter a Start Time in the future.')
         setErrors(errors)
         }, [name, venue_name, description, address, city, state, zip_code, image_url, website, start_date, start_time, end_date, end_time])
 

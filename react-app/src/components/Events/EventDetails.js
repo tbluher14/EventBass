@@ -24,7 +24,6 @@ const EventDetails = () => {
     const sessionUser = useSelector(state => state.session.user)
     const allUsers = useSelector(state => state.users)
     const userArr = Object.values(allUsers)
-    console.log(userArr)
     const eventOwner = userArr.filter(user => user.id == currentEvent?.owner_id)
 
 
