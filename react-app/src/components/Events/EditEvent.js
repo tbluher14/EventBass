@@ -25,6 +25,8 @@ const EditEvent = () => {
     const [end_time, setEnd_time] = useState(currentEvent?.end_time )
     const [refunds, setRefunds] = useState(currentEvent?.refunds )
     const [venue_name, setVenueName] = useState(currentEvent?.venue_name)
+
+    
     const [isLoaded, setIsLoaded] = useState(false)
     const [submitted, setSubmitted] = useState(false)
     const [errors, setErrors] = useState([])
@@ -35,7 +37,6 @@ const EditEvent = () => {
     },[dispatch])
 
     useEffect(() => {
-        console.log(currentEvent)
         if (currentEvent){
             setIsLoaded(true)
             setName(currentEvent.name)
@@ -58,6 +59,7 @@ const EditEvent = () => {
     const imageRegX = /\.(jpeg|jpg|png|svg)$/
 
     useEffect (( ) => {
+
         const errors = []
         const currentTime = new Date().toString().slice(16,21)
         if (name.length < 2 || name.length>255) errors.push('Please enter a Name for your Event between 2 and 255 Characters');
@@ -81,6 +83,7 @@ const EditEvent = () => {
         if (end_time.length < 1) errors.push('Please enter an End Time for your Event');
         if (start_time<currentTime) errors.push('Please enter a Start Time in the future.')
         setErrors(errors)
+
         }, [name, venue_name, description, address, city, state, zip_code, image_url, website, start_date, start_time, end_date, end_time])
 
 
