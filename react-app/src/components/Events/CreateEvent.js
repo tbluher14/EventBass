@@ -11,7 +11,7 @@ const CreateEvent = () => {
 
     const user = useSelector(state => state.session.user);
 
-
+    // State
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
     const [venue_name, setVenueName] = useState('');
@@ -33,10 +33,11 @@ const CreateEvent = () => {
 
 
     const imageRegX = /\.(jpeg|jpg|png|svg)$/
+    // Time Functions
 
     const eventInFuture = (sTime, eTime) => {
         sTime = new Date(sTime)
-        eTime = new Date(sTime)
+        eTime = new Date(eTime)
         return sTime.getTime() >= eTime.getTime()
     }
 
@@ -59,27 +60,27 @@ const CreateEvent = () => {
         }
         else {
         if (eventInFuture(start_date, currentDate()) == false){
-            errors.push("Event Must Happen in the Future")
+            errors.push("Event must happen in the future")
         }
-        if (start_date.length < 1) errors.push('Please enter a Start Date for your Event');
-        if (start_time > end_time && start_date === end_date) errors.push('Please enter a Start Time before the Event End Time');
-        if (start_date.length > 10) errors.push("Please Enter a Valid Start Date (MM-DD-YYYY)")
-        if (end_date.length > 10) errors.push("Please Enter a Valid End Date (MM-DD-YYYY)")
-        if (start_date>end_date) errors.push('Please enter a Start Date before the Event End Date');
-        if (start_time.length < 1) errors.push('Please enter a Start Time for your Event');
-        if (end_date.length < 1) errors.push('Please enter an End Date for your Event');
-        if (end_time.length < 1) errors.push('Please enter an End Time for your Event');
+        if (start_date.length < 1) errors.push('Please enter a Start Date for your event');
+        if (start_time > end_time && start_date === end_date) errors.push('Please enter a Start Time before the event End Time');
+        if (start_date.length > 10) errors.push("Please enter a valid Start Date (MM-DD-YYYY)")
+        if (end_date.length > 10) errors.push("Please enter a valid End Date (MM-DD-YYYY)")
+        if (start_date>end_date) errors.push('Please enter a Start Date before the event End Date');
+        if (start_time.length < 1) errors.push('Please enter a Start Time for your event');
+        if (end_date.length < 1) errors.push('Please enter an End Date for your event');
+        if (end_time.length < 1) errors.push('Please enter an End Time for your event');
         if (start_time<currentTime) errors.push('Please enter a Start Time in the future.')
-        if (name.length < 2 || name.length>255) errors.push('Please enter a Name for your Event between 2 and 255 Characters');
+        if (name.length < 2 || name.length>255) errors.push('Please enter a Name for your event between 2 and 255 characters');
         if (venue_name < 2 || venue_name > 255) errors.push('Please enter a Venue Name between 2 and 255 Characters');
-        if (description.length < 1 || description.length>500) errors.push('Please enter a Description for your Event between 2 and 255 Characters');
-        if (address.length < 2 || address.length > 255) errors.push('Please enter an Address for your Event between 2 and 255 Characters');
+        if (description.length < 1 || description.length>500) errors.push('Please enter a Description for your event between 2 and 255 Characters');
+        if (address.length < 2 || address.length > 255) errors.push('Please enter an Address for your event between 2 and 255 Characters');
         if (city.length < 2 || city.length> 255) errors.push('Please enter a City for your Event between 2 and 255 Characters');
-        if (state.length < 2 || state.length > 255) errors.push('Please enter a State for your Event between 2 and 255 Characters');
-        if (zip_code.length !== 5) errors.push('Please enter a valid 5 digit Zip Code for your Event');
-        if (image_url.length < 1 || !image_url.split('?')[0].match(imageRegX)) errors.push('Please enter a valid Image Url for your Event (jpg, jpeg, png, svg)');
+        if (state.length < 2 || state.length > 255) errors.push('Please enter a State for your event between 2 and 255 Characters');
+        if (zip_code.length !== 5) errors.push('Please enter a valid 5 digit Zip Code for your event');
+        if (image_url.length < 1 || !image_url.split('?')[0].match(imageRegX)) errors.push('Please enter a valid Image Url for your event (jpg, jpeg, png, svg)');
         if (website.length < 1 || /^https:\/\//.test(website) === false && /^http:\/\//.test(website) === false){
-             errors.push('Please enter a Website for your Event (https or http)');
+             errors.push('Please enter a Website for your event (https or http)');
             }
 
         setErrors(errors);

@@ -49,7 +49,7 @@ function ProfileButton({ user }) {
         </div>
         {sessionUser.email}
         <div className="down-arrow">
-        <i class="fa-solid fa-angle-down"></i>
+        <i className="fa-solid fa-angle-down"></i>
         </div>
       </div>
       <div className="menu_modal">
