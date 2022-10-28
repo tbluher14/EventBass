@@ -45,7 +45,7 @@ def seed_events():
         state='Colorado',
         zip_code='80216',
         image_url='https://www.youredm.com/wp-content/uploads/2016/09/duke-dumont.jpg',
-        website='https:/dukedumont.com',
+        website='https://dukedumont.com',
         start_date='2022-11-26',
         start_time=time(20, 00),
         end_date='2022-11-27',
