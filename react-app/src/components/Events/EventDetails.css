@@ -126,6 +126,7 @@
 .event-details-location{
     /* margin-bottom: 10px; */
     margin-top: -12px;
+
     font-size: 18px;
     color: grey;
     font-weight: 600;
@@ -134,6 +135,7 @@
     font-size: 18px;
     color: grey;
     font-weight: 600;
+    margin-top: 5px;
 }
 
 .event-details-when-and-where-state{
@@ -176,7 +178,7 @@
     font-size: 18px;
     margin-top: 0px;
     font-weight: 600;
-    margin-right: 2px;
+    margin-right: 8px;
     color: gray;
 }
 
