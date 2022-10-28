@@ -10,7 +10,7 @@ const EventCard = ({ event }) => {
     const dateLogic = new Date(event.start_date)
     const dateArr = dateLogic.toString().split(' ')
     const date = dateArr[0] + ", " + dateArr[1] + " " + dateArr[2] + ", " + dateArr[3]
-    console.log(date)
+
     return (
         <div className="event-card">
             <div onClick={() => history.push(`/events/${event?.id}`)}>

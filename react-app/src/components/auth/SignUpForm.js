@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link, Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
 // import "./SignUpForm.css"
+import image from './loginImage.jpeg'
 // import "../..//index.css"
 
 const SignUpForm = () => {
@@ -177,7 +178,7 @@ const SignUpForm = () => {
           <Link to='/login' className='login-link'>Have An Account? Log In Here</Link>
           </form>
           </div>
-          <img src='https://media2.westword.com/den/imager/u/original/11506458/img_3696.jpg'
+          <img src={image}
           className='signup-image'
           alt='signup-pic'
           />

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
+import image from './loginImage.jpeg'
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -9,6 +10,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
+
 
   const onLogin = async (e) => {
     e.preventDefault();
@@ -67,7 +69,7 @@ const LoginForm = () => {
       </div>
       <Link to='/sign-up' className='signup-link'>No Account? Sign Up Here</Link>
       </div>
-    <img src='https://media2.westword.com/den/imager/u/original/11506458/img_3696.jpg'
+    <img src={image}
     className='login-image'
     alt='login-pic'
     />
