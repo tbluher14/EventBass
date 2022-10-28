@@ -24,3 +24,39 @@
 .all-events-button:hover{
     /* box-shadow: .6px .6px .6px .6px lightgray; */
 }
+
+.homepage-bottom-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+    position: sticky;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+  }
+
+  .homepage-bottom-links {
+    display: flex;
+    width: 700px;
+    justify-content: center;
+    margin-right: 30px;
+  }
+
+  .homepage-first-last-name {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 7px;
+  }
+
+  .home-page-github {
+    width: 35px;
+    height: 35px;
+    margin-left: 65px;
+  }
+
+  .home-page-linkedin {
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+  }
