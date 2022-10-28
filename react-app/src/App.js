@@ -16,6 +16,7 @@ import MyEvents from './components/Events/MyEvents';
 import SplashPage from './components/SplashPage';
 import CreateComment from './components/Comments/CreateComment';
 import EditComment from './components/Comments/EditComment';
+import FourOFour from './components/404/Fof';
 
 
 function App() {
@@ -55,7 +56,7 @@ function App() {
         <Route path='/all-events'>
           <AllEvents />
         </Route>
-        <ProtectedRoute path='/create-event'>
+        <ProtectedRoute exact={true} path='/create-event'>
           <CreateEvent />
         </ProtectedRoute>
         <Route exact={true} path='/events/:eventId'>
@@ -73,6 +74,9 @@ function App() {
         <ProtectedRoute exact={true} path='/comments/:commentId/edit'>
             <EditComment />
         </ProtectedRoute>
+        <Route>
+          <FourOFour></FourOFour>
+        </Route>
       </Switch>
     </BrowserRouter>
   );

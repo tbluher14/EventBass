@@ -170,7 +170,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 40px;
+    margin-right: 45px;
 }
 .create_errors{
     color: red;
@@ -219,6 +219,7 @@
     justify-content: center;
     color: black;
     margin-top: 10px;
+    margin-right: 6px;
 }
 
 .signup_button{

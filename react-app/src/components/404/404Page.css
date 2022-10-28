@@ -1,0 +1,43 @@
+.FOF-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .FOF-header {
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 48px;
+  }
+
+  .FOF-body {
+    display: flex;
+    justify-content: center;
+  }
+
+  .FOF-image {
+    object-fit: cover;
+    width: 100%;
+    height: 600px;
+    margin-top: 10px;
+  }
+
+
+  .FOF-home-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .FOF-home {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+  }
+
+  .FOF-home:hover{
+    background-color: lightgray;
+    border-radius: 4px;
+  }
