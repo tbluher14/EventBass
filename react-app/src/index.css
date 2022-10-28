@@ -355,7 +355,7 @@
 
 
 /* ****************************************************/
-/* Create Comment Styling */
+/* Create/Edit Comment Styling */
 
 .comment_errors{
     display: flex;
@@ -373,6 +373,26 @@
 }
 
 .create-comment-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 520px;
+    height: 40px;
+    font-weight: 550;
+    text-shadow: .3px .3px .3px black;
+    font-size: 17px;
+    color: white;
+    background-color:rgba(245, 63, 0, 0.97);
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.edit-comment-button{
     display: flex;
     align-items: center;
     justify-content: center;
