@@ -75,6 +75,29 @@
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.event-card-location-and-icon{
+    display: flex;
+    flex-direction: row;
+}
+
+#card-map{
+    margin-left: 6px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+#card-calendar{
+    margin-top: 6px;
+    margin-left: 5px;
+    margin-right: 2px;
+}
+.event-card-date-and-icon{
+    display: flex;
+    flex-direction: row;
 }
 
 .event-card-time{
@@ -104,10 +127,12 @@
     box-shadow: 0 0 11px rgba(33,33,33,.2);
 
 }
-.events-near-you{
+.Events-near-you{
     display: flex;
     flex-direction: column;
     margin-left: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 /* ************************************************************ */
@@ -347,9 +372,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     /* margin-top: 20px;
     margin-bottom: 20px; */
 }
+
 
 .my_events_cards{
     display: flex;

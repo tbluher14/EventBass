@@ -21,8 +21,14 @@ const EventCard = ({ event }) => {
                         </div>
                         <div className="event-card-inner-container-right">
                             <div className="event-card-header">{event?.name}</div>
-                            <div className="event-card-date">{date}</div>
-                            <div className="event-card-address">{event?.venue_name}</div>
+                            <div className='event-card-date-and-icon'>
+                                <i class="fa-solid fa-calendar-plus" id="card-calendar"></i>
+                                <div className="event-card-date">{date}</div>
+                            </div>
+                            <div className="event-card-location-and-icon">
+                                <i class="fa-sharp fa-solid fa-location-dot" id='card-map'></i>
+                                <div className="event-card-address">{event?.venue_name}</div>
+                            </div>
                         </div>
                     </div>
                 </div>

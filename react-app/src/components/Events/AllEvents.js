@@ -17,7 +17,7 @@ const AllEvents = () => {
 
     return (
        <div>
-       <h2 className='Events-near-you'>Events Near You </h2>
+       <h2 className='Events-near-you'>Events Happening Soon: </h2>
         <div className='all-events-container'>
 
             {Object.values(events).map(event => (
