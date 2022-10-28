@@ -22,10 +22,10 @@ const NavBar = () => {
 
         <div className='outter-nav-bar-container'>
       <div className="navbar-logo-container">
-          <img
+          {/* <img
           className='navbar-logo'
           src={logo} alt="logo"
-          onClick={() => history.push('/')} />
+          onClick={() => history.push('/')} /> */}
           <h2
           className='navbar-eventbass'
           onClick={() => history.push('/')} >

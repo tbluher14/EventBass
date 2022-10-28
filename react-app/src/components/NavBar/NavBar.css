@@ -30,7 +30,10 @@
     cursor: pointer;
     color:rgba(245, 63, 0, 0.97);
     text-shadow: .1px .1px .1px grey;
-    margin-left: 5px;
+    margin-left: 20px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 28px;
+    margin-bottom: -5px;
 
 }
 .navbar-myevents{
