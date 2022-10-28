@@ -16,38 +16,40 @@ const CreateComment = () => {
 
     const specificEvent = useSelector(state => state.events[eventId]);
 
+
     const [comment, setComment] = useState('');
     const [submitted, setSubmitted] = useState(false);
     const [errors, setErrors] = useState([]);
 
-    useEffect(() => {
-        const errors = []
-        if (comment.length < 2 || comment.length  > 500) {
-            errors.push('Please enter a comment between 2 and 500 characters.')
-        }
-        setErrors(errors)
-
-    }, [comment])
 
     useEffect( ()   => {
         dispatch(getAllEventsThunk())
         dispatch(getAllCommentsThunk())
     }, [])
 
+    useEffect(()=> {
+        const errors = []
+        if (comment.length < 2 || comment.length  > 500) {
+            errors.push('Please enter a comment between 2 and 500 characters.')
+        }
+        setErrors(errors)
+    }, [comment])
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setSubmitted(true)
-        const commentData = {
-                user_id: sessionUser.id,
-                event_id: eventId,
-                comment: comment
-            }
 
-            console.log(commentData)
-            if (comment.length>2 && comment.length < 500) {
-            return dispatch(createCommentThunk(commentData))
-            .then(history.push(`/events/${specificEvent.id}`))
+        if (errors.length === 0){
+            const commentData = {
+                    user_id: sessionUser.id,
+                    event_id: eventId,
+                    comment: comment
+                }
+
+                if (comment.length>2 && comment.length < 500) {
+                return dispatch(createCommentThunk(commentData))
+                .then(history.push(`/events/${specificEvent.id}`))
+                }
             }
         }
 
@@ -57,15 +59,17 @@ const CreateComment = () => {
             <form onSubmit={handleSubmit}>
             <div className="form-container">
                 <div className="form-input-container">
+                <h3 className="add_comment_header">
+                    Add A Comment on {specificEvent?.name}
+                </h3>
+                </div>
+                <div className="input-container">
+                    <label htmlFor="comment" className="form-label"></label>
                     <div className="comment_errors">
-                        {errors.map((error, ind) => (
+                        {submitted && errors.map((error, ind) => (
                             <div key={ind}>{error}</div>
                         ))}
                     </div>
-
-                </div>
-                <div className="input-container">
-                    <label htmlFor="comment" className="form-label">Comment</label>
                     <textarea
                     className="form-field"
                     name="comment" type="text"
