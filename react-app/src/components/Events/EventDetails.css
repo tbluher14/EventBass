@@ -136,8 +136,26 @@
     padding: 0px;
 }
 
+.event-details-website-url{
+    color: black;
+}
+.event-details-about-this-event-descripton{
+    color: black;
+}
+
 
 /* COMMENT SECTION */
+
+#comment-section-user-icon{
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.comment-card-user-name{
+    margin-left: 5px;
+    margin-top: 5px;
+
+}
 
 .add-comment{
     width: 140px;
@@ -219,7 +237,7 @@
 .edit-delete-comment-container{
     display: flex;
     position: relative;
-    left: 200px;
+    left: 180px;
 }
 
 .comment-card-user-name{

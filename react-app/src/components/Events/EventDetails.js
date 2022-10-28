@@ -141,7 +141,7 @@ const EventDetails = () => {
                 </div>
                 <div className='event-details-about-container'>
                     <h2 className="event-details-About-This-Event-h2">About This Event:</h2>
-                    <div className='event-details-about-this-event-descripton'><a href={currentEvent?.website} target='blank'>{currentEvent.name} Website</a></div>
+                    <div className='event-details-about-this-event-descripton'><i class="fa-solid fa-link"></i> <a href={currentEvent?.website} target='blank' className='event-details-website-url'>{currentEvent.name}'s Website</a></div>
                 <div className='event-details-refund-container'>
                     <h2 className="event-details-Refund-Policy-h2">Refund Policy:</h2>
                     <div className='event-details-refund-policy'>{refundLogic()}</div>
