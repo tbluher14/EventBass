@@ -333,8 +333,9 @@
 }
 
 /* ************************************************************ */
+/* My Events */
 
-.my_events_container{
+.my-events-container{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -347,6 +348,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 10px;
+    /* flex-direction: row; */
 
 }
 
@@ -356,6 +359,11 @@
 
 .event-card:hover{
     box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
+
+.my-events-header{
+    display: flex;
+    justify-content: center;
 }
 
 

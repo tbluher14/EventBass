@@ -20,14 +20,17 @@ const MyEvents = () => {
     }, [])
 
     return (
+        <div>
+        <h2 className='my-events-header'>My Events</h2>
         <div className='my-events-container'>
-            <h2>My Events</h2>
-           {userEvents?.map(event => (
+           {userEvents?.length == 0 ? <h2 className='my-events-header'>No Events Here!</h2> :
+           userEvents?.length > 0} {userEvents?.map(event => (
              <div className='my_events_cards'>
                 <EventCard event={event} />
             </div>
            ))
         }
+        </div>
         </div>
     )
 }
