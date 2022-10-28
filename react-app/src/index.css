@@ -152,16 +152,39 @@
     justify-content: center;
 }
 
-/* SIGN UP AND LOGIN STYLING */
+/* SIGN UP AND LOGIN STYLING ***********************************************************/
 
 .login-image{
     display: flex;
     width: 60rem;
     height: 47rem;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     position: static;
     left: 50%;
 
+}
+
+.signup-link{
+    color: black;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 40px;
+}
+.create_errors{
+    color: red;
+}
+.signup-image{
+    display: flex;
+    flex-direction: row;
+    width: 58.7%;
+    height: 950px;
+    /* border-radius: 10px; */
+    margin-left: 100px;
+
+    position: static;
+    left: 50%;
 }
 
 .login-form{
@@ -190,9 +213,17 @@
     margin-bottom: 10px;
 }
 
+.login-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    margin-top: 10px;
+}
+
 .signup_button{
-    margin-top: 25px;
-    width: 200px;
+    margin-top: 10px;
+    width: 520px;
     height: 40px;
     font-weight: 550;
     text-shadow: .3px .3px .3px black;
@@ -202,7 +233,27 @@
     border-radius: 8px;
     border: none;
     cursor: pointer;
+    /* margin-bottom: 30px; */
     font-family: 'Montserrat', sans-serif;
+}
+
+.signup-form-inputs-and-submit{
+    display: flex;
+    flex-direction: column;
+}
+.signup-form-outer-container{
+    display: flex;
+    margin-left: 100px;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.signup-input-container{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .signup-form-header{
@@ -212,10 +263,13 @@
     font-size: 20px;
 
 }
-.create_errors{
+.signup_create_errors{
     margin-bottom: 5px;
+    display: flex;
     color: red;
 }
+
+
 .error-message{
     color: red;
     margin-left: 20px;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 
 const LoginForm = () => {
@@ -65,6 +65,7 @@ const LoginForm = () => {
         <button type='submit' className='login_button'>Login</button>
         <button onClick={() => dispatch(login('demo@aa.io', 'password'))} className='demo_user_button'>Demo User</button>
       </div>
+      <Link to='/sign-up' className='signup-link'>No Account? Sign Up Here</Link>
       </div>
     <img src='https://media2.westword.com/den/imager/u/original/11506458/img_3696.jpg'
     className='login-image'

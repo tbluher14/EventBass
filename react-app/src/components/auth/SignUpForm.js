@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
 // import "./SignUpForm.css"
 // import "../..//index.css"
@@ -93,18 +93,20 @@ const SignUpForm = () => {
   }
 
   return (
-    <div className='form-outer-container'>
+    <div className='signup-form-outer-container'>
+      <div className='signup-form-inputs-and-submit'>
       <form onSubmit={onSignUp}>
+        <div className='signup-form-container'></div>
         <div className='signup-form-header'>Sign Up and Host Your Next Event on eventBass</div>
         <div className='form-input-container'>
-          <div className='create_errors'>
+          <div className='sign_create_errors'>
             {submitted && errors.map((error, ind) => (
-              <div className="error-message-container" key={ind}>
+              <div className="signup-error-message-container" key={ind}>
                 <div className="error-message">{error}</div>
               </div>
             ))}
           </div>
-          <div className='input-container'>
+          <div className='signup-input-container'>
             <label className='form-label'>First Name:</label>
             <input
               type='text'
@@ -115,7 +117,7 @@ const SignUpForm = () => {
               required
             ></input>
           </div>
-          <div>
+          <div className='signup-input-container'>
             <label className='form-label'>Last Name:</label>
             <input
               type='text'
@@ -126,7 +128,7 @@ const SignUpForm = () => {
               required
             ></input>
           </div>
-          <div>
+          <div className='signup-input-container'>
             <label className='form-label'>Username:</label>
             <input
               type='text'
@@ -137,7 +139,7 @@ const SignUpForm = () => {
               required
             ></input>
           </div>
-          <div>
+          <div  className='signup-input-container'>
             <label className='form-label'>Email:</label>
             <input
               type='text'
@@ -148,7 +150,7 @@ const SignUpForm = () => {
               required
             ></input>
           </div>
-          <div>
+          <div  className='signup-input-container'>
             <label className='form-label'>Password:</label>
             <input
               type='password'
@@ -159,7 +161,7 @@ const SignUpForm = () => {
               required
             ></input>
           </div>
-          <div>
+          <div  className='signup-input-container'>
             <label className='form-label'>Confirm Password:</label>
             <input
               type='password'
@@ -170,9 +172,15 @@ const SignUpForm = () => {
               required
             ></input>
           </div>
+          </div>
           <button type='submit' className='signup_button'>Sign Up</button>
-        </div>
-      </form>
+          <Link to='/login' className='login-link'>Have An Account? Log In Here</Link>
+          </form>
+          </div>
+          <img src='https://media2.westword.com/den/imager/u/original/11506458/img_3696.jpg'
+          className='signup-image'
+          alt='signup-pic'
+          />
     </div>
   );
 };
