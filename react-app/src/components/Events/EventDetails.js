@@ -33,10 +33,9 @@ const EventDetails = () => {
     const commentsArr = Object.values(eventComments)
     const specificComments = commentsArr.filter(comment => comment?.event_id == eventId)
 
-    // Date Rendering:
+    // Time Rendering:
     const formatTime = (time) => {
         let timeArr = time.split(":")
-        console.log('this is time', time)
         let hour = timeArr[0]
         let minutes = timeArr[1]
         let amPm = "AM"
@@ -46,6 +45,8 @@ const EventDetails = () => {
         }
         return `${hour}:${minutes} ${amPm}`
     }
+
+    // Date Rendering
     const formatDate = (date) => {
         if (isLoaded){
             const datesArray = date.split('-')
@@ -89,7 +90,6 @@ const EventDetails = () => {
         history.push('/all-events')
         const res = await dispatch(deleteEventThunk(eventId))
         .then(dispatch(getAllEventsThunk()))
-        // return res
     }
 
     const editEvent = (eventId) => async (e) => {
@@ -117,9 +117,14 @@ const EventDetails = () => {
                 <div className='event-details-header-name'>{currentEvent?.name}</div>
                 <div className='event-details-header-description'>{currentEvent?.description}</div>
                 <div>
-                 <h3 className='event-details-event-owner'>
-                    Hosted By: {eventOwner[0]?.username}
-                 </h3>
+                    <div className='event-details-event-owner-container'>
+                        <h3 className='event-details-event-owner'>
+                        Hosted By:
+                        </h3>
+                        <div className='event-details-event-owner-variable'>
+                            {eventOwner[0]?.username}
+                        </div>
+                    </div>
                 {sessionUser?.id === currentEvent?.owner_id && (
                     <button className='event-details-edit-button' onClick={editEvent(currentEvent?.id)}>Edit My Event</button>
                     )}

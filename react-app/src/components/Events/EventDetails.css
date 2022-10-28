@@ -16,6 +16,13 @@
     filter: blur(1em);
     z-index: -1;
 
+    /* width: 1100px;
+    height: 480px;
+    position: relative;
+    right: 50px;
+    bottom: 460px;
+    filter: blur(1em);
+    z-index: -1; */
 }
 
 .event-detail-container{
@@ -25,8 +32,9 @@
 }
 
 .event-details-header-date{
-    font-size: 20px;
-    margin-top: 25px;
+    font-size: 22px;
+    margin-top: 30px;
+    font-weight: 700;
 }
 
 .event-details-header-name{
@@ -36,12 +44,27 @@
     margin-bottom: 10px;
 }
 
-.event-deatils-header-description{
-    font-size: 20px;
+.event-details-header-description{
+    font-size: 16px;
     margin-top: 10px;
     margin-bottom: 10px;
+    color: grey;
 }
 
+.event-details-event-owner{
+    color: rgba(245, 63, 0, 0.97)
+}
+.event-details-event-owner-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.event-details-event-owner-variable{
+    margin-top: 18px;
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
 .event-details-edit-button{
     margin-top: 25px;
     width: 140px;
@@ -104,13 +127,19 @@
     /* margin-bottom: 10px; */
     margin-top: -12px;
     font-size: 18px;
+    color: grey;
+    font-weight: 600;
 }
 .event-details-when-and-where-city{
     font-size: 18px;
+    color: grey;
+    font-weight: 600;
 }
 
 .event-details-when-and-where-state{
     font-size: 18px;
+    color: grey;
+    font-weight: 600;
 }
 
 .when-and-where-header-container{
@@ -132,18 +161,23 @@
     align-items: space-between;
     justify-content: space-around;
     border-bottom: 1px solid lightgray;
+
 }
 
 .event-details-when-and-where-start-date{
     font-size: 18px;
+    font-weight: 600;
     margin-bottom: 5px;
     margin-top: -10px;
+    color: gray;
 
 }
 .event-details-when-and-where-end-time{
     font-size: 18px;
     margin-top: 0px;
+    font-weight: 600;
     margin-right: 2px;
+    color: gray;
 }
 
 .date-and-time-header{
@@ -152,13 +186,15 @@
 }
 
 .event-details-when-and-where-h2{
-    padding: 0px;
+    padding-top: 10px;
+    margin-top: 5px;
     margin-bottom: -10px;
     border-top: 1px solid lightgray;
 }
 
 .event-details-website-url{
-    color: black;
+    color: gray;
+    font-weight: 700;
 }
 .event-details-about-this-event-descripton{
     color: black;
