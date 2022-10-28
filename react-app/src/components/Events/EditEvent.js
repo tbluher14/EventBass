@@ -26,7 +26,7 @@ const EditEvent = () => {
     const [refunds, setRefunds] = useState(currentEvent?.refunds )
     const [venue_name, setVenueName] = useState(currentEvent?.venue_name)
 
-    
+
     const [isLoaded, setIsLoaded] = useState(false)
     const [submitted, setSubmitted] = useState(false)
     const [errors, setErrors] = useState([])
@@ -34,55 +34,58 @@ const EditEvent = () => {
 
     useEffect(() => {
         dispatch(getAllEventsThunk())
+        .then(setIsLoaded(true))
     },[dispatch])
 
     useEffect(() => {
         if (currentEvent){
             setIsLoaded(true)
-            setName(currentEvent.name)
-            setDescription(currentEvent.description)
-            setAddress(currentEvent.address)
-            setCity(currentEvent.city)
-            setState(currentEvent.state)
-            setZipCode(currentEvent.zip_code)
-            setImage_url(currentEvent.image_url)
-            setAddress(currentEvent.website)
-            setStart_date(currentEvent.start_date)
-            setStart_time(currentEvent.start_time)
-            setEnd_date(currentEvent.end_date)
-            setEnd_time(currentEvent.end_time)
-            setRefunds(currentEvent.refunds)
-            setVenueName(currentEvent.venue_name)
+            setName(currentEvent?.name)
+            setDescription(currentEvent?.description)
+            setAddress(currentEvent?.address)
+            setCity(currentEvent?.city)
+            setState(currentEvent?.state)
+            setZipCode(currentEvent?.zip_code)
+            setImage_url(currentEvent?.image_url)
+            setAddress(currentEvent?.website)
+            setStart_date(currentEvent?.start_date)
+            setStart_time(currentEvent?.start_time)
+            setWebsite(currentEvent?.website)
+            setEnd_date(currentEvent?.end_date)
+            setEnd_time(currentEvent?.end_time)
+            setRefunds(currentEvent?.refunds)
+            setVenueName(currentEvent?.venue_name)
         }
     },[currentEvent])
 
-    const imageRegX = /\.(jpeg|jpg|png|svg)$/
 
     useEffect (( ) => {
-
-        const errors = []
-        const currentTime = new Date().toString().slice(16,21)
-        if (name.length < 2 || name.length>255) errors.push('Please enter a Name for your Event between 2 and 255 Characters');
-        if (venue_name < 2 || venue_name > 255) errors.push('Please enter a Venue Name between 2 and 255 Characters');
-        if (description.length < 1 || description.length>500) errors.push('Please enter a Description for your Event between 2 and 255 Characters');
-        if (address.length < 2 || address.length > 255) errors.push('Please enter an Address for your Event between 2 and 255 Characters');
-        if (city.length < 2 || city.length> 255) errors.push('Please enter a City for your Event between 2 and 255 Characters');
-        if (state.length < 2 || state.length > 255) errors.push('Please enter a State for your Event between 2 and 255 Characters');
-        if (zip_code.length !== 5) errors.push('Please enter a valid 5 digit Zip Code for your Event');
-        if (image_url.length < 1 || !image_url.split('?')[0].match(imageRegX)) errors.push('Please enter a valid Image Url for your Event (jpg, jpeg, png, svg)');
-        if (website.length < 1 || /^https:\/\//.test(website) === false && /^http:\/\//.test(website) === false){
-             errors.push('Please enter a Website for your Event (https or http)');
-            }
-        if (start_date.length < 1) errors.push('Please enter a Start Date for your Event');
-        if (start_time>end_time && start_date == end_date) errors.push('Please enter a Start Time before the Event End Time');
-        if (start_date.length > 10) errors.push("Please Enter a Valid Start Date (MM-DD-YYYY)")
-        if (end_date.length > 10) errors.push("Please Enter a Valid End Date (MM-DD-YYYY")
-        if (start_date>end_date) errors.push('Please enter a Start Date before the Event End Date');
-        if (start_time.length < 1) errors.push('Please enter a Start Time for your Event');
-        if (end_date.length < 1) errors.push('Please enter an End Date for your Event');
-        if (end_time.length < 1) errors.push('Please enter an End Time for your Event');
-        if (start_time<currentTime) errors.push('Please enter a Start Time in the future.')
-        setErrors(errors)
+        const imageRegX = /\.(jpeg|jpg|png|svg)$/
+        if (isLoaded){
+            const errors = []
+            const currentTime = new Date().toString().slice(16,21)
+            if (name?.length < 2 || name.length>255) errors.push('Please enter a Name for your Event between 2 and 255 Characters');
+            if (venue_name < 2 || venue_name > 255) errors.push('Please enter a Venue Name between 2 and 255 Characters');
+            if (description.length < 1 || description.length>500) errors.push('Please enter a Description for your Event between 2 and 255 Characters');
+            if (address.length < 2 || address.length > 255) errors.push('Please enter an Address for your Event between 2 and 255 Characters');
+            if (city.length < 2 || city.length> 255) errors.push('Please enter a City for your Event between 2 and 255 Characters');
+            if (state.length < 2 || state.length > 255) errors.push('Please enter a State for your Event between 2 and 255 Characters');
+            if (zip_code.length !== 5) errors.push('Please enter a valid 5 digit Zip Code for your Event');
+            if (image_url.length < 1 || !image_url.split('?')[0].match(imageRegX)) errors.push('Please enter a valid Image Url for your Event (jpg, jpeg, png, svg)');
+            if (/^https:\/\//.test(website) === false && /^http:\/\//.test(website) === false){
+                 errors.push('Please enter a Website for your Event (https or http)');
+                }
+            if (start_date.length < 1) errors.push('Please enter a Start Date for your Event');
+            if (start_time>end_time && start_date == end_date) errors.push('Please enter a Start Time before the Event End Time');
+            if (start_date.length > 10) errors.push("Please Enter a Valid Start Date (MM-DD-YYYY)")
+            if (end_date.length > 10) errors.push("Please Enter a Valid End Date (MM-DD-YYYY")
+            if (start_date>end_date) errors.push('Please enter a Start Date before the Event End Date');
+            if (start_time.length < 1) errors.push('Please enter a Start Time for your Event');
+            if (end_date.length < 1) errors.push('Please enter an End Date for your Event');
+            if (end_time.length < 1) errors.push('Please enter an End Time for your Event');
+            if (start_time<currentTime) errors.push('Please enter a Start Time in the future.')
+            setErrors(errors)
+        }
 
         }, [name, venue_name, description, address, city, state, zip_code, image_url, website, start_date, start_time, end_date, end_time])
 

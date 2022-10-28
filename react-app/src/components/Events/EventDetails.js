@@ -139,13 +139,13 @@ const EventDetails = () => {
                         <div className='event-details-when-and-where-state'></div>
                     </div>
                 </div>
+                <div className='event-details-about-container'>
+                    <h2 className="event-details-About-This-Event-h2">About This Event:</h2>
+                    <div className='event-details-about-this-event-descripton'><a href={currentEvent?.website} target='blank'>{currentEvent.name} Website</a></div>
                 <div className='event-details-refund-container'>
                     <h2 className="event-details-Refund-Policy-h2">Refund Policy:</h2>
                     <div className='event-details-refund-policy'>{refundLogic()}</div>
                 </div>
-                <div className='event-details-about-container'>
-                    <h2 className="event-details-About-This-Event-h2">About This Event:</h2>
-                    <div className='event-details-about-this-event-descripton'>{currentEvent?.website}</div>
                 </div>
                 <div className='event-details-comments-container'>
                     <h2 className="event-details-Comments-h2">Comments:</h2>
