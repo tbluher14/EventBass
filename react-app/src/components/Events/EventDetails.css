@@ -3,17 +3,18 @@
     width: 1000px;
     height: 450px;
     object-fit: fill;
-    margin-top: 25px;
+    margin-top: 10px;
     border-radius: 10px;
+
 }
 
 .event-blur-image{
-    width: 1100px;
-    height: 480px;
+    width: 100%;
+    height: 460px;
     position: absolute;
-    right: 250px;
-    bottom: 240px;
-    filter: blur(1em);
+    right: 000px;
+    bottom: 275px;
+    filter: blur(.7em);
     z-index: -1;
 
     /* width: 1100px;
@@ -33,7 +34,7 @@
 
 .event-details-header-date{
     font-size: 22px;
-    margin-top: 30px;
+    margin-top: 50px;
     font-weight: 700;
 }
 
@@ -110,6 +111,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-top: 3px;
 
 }
 

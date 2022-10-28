@@ -132,7 +132,7 @@ const EventDetails = () => {
                     <button className="event-details-delete-button" onClick={deleteEvent(currentEvent?.id)}>Delete My Event</button>
                     )}
                  </div>
-                <h2 className="event-details-when-and-where-h2">When And Where:</h2>
+                <h2 className="event-details-when-and-where-h2">When & Where:</h2>
                 <div className='event-details-when-and-where-container'>
                     <div className='event-details-when-and-where-left'>
                         <div className='when-and-where-header-container'>
