@@ -121,7 +121,7 @@ console.log("this is filtering", Object.values(users).filter(user => user.email 
           <div className='sign_create_errors'>
             {submitted && errors.map((error, ind) => (
               <div className="signup-error-message-container" key={ind}>
-                <div className="error-message">{error}</div>
+                <div className="error-message">{error.slice(error.indexOf(':') + 1)}</div>
               </div>
             ))}
           </div>
