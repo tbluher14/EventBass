@@ -4,9 +4,10 @@ This is my clone of EventBrite, eventBass, created for my App Academy Capstone P
 
 Live Site: https://eventbass.herokuapp.com/
 
-<img width="1328" alt="Screen Shot 2022-10-21 at 11 38 09 AM" src="https://user-images.githubusercontent.com/97054477/197256054-ad13f586-d193-4fef-9977-e665aac8472c.png">
+<img width="1431" alt="Screen Shot 2022-10-29 at 11 03 14 AM" src="https://user-images.githubusercontent.com/97054477/198844049-9c1ff89f-8992-4369-ab12-48436fc9e0f8.png">
 
-Gulped is a full-stack clone of https://www.yelp.com/ . Users can add, edit, and delte their business, add reviews to other user's businesses, as well as edit and delete their reviews. Owners of businesses can add and delete menu items from their business.
+
+eventBass is a full-stack clone of https://www.eventbrite.com . Users can add, edit, and delete their events, add comments to other user's events, as well as edit and delete their comments. 
 
 ## Languages and Frameworks Used: 
 Frontend:
@@ -31,10 +32,10 @@ Database:
 
 ## Site Resources: 
 
-* [Gulp Live Link](https://gulped.herokuapp.com/)
-* [API Routes](https://github.com/tbluher14/Gulp/wiki/API-Routes)
-* [Database Schema](https://github.com/tbluher14/Gulp/wiki/Database-Schema)
-* [MVP Features](https://github.com/tbluher14/Gulp/wiki/MVP-Features)
-* [React State Shape](https://github.com/tbluher14/Gulp/wiki/React-State-Shape)
-* [User Stories](https://github.com/tbluher14/Gulp/wiki/User-Stories)
+* [eventBass Live Link](https://eventbass.herokuapp.com/)
+* [API Routes]()
+* [Database Schema]([https://github.com/tbluher14/a](https://github.com/tbluher14/EventBass/wiki/Database-Schema))
+* [MVP Features](https://github.com/tbluher14/EventBass/wiki/MVP-Features)
+* [React State Shape]()
+* [User Stories](https://github.com/tbluher14/EventBass/wiki/User-Stories)
 
