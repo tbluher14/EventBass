@@ -56,7 +56,7 @@ Database:
 ## Create/Edit/Delete An Event:  
 
 ## Create Event 
-<img width="500" alt="Screen Shot 2022-10-29 at 11 09 32 AM" src="https://user-images.githubusercontent.com/97054477/198844306-881fb263-e8a7-4961-9e7f-2a3fbeea9f33.png"><img width="500" alt="Screen Shot 2022-10-29 at 11 09 41 AM" src="https://user-images.githubusercontent.com/97054477/198844316-926783cf-6abb-4144-98f7-f7399bb4c235.png">
+<img width="500" height="700" alt="Screen Shot 2022-10-29 at 11 09 32 AM" src="https://user-images.githubusercontent.com/97054477/198844306-881fb263-e8a7-4961-9e7f-2a3fbeea9f33.png"><img width="500" height="700" alt="Screen Shot 2022-10-29 at 11 09 41 AM" src="https://user-images.githubusercontent.com/97054477/198844316-926783cf-6abb-4144-98f7-f7399bb4c235.png">
 
 
 
