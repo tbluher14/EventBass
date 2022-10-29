@@ -59,10 +59,10 @@ Database:
 <img width="500" height="700" alt="Screen Shot 2022-10-29 at 11 09 32 AM" src="https://user-images.githubusercontent.com/97054477/198844306-881fb263-e8a7-4961-9e7f-2a3fbeea9f33.png"><img width="500" height="700" alt="Screen Shot 2022-10-29 at 11 09 41 AM" src="https://user-images.githubusercontent.com/97054477/198844316-926783cf-6abb-4144-98f7-f7399bb4c235.png">
 
 
+- List your event on Gulped! Fill out the required fields and click submit to be taken to your newly created eventBass page.
+- The event date fields do not allow for events in the past, illogical event timing such as event date starting before the event start date, as well as time needing to be in the future for same-day events.  
 
-- List your business on Gulped! Fill out the required fields and click submit to be taken to your newly created Gulped page
 
-<img width="524" alt="Screen Shot 2022-10-21 at 12 00 17 PM" src="https://user-images.githubusercontent.com/97054477/197259919-386510f8-255c-45e4-b5c2-2f4cbf9f3bc5.png">
 
 - Make edits to your business as things change! 
 
