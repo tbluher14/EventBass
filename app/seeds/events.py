@@ -184,7 +184,7 @@ def seed_events():
         zip_code='80218',
         image_url='https://www.youredm.com/wp-content/uploads/2017/03/Griz_okeechobee_Collin-Taylor.jpeg',
         website='https://www.mynameisgriz.com/',
-        start_date='2023-5-01',
+        start_date='2023-05-01',
         start_time=time(20, 00),
         end_date='2023-05-02',
         end_time=time(2,00),
