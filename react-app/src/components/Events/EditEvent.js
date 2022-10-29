@@ -312,7 +312,7 @@ const EditEvent = () => {
                                     </select>
                                     </div>
                                     <div className='create-event-button-container'>
-                                        <button className='create-event-form-button' type='submit'>Create Event</button>
+                                        <button className='create-event-form-button' type='submit'>Edit Event</button>
                                     </div>
                                         </div>
                                     </div>
