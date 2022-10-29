@@ -55,7 +55,9 @@ Database:
 
 ## Create/Edit/Delete An Event:  
 
-<img width="578" alt="Screen Shot 2022-10-21 at 11 49 19 AM" src="https://user-images.githubusercontent.com/97054477/197259137-425cb957-809c-4bac-b063-637dac491d65.png">
+<img width="614" alt="Screen Shot 2022-10-29 at 11 09 32 AM" src="https://user-images.githubusercontent.com/97054477/198844306-881fb263-e8a7-4961-9e7f-2a3fbeea9f33.png"><img width="599" alt="Screen Shot 2022-10-29 at 11 09 41 AM" src="https://user-images.githubusercontent.com/97054477/198844316-926783cf-6abb-4144-98f7-f7399bb4c235.png">
+
+
 
 - List your business on Gulped! Fill out the required fields and click submit to be taken to your newly created Gulped page
 
