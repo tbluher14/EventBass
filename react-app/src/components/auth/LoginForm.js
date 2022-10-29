@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
+import { getAllUsersThunk } from '../../store/users';
 import image from './loginImage.jpeg'
 
 const LoginForm = () => {
@@ -9,7 +10,23 @@ const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const user = useSelector(state => state.session.user);
+  const users = useSelector(state => state.users)
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllUsersThunk())
+  }, [])
+
+  useEffect (() => {
+    let errors = []
+
+    const emailCheck = Object.values(users).filter(user => user.email !== email)
+    // const userCheck = Object.values(users).filter(user => user.username !== username)
+
+    if (emailCheck.length==0){errors.push("Email does not exist in our records")}
+    setErrors(errors)
+
+  }, [email])
 
 
   const onLogin = async (e) => {

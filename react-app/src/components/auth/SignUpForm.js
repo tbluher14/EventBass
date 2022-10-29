@@ -32,33 +32,33 @@ const SignUpForm = () => {
     let errors = [];
 
     if (first_name.length < 2 || first_name.length > 50) {
-      errors.push("First Name must be between 2 and 50 characters.")
+      errors.push("first name: First Name must be between 2 and 50 characters.")
     }
     if (last_name.length < 2 || last_name.length > 50) {
-      errors.push("Last Name must be between 2 and 50 characters.")
+      errors.push("last name: Last Name must be between 2 and 50 characters.")
     }
     if (username.length < 2 || username.length > 50) {
-      errors.push("Username must be between 2 and 50 characters.")
+      errors.push("username: Username must be between 2 and 50 characters.")
     }
     if (!email.match(emailRegX)) {
-      errors.push("Email must be valid email address ( example@ex.com ).")
+      errors.push("email: Email must be valid email address ( example@ex.com ).")
     }
     if (email.length < 2 || email.length > 50) {
-      errors.push("Email must be between 2 and 50 characters.")
+      errors.push("email: Email must be between 2 and 50 characters.")
     }
     if (password.length < 6 || password.length > 50) {
-      errors.push('Password must be between 6 and 50 characters.');
+      errors.push('password: Password must be between 6 and 50 characters.');
     }
     if (password !== confirmPassword) {
-      errors.push('Passwords must match.');
+      errors.push('password: Passwords must match.');
     }
     const emailCheck = Object.values(users).filter(user => user.email === email)
 
-    if (emailCheck.length > 0) errors.push("Email address already in use")
+    if (emailCheck.length > 0) errors.push("email: Email address already in use")
 
     const userCheck = Object.values(users).filter(user => user.username === username)
 
-    if ( userCheck.length > 0) errors.push("Username already in use")
+    if ( userCheck.length > 0) errors.push("username: Username already in use")
 
     setErrors(errors);
   }, [first_name, last_name, email, username, password, confirmPassword]);
