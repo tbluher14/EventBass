@@ -62,6 +62,8 @@ Database:
 - List your event on eventBass! Fill out the required fields and click submit to be taken to your newly created eventBass page.
 - The event date fields do not allow for events in the past, illogical event timing such as event date starting before the event start date, as well as time needing to be in the future for same-day events.  
 
+## Edit Event
+
 <img width="500" height="700" alt="Screen Shot 2022-10-29 at 11 13 40 AM" src="https://user-images.githubusercontent.com/97054477/198844521-e6d18b66-857b-4ddd-b5a7-201bba1d055f.png"> <img width="500" height="700" alt="Screen Shot 2022-10-29 at 11 13 47 AM" src="https://user-images.githubusercontent.com/97054477/198844531-b302176e-c92d-4c52-a33c-74cd754f0789.png">
 
 - After creating an event, the event owner can make edits to the event as things change! 
