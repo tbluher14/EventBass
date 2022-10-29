@@ -39,3 +39,49 @@ Database:
 * [React State Shape]()
 * [User Stories](https://github.com/tbluher14/EventBass/wiki/User-Stories)
 
+
+## Features: 
+## Login or Signup as a New User: 
+
+<img width="1332" alt="Screen Shot 2022-10-29 at 11 07 58 AM" src="https://user-images.githubusercontent.com/97054477/198844230-360fcc4a-761b-4949-9bfd-c8addce31ce7.png">
+
+
+- Sign up for our site with a valid email and user name and have access to all of eventBass's functionality
+
+<img width="1351" alt="Screen Shot 2022-10-29 at 11 08 31 AM" src="https://user-images.githubusercontent.com/97054477/198844254-4e58d73d-31ba-421c-8f97-e12c0c08b4b9.png">
+
+- You can use you newly created account to log in
+- Or you can log in as a demo user 
+
+## Create/Edit/Delete An Event:  
+
+<img width="578" alt="Screen Shot 2022-10-21 at 11 49 19 AM" src="https://user-images.githubusercontent.com/97054477/197259137-425cb957-809c-4bac-b063-637dac491d65.png">
+
+- List your business on Gulped! Fill out the required fields and click submit to be taken to your newly created Gulped page
+
+<img width="524" alt="Screen Shot 2022-10-21 at 12 00 17 PM" src="https://user-images.githubusercontent.com/97054477/197259919-386510f8-255c-45e4-b5c2-2f4cbf9f3bc5.png">
+
+- Make edits to your business as things change! 
+
+## Add/Delete Menu Items as a Business Owner: 
+
+<img width="294" alt="Screen Shot 2022-10-21 at 12 01 31 PM" src="https://user-images.githubusercontent.com/97054477/197260221-9220b1fb-0fc5-4594-b17b-f493179115b8.png">
+
+- After listing your business, you'll want to let other users know what all you offer! 
+
+<img width="615" alt="Screen Shot 2022-10-21 at 12 00 59 PM" src="https://user-images.githubusercontent.com/97054477/197260222-233f0ddf-5059-4fae-8194-7735a312265a.png">
+
+- List your businesses's delicious menu items with their menu name, price, and a valid image url displaying the food! 
+
+## Add Review: 
+
+<img width="585" alt="Screen Shot 2022-10-21 at 12 05 53 PM" src="https://user-images.githubusercontent.com/97054477/197260960-8da31701-4d13-4fb6-a67d-7f3da354c90a.png">
+
+- Check out other user's establishments and if you see one you've been to, leave them a review letting them know how your expierence was! 
+
+## Edit/Delete A Review:
+
+<img width="343" alt="Screen Shot 2022-10-21 at 12 06 43 PM" src="https://user-images.githubusercontent.com/97054477/197261071-c2e4829d-3fac-4814-8433-09422d605708.png">
+
+- If you change your mind on a business and would like to change or remove your review, no worries, just click edit or delete review! 
+
