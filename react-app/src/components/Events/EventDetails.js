@@ -161,12 +161,12 @@ const EventDetails = () => {
                 </div>
                 <div className='event-details-comments-container'>
                     <h2 className="event-details-Comments-h2">Comments:</h2>
-                    {specificComments?.map((comment) => (
+                    {specificComments.length == 0 ? "No comments yet!" : specificComments?.map((comment) => (
                         <div className='event-details-comments'>
                             <CommentCard key={comment.id} comment = {comment}></CommentCard>
                         </div>
                      ))}
-                    <button className='add-comment' onClick={() => history.push(`/${currentEvent.id}/create_comment`)}>Add Comment</button>
+                     <button className='add-comment' onClick={() => history.push(`/${currentEvent.id}/create_comment`)}>Add Comment</button>
                 </div>
             </div>
             </div>

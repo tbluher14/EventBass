@@ -223,17 +223,22 @@
     border: none;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
-    margin-top: 5px;
-    margin-bottom: 25px;
+    margin-top: 20px;
+    margin-bottom: 35px;
 
 }
 
+.event-details-comments-container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
 
 .event-details-comments{
     display: flex;
     /* flex-direction: column; */
     margin-top: 10px;
-    margin-bottom: 25px;
+    /* margin-bottom: 25px; */
 
 }
 
