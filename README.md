@@ -64,27 +64,29 @@ Database:
 
 <img width="500" height="700" alt="Screen Shot 2022-10-29 at 11 13 40 AM" src="https://user-images.githubusercontent.com/97054477/198844521-e6d18b66-857b-4ddd-b5a7-201bba1d055f.png"> <img width="500" height="700" alt="Screen Shot 2022-10-29 at 11 13 47 AM" src="https://user-images.githubusercontent.com/97054477/198844531-b302176e-c92d-4c52-a33c-74cd754f0789.png">
 
-- Make edits to your event as things change! 
+- After creating an event, the event owner can make edits to the event as things change! 
 
-## Add/Delete Menu Items as a Business Owner: 
+## Delete An Event
 
-<img width="294" alt="Screen Shot 2022-10-21 at 12 01 31 PM" src="https://user-images.githubusercontent.com/97054477/197260221-9220b1fb-0fc5-4594-b17b-f493179115b8.png">
+<img width="1045" alt="Screen Shot 2022-10-29 at 11 17 37 AM" src="https://user-images.githubusercontent.com/97054477/198844708-06732970-4720-4124-a116-d1cd444c776f.png">
 
-- After listing your business, you'll want to let other users know what all you offer! 
+- As the event owner, the user may delete an event 
 
-<img width="615" alt="Screen Shot 2022-10-21 at 12 00 59 PM" src="https://user-images.githubusercontent.com/97054477/197260222-233f0ddf-5059-4fae-8194-7735a312265a.png">
 
-- List your businesses's delicious menu items with their menu name, price, and a valid image url displaying the food! 
+## Create/Edit/Delete A Comment
 
-## Add Review: 
+<img width="616" alt="Screen Shot 2022-10-29 at 11 18 47 AM" src="https://user-images.githubusercontent.com/97054477/198844777-2378da26-1a3c-45ef-9ce3-0fe2136966f4.png">
 
-<img width="585" alt="Screen Shot 2022-10-21 at 12 05 53 PM" src="https://user-images.githubusercontent.com/97054477/197260960-8da31701-4d13-4fb6-a67d-7f3da354c90a.png">
+## Create Comment
 
-- Check out other user's establishments and if you see one you've been to, leave them a review letting them know how your expierence was! 
+<img width="871" alt="Screen Shot 2022-10-29 at 11 19 23 AM" src="https://user-images.githubusercontent.com/97054477/198844803-7e924476-6987-45cb-a132-9f287d8aae89.png">
 
-## Edit/Delete A Review:
+- To add a comment to an event, make sure you're logged in, and simply click "add comment" and let the organizers know how stoked you are for their event!
 
-<img width="343" alt="Screen Shot 2022-10-21 at 12 06 43 PM" src="https://user-images.githubusercontent.com/97054477/197261071-c2e4829d-3fac-4814-8433-09422d605708.png">
+## Edit/Delete A Comment:
 
-- If you change your mind on a business and would like to change or remove your review, no worries, just click edit or delete review! 
+<img width="897" alt="Screen Shot 2022-10-29 at 11 20 12 AM" src="https://user-images.githubusercontent.com/97054477/198844852-85abd8fd-4579-45d9-8fff-2f2f3b398108.png">
+
+
+- If you change your mind on an event and would like to change or remove your comment, no worries, just click edit or delete review! 
 
