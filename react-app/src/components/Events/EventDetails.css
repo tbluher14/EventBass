@@ -3,7 +3,7 @@
     width: 1000px;
     height: 450px;
     object-fit: fill;
-    margin-top: 10px;
+    margin-top: 15px;
     border-radius: 10px;
 
 }
@@ -13,17 +13,10 @@
     height: 460px;
     position: absolute;
     right: 000px;
-    bottom: 275px;
+    bottom: 195px;
     filter: blur(.7em);
     z-index: -1;
 
-    /* width: 1100px;
-    height: 480px;
-    position: relative;
-    right: 50px;
-    bottom: 460px;
-    filter: blur(1em);
-    z-index: -1; */
 }
 
 .event-detail-container{
@@ -75,7 +68,7 @@
     font-size: 16px;
     color: white;
     background-color:rgba(245, 63, 0, 0.97);
-    border-radius: 8px;
+    border-radius: 5px;
     border: none;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
@@ -91,7 +84,7 @@
     font-size: 16px;
     color: white;
     background-color:rgba(245, 63, 0, 0.97);
-    border-radius: 8px;
+    border-radius: 5px;
     border: none;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
