@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Link, Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
+import { getAllUsersThunk } from '../../store/users';
 // import "./SignUpForm.css"
 import image from './loginImage.jpeg'
 // import "../..//index.css"
@@ -17,6 +18,13 @@ const SignUpForm = () => {
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
   const [submitted, setSubmitted] = useState(false);
+  const users = useSelector(state => state.users)
+
+
+  useEffect(() => {
+    dispatch(getAllUsersThunk())
+  },[])
+
 
   const emailRegX = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
 
@@ -44,15 +52,24 @@ const SignUpForm = () => {
     if (password !== confirmPassword) {
       errors.push('Passwords must match.');
     }
+    const emailCheck = Object.values(users).filter(user => user.email === email)
+
+    if (emailCheck.length > 0) errors.push("Email address already in use")
+
+    const userCheck = Object.values(users).filter(user => user.username === username)
+
+    if ( userCheck.length > 0) errors.push("Username already in use")
 
     setErrors(errors);
   }, [first_name, last_name, email, username, password, confirmPassword]);
 
+console.log("this is filtering", Object.values(users).filter(user => user.email === email))
 
 
   const onSignUp = async (e) => {
     e.preventDefault();
     setSubmitted(true);
+
 
     if (errors.length > 0) return
     console.log(username,email,password,first_name,last_name)
@@ -61,6 +78,7 @@ const SignUpForm = () => {
       const data = await dispatch(signUp(username, email, password, first_name, last_name));
       if (data) {
         setErrors(Object.values(data));
+        console.log(Object.values(data))
       }
     }
   };
