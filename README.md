@@ -34,7 +34,7 @@ Database:
 
 * [eventBass Live Link](https://eventbass.herokuapp.com/)
 * [API Routes]()
-* [Database Schema](https://github.com/tbluher14/a](https://github.com/tbluher14/EventBass/wiki/Database-Schema)
+* [Database Schema](https://github.com/tbluher14/EventBass/wiki/Database-Schema)
 * [MVP Features](https://github.com/tbluher14/EventBass/wiki/MVP-Features)
 * [React State Shape]()
 * [User Stories](https://github.com/tbluher14/EventBass/wiki/User-Stories)
