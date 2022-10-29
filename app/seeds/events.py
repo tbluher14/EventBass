@@ -186,7 +186,7 @@ def seed_events():
         website='https://www.mynameisgriz.com/',
         start_date='2023-5-01',
         start_time=time(20, 00),
-        end_date='2023-05-01',
+        end_date='2023-05-02',
         end_time=time(2,00),
         owner_id=1,
         refunds=False
