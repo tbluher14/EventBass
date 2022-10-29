@@ -44,7 +44,7 @@ def seed_events():
         city='Denver',
         state='Colorado',
         zip_code='80216',
-        image_url='https://www.youredm.com/wp-content/uploads/2016/09/duke-dumont.jpg',
+        image_url='https://images.squarespace-cdn.com/content/v1/5e5c72d426341f1a10215614/1583551329667-9MUCSXP4ONQ0OXPKR5KY/TameImpalaMissionBallroom2019-01.jpg',
         website='https://dukedumont.com',
         start_date='2022-11-26',
         start_time=time(20, 00),
@@ -61,7 +61,7 @@ def seed_events():
         city='Denver',
         state='Colorado',
         zip_code='80218',
-        image_url='https://i.ytimg.com/vi/GTCgZOA6UnA/maxresdefault.jpg',
+        image_url='https://www.gratefulweb.com/sites/default/files/inline-images/DSC07791.jpg',
         website='https://www.ogdentheatre.com/events/detail/448775',
         start_date='2022-12-10',
         start_time=time(20, 00),
@@ -88,15 +88,15 @@ def seed_events():
         refunds=False
     )
     event3 = Event (
-        name='dirtmonkey w/ Space Wizard & Kilamanzego & Green Matter',
+        name='dirt monkey w/ Space Wizard & Kilamanzego & Green Matter',
         venue_name='Mission Ballroom',
         description='Based out of Boulder, Patrick Dirt Monkey Megeath has been producing for nearly 10 years, starting with hip-hop and breaks before recently trying his hand at dubstep. With a keen ear for bass and a vast knowledge of music production, he has quickly exploded onto the scene with his innovative original productions and energetic stage presence.',
         address='4242 Wynkoop Street',
         city='Denver',
         state='Colorado',
         zip_code='80216',
-        image_url='https://cdn.relentlessbeats.com/wp-content/uploads/2018/10/dirt-monkey-aura-181124-042-1-1200x800.jpg',
-        website='https://www.dirtmonkey.com',
+        image_url='https://static.pollstar.com/wp-content/uploads/2022/01/51209eba-448b-4bb6-9b6e-ab5ccc33604c-Float_Fest_2018_-_credit_Rick_Kern-scaled.jpg',
+        website='https://www.axs.com/artists/113296/dirt-monkey-tickets?s_kwcid=AL!7852!3!556358162040!!!g!!&cpch=SEM&cpdate=20211026&cpsrc=google&cpcn=axs-rbl-denverboulder-sem-paid&intoff=true&cpid=15086805545&utm_term=&utm_source=google&utm_medium=SEM&utm_campaign=axs-rbl-denverboulder-sem-paid&gclid=Cj0KCQjwnvOaBhDTARIsAJf8eVM9M-7VF3LVUGhUU1-H3spFllHKWqyLHAB4qGmBijipugVTocIrlAQaAk0rEALw_wcB',
         start_date='2023-01-21',
         start_time=time(20, 00),
         end_date='2023-01-22',
@@ -171,7 +171,25 @@ def seed_events():
         end_date='2023-04-07',
         end_time=time(1,00),
         owner_id=4,
-        refunds=True
+        refunds=False
+    )
+
+    griz = Event(
+        name='GRiZ Presents: Free Shows For The People',
+        description='Grant is back at it again - this time performing a free show for the people of Denver at The Ogden Theater on Colfax Ave. This event is guarenteed to be a barn burner - get to the venue early to secure you spot! ',
+        venue_name = "The Ogden Theater",
+        address='935 E Colfax Ave',
+        city='Denver',
+        state='Colorado',
+        zip_code='80218',
+        image_url='https://www.youredm.com/wp-content/uploads/2017/03/Griz_okeechobee_Collin-Taylor.jpeg',
+        website='https://www.mynameisgriz.com/',
+        start_date='2023-5-01',
+        start_time=time(20, 00),
+        end_date='2023-05-01',
+        end_time=time(2,00),
+        owner_id=1,
+        refunds=False
     )
 
     db.session.add(event)
@@ -183,6 +201,7 @@ def seed_events():
     db.session.add(ofthetrees)
     db.session.add(event4)
     db.session.add(event5)
+    db.session.add(griz)
 
 
     db.session.commit()
