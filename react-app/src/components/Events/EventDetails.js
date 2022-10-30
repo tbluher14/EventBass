@@ -64,7 +64,7 @@ const EventDetails = () => {
             )
         }
     }
-
+    // Event Details on mount Use Effect
     useEffect(() => {
 
         (async () => {

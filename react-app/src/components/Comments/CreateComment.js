@@ -25,7 +25,6 @@ const CreateComment = () => {
     useEffect( ()   => {
         dispatch(getAllEventsThunk())
         dispatch(getAllCommentsThunk())
-
     }, [])
 
     useEffect(()=> {
@@ -36,6 +35,7 @@ const CreateComment = () => {
         setErrors(errors)
     }, [comment])
 
+    // create comment handle submit
     const handleSubmit = (e) => {
         e.preventDefault();
         setSubmitted(true)
@@ -52,9 +52,9 @@ const CreateComment = () => {
 
                 return dispatch(createCommentThunk(commentData))
                 .then(dispatch(getAllCommentsThunk()))
-                .then( setSubmitted(false))
+                .then(setSubmitted(false))
                 .then(setComment(''))
-                // .then(history.push(`/events/${specificEvent.id}`))
+
                 }
             }
         }
