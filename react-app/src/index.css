@@ -193,7 +193,7 @@
 @media screen and (max-width: 1900px) and (min-width: 1025px) {
     .login-image {
       width: 62%;
-      height: 655px;
+      height: 700px;
       display: flex;
       flex-direction: row;
       align-items: center;
