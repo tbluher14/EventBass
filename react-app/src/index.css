@@ -53,19 +53,18 @@
 
 }
 .event-card-header{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     margin-top: 10px;
     margin-bottom: 5px;
-    margin-left: 5px;
+    margin-left: 6px;
     width: 315px;
-    height: 25px;
-    overflow: scroll;
-    scroll-behavior: smooth;
-
+    height: 40px;
+    overflow: hidden;
 }
+
 .event-card-address{
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 400;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -73,7 +72,7 @@
 }
 
 .event-card-date{
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 400;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -94,7 +93,7 @@
 }
 
 #card-calendar{
-    margin-top: 6px;
+    margin-top: 5px;
     margin-left: 5px;
     margin-right: 2px;
 }

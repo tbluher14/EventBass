@@ -146,9 +146,11 @@ const EventDetails = () => {
                         <div className='location-header'>
                         <i className="fa-solid fa-map-pin"></i><h3 className='location-header-text'> Location: </h3>
                         </div>
+                        <div className='venue-location-section'>
                         <div className="event-details-location">{currentEvent?.venue_name}</div>
                         <div className='event-details-when-and-where-city'>{currentEvent?.city}, {currentEvent?.state}</div>
                         <div className='event-details-when-and-where-state'></div>
+                        </div>
                     </div>
                 </div>
                 <div className='event-details-about-container'>
