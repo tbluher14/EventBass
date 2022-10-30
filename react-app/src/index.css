@@ -203,7 +203,7 @@
     .signup-image{
         width: 72%;
         height: 770px;
-        margin-left: 100px;
+        margin-left: 70px;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -214,12 +214,12 @@
   @media screen and (max-width: 1024px) {
     .login-image {
       width: 45%;
-      height: 655px;
+      height: 690px;
     }
     .signup-image{
         width: 60%;
-        height: 900px;
-        margin-left: 100px;
+        height: 840px;
+        margin-left: 70px;
     }
   }
 
@@ -305,9 +305,11 @@
 }
 .signup-form-outer-container{
     display: flex;
-    margin-left: 20px;
+    margin-left: 60px;
+    /* align-items: center;
+    justify-content: center; */
     /* margin-bottom: 20px; */
-    margin-right: 20px;
+    margin-right: 0px;
     justify-content: flex-start;
     flex-direction: row;
 }
@@ -315,6 +317,7 @@
 .signup-input-container{
     display: flex;
     flex-direction: column;
+
     /* justify-content: flex-start; */
     margin-top: 10px;
     margin-bottom: 10px;
@@ -336,8 +339,12 @@
     font-weight: 600;
 
 }
-.signup_create_errors{
+.sign_create_errors{
     margin-bottom: 5px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
     display: flex;
     color: red;
 }
