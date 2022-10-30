@@ -8,7 +8,8 @@ import { getAllCommentsThunk } from '../../store/comment';
 import CommentCard from '../Comments/CommentCard'
 import { getAllUsersThunk } from '../../store/users';
 import { formatTime } from '../dateTimeRendering/timeRendering';
-
+import CreateComment from '../Comments/CreateComment';
+import '../../index.css'
 
 
 const EventDetails = () => {
@@ -67,11 +68,11 @@ const EventDetails = () => {
 
         (async () => {
         await dispatch(getAllEventsThunk())
-        await dispatch(getAllCommentsThunk())
+        dispatch(getAllCommentsThunk())
         await setIsLoaded(true)
         await dispatch(getAllUsersThunk())
         })()
-    }, [])
+    }, [dispatch])
 
     if (!isLoaded) {
         return null
@@ -161,6 +162,7 @@ const EventDetails = () => {
                     <div className='event-details-refund-policy'>{refundLogic()}</div>
                 </div>
                 </div>
+                <div id='event-details-comments-outer-container'>
                 <div className='event-details-comments-container'>
                     <h2 className="event-details-Comments-h2">Comments:</h2>
                     {specificComments.length == 0 ? "No comments yet!" : specificComments?.map((comment) => (
@@ -168,7 +170,9 @@ const EventDetails = () => {
                             <CommentCard key={comment.id} comment = {comment}></CommentCard>
                         </div>
                      ))}
-                     <button className='add-comment' onClick={() => history.push(`/${currentEvent.id}/create_comment`)}>Add Comment</button>
+                     {sessionUser && <CreateComment />}
+                     {/* <button className='add-comment' onClick={() => history.push(`/${currentEvent.id}/create_comment`)}>Add Comment</button> */}
+                </div>
                 </div>
             </div>
             </div>

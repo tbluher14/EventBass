@@ -22,6 +22,10 @@
 
 }
 
+.event-details-header-info-container{
+    margin-bottom: 60px;
+}
+
 .event-detail-container{
     display: flex;
     flex-direction: column;
@@ -220,127 +224,3 @@
 
 
 /* COMMENT SECTION */
-
-#comment-section-user-icon{
-    margin-left: 5px;
-    margin-top: 5px;
-}
-
-.comment-card-user-name{
-    margin-left: 5px;
-    margin-top: 5px;
-
-}
-
-.add-comment{
-    width: 140px;
-    height: 30px;
-    font-weight: 550;
-    text-shadow: .3px .3px .3px black;
-    font-size: 16px;
-    color: white;
-    background-color:rgba(245, 63, 0, 0.97);
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 20px;
-    margin-bottom: 35px;
-
-}
-
-.event-details-comments-container{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-}
-
-.event-details-comments{
-    display: flex;
-    /* flex-direction: column; */
-    margin-top: 10px;
-    /* margin-bottom: 25px; */
-
-}
-
-.comment-card-container{
-    border: 1px solid gray;
-    padding: 10px;
-    border-radius: 10px;
-    width: 50%;
-    word-wrap: break-word;
-}
-
-.comment-card{
-    display: flex;
-    flex-direction: column;
-    /* justify-content: flex-end; */
-    /* align-items: right; */
-}
-
-.comment-card-header{
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-}
-
-.comment-card-user{
-    display: flex;
-    flex-direction: row;
-}
-
-.comment-card-edit{
-    margin-right: 5px;
-    display: flex;
-    width: 50px;
-    height: 20px;
-    font-weight: 500;
-    text-shadow: .3px .3px .3px black;
-    font-size: 12px;
-    color: white;
-    background-color:rgba(245, 63, 0, 0.97);
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.comment-card-header{
-    display: flex;
-    flex-direction: row;
-    /* justify-content: space-evenly; */
-}
-
-.edit-delete-comment-container{
-    display: flex;
-    position: relative;
-    left: 180px;
-}
-
-.comment-card-user-name{
-    justify-content: flex-start;
-}
-
-
-
-.comment-card-delete{
-    /* display: flex; */
-    width: 60px;
-    height: 20px;
-    font-weight: 500;
-    text-shadow: .3px .3px .3px black;
-    font-size: 12px;
-    color: white;
-    background-color:rgba(245, 63, 0, 0.97);
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-    align-items: center;
-    justify-content: center;
-
-}

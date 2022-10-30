@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { createCommentThunk, getAllCommentsThunk } from '../../store/comment'
 import {getAllEventsThunk} from "../../store/event";
-
+import '../../index.css'
 
 const CreateComment = () => {
 
@@ -25,11 +25,12 @@ const CreateComment = () => {
     useEffect( ()   => {
         dispatch(getAllEventsThunk())
         dispatch(getAllCommentsThunk())
+
     }, [])
 
     useEffect(()=> {
         const errors = []
-        if (comment.length < 2 || comment.length  > 500) {
+        if (comment.length < 1 || comment.length  > 500) {
             errors.push('Please enter a comment between 2 and 500 characters.')
         }
         setErrors(errors)
@@ -40,6 +41,7 @@ const CreateComment = () => {
         setSubmitted(true)
 
         if (errors.length === 0){
+
             const commentData = {
                     user_id: sessionUser.id,
                     event_id: eventId,
@@ -47,8 +49,11 @@ const CreateComment = () => {
                 }
 
                 if (comment.length>2 && comment.length < 500) {
+
                 return dispatch(createCommentThunk(commentData))
-                .then(history.push(`/events/${specificEvent.id}`))
+                .then(setSubmitted(false))
+                .then(setComment(''))
+                // .then(history.push(`/events/${specificEvent.id}`))
                 }
             }
         }
@@ -57,7 +62,7 @@ const CreateComment = () => {
     return (
         <div className='create-comment-container'>
             <form onSubmit={handleSubmit}>
-            <div className="form-container">
+            <div className="add-comment-form-container">
                 <div className="form-input-container">
                 <h3 className="add_comment_header">
                     Add A Comment on {specificEvent?.name}
@@ -71,7 +76,7 @@ const CreateComment = () => {
                         ))}
                     </div>
                     <textarea
-                    className="form-field"
+                    className="add-comment-form-field"
                     name="comment" type="text"
                     placeholder="Comment"
                     value={comment}
