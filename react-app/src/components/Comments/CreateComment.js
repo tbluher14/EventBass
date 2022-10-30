@@ -51,8 +51,9 @@ const CreateComment = () => {
                 if (comment.length>2 && comment.length < 500) {
 
                 return dispatch(createCommentThunk(commentData))
-                .then(setSubmitted(false))
-                .then(setComment(''))
+                // .then(dispatch(getAllCommentsThunk()))
+                // .then( setSubmitted(false))
+                // .then(setComment(''))
                 // .then(history.push(`/events/${specificEvent.id}`))
                 }
             }

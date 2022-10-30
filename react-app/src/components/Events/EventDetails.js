@@ -17,6 +17,7 @@ const EventDetails = () => {
     const dispatch= useDispatch()
     const history = useHistory()
     const { eventId } = useParams()
+    console.log("eventId", eventId)
     const [isLoaded, setIsLoaded] = useState(false)
 
     const currentEvent = useSelector(state => state.events[eventId])
@@ -32,7 +33,7 @@ const EventDetails = () => {
     //Comments Section:
     const eventComments = useSelector(state => state.comments)
     const commentsArr = Object.values(eventComments)
-    const specificComments = commentsArr.filter(comment => comment?.event_id == eventId)
+    const specificComments = commentsArr.filter(comment => comment?.event_id === Number(eventId))
 
     // Time Rendering:
     const formatTime = (time) => {
@@ -68,11 +69,15 @@ const EventDetails = () => {
 
         (async () => {
         await dispatch(getAllEventsThunk())
-        dispatch(getAllCommentsThunk())
+        await dispatch(getAllCommentsThunk())
         await setIsLoaded(true)
         await dispatch(getAllUsersThunk())
         })()
     }, [dispatch])
+
+    // useEffect(() => {
+    //     dispatch(getAllCommentsThunk())
+    // },[])
 
     if (!isLoaded) {
         return null
