@@ -659,7 +659,7 @@
 .edit-delete-comment-container{
     display: flex;
     position: relative;
-    left: 180px;
+    left: 135px;
 }
 
 .comment-card-user-name{
@@ -672,7 +672,7 @@
     /* display: flex; */
     width: 60px;
     height: 20px;
-    font-weight: 500;
+    font-weight: 600;
     text-shadow: .3px .3px .3px black;
     font-size: 12px;
     color: white;
@@ -695,7 +695,7 @@
     margin-bottom: 20px;
     width: 520px;
     height: 40px;
-    font-weight: 550;
+    font-weight: 600;
     text-shadow: .3px .3px .3px black;
     font-size: 17px;
     color: white;

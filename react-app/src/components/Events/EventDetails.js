@@ -75,9 +75,10 @@ const EventDetails = () => {
         })()
     }, [dispatch])
 
-    // useEffect(() => {
-    //     dispatch(getAllCommentsThunk())
-    // },[])
+
+    useEffect(() => {
+        dispatch(getAllCommentsThunk())
+    },[])
 
     if (!isLoaded) {
         return null
@@ -105,7 +106,8 @@ const EventDetails = () => {
 
 
     return (
-        isLoaded && <div className='event-detail-container'>
+        isLoaded &&
+        <div className='event-detail-container'>
             <div className='event-detail-inner-container'>
                 <div className='event-detail-image'>
                     <img
