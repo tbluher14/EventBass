@@ -23,7 +23,7 @@ const LoginForm = () => {
     const emailCheck = Object.values(users).filter(user => user.email !== email)
     // const userCheck = Object.values(users).filter(user => user.username !== username)
 
-    if (emailCheck.length==0){errors.push("Email does not exist in our records")}
+    // if (emailCheck.length==0){errors.push("Email does not exist in our records")}
     setErrors(errors)
 
   }, [email])
@@ -68,6 +68,7 @@ const LoginForm = () => {
         type='text'
         placeholder='Email'
         value={email}
+        required
         onChange={updateEmail}
         />
       </div>
@@ -75,6 +76,7 @@ const LoginForm = () => {
         <label htmlFor='password' className="form-label">Password</label>
         <input
           className='form-field'
+          required
           name='password'
           type='password'
           placeholder='Password'

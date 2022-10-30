@@ -48,7 +48,9 @@ const CreateEvent = () => {
         const year = currentDate.getFullYear()
         return year + '-'+ month + '-' + day
     }
-
+    function onlyNumbers(str) {
+        return /^[0-9]+$/.test(str);
+      }
 
     useEffect(()=> {
         const errors = [];
@@ -70,14 +72,14 @@ const CreateEvent = () => {
         if (start_time.length < 1) errors.push('Please enter a Start Time for your event');
         if (end_date.length < 1) errors.push('Please enter an End Date for your event');
         if (end_time.length < 1) errors.push('Please enter an End Time for your event');
-        if (start_time<currentTime) errors.push('Please enter a Start Time in the future.')
+        if ((start_time<currentTime) && (start_date == currentDate())) errors.push('Please enter a Start Time in the future.')
         if (name.length < 2 || name.length>255) errors.push('Please enter a Name for your event between 2 and 255 characters');
         if (venue_name < 2 || venue_name > 255) errors.push('Please enter a Venue Name between 2 and 255 Characters');
         if (description.length < 1 || description.length>500) errors.push('Please enter a Description for your event between 2 and 255 Characters');
         if (address.length < 2 || address.length > 255) errors.push('Please enter an Address for your event between 2 and 255 Characters');
         if (city.length < 2 || city.length> 255) errors.push('Please enter a City for your Event between 2 and 255 Characters');
         if (state.length < 2 || state.length > 255) errors.push('Please enter a State for your event between 2 and 255 Characters');
-        if (zip_code.length !== 5) errors.push('Please enter a valid 5 digit Zip Code for your event');
+        if (zip_code.length !== 5 &&  !onlyNumbers(zip_code)) errors.push('Please enter a valid 5 digit Zip Code for your event');
         if (image_url.length < 1 || !image_url.split('?')[0].match(imageRegX)) errors.push('Please enter a valid Image Url for your event (jpg, jpeg, png, svg)');
         if (website.length < 1 || /^https:\/\//.test(website) === false && /^http:\/\//.test(website) === false){
              errors.push('Please enter a Website for your event (https or http)');
