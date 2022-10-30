@@ -57,7 +57,7 @@ const LoginForm = () => {
     <div className='login-form-header'>Log In</div>
       <div className='create_errors'>
         {errors.map((error, ind) => (
-          <div key={ind} className='login-errors'>{error}</div>
+          <div key={ind} className='login-errors'>{error.slice(error.indexOf(':')+ 1)}</div>
           ))}
       </div>
       <div className='login-input-container'>

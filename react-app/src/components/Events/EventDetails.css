@@ -23,6 +23,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 1024px;
 }
 
 .event-details-header-date{
@@ -69,7 +70,7 @@
     color: white;
     background-color:rgba(245, 63, 0, 0.97);
     border-radius: 5px;
-    border: none;
+    border: 2px solid white;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
 }
@@ -85,7 +86,7 @@
     color: white;
     background-color:rgba(245, 63, 0, 0.97);
     border-radius: 5px;
-    border: none;
+    border: 2px solid white;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
 }
