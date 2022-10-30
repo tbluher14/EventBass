@@ -36,7 +36,7 @@ const CreateComment = () => {
     }, [comment])
 
     // create comment handle submit
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setSubmitted(true)
 
@@ -49,11 +49,10 @@ const CreateComment = () => {
                 }
 
                 if (comment.length>2 && comment.length < 500) {
-
-                return dispatch(createCommentThunk(commentData))
-                .then(dispatch(getAllCommentsThunk()))
-                .then(setSubmitted(false))
-                .then(setComment(''))
+                const awaitedComment = await dispatch(createCommentThunk(commentData))
+                dispatch(getAllCommentsThunk())
+                setComment("")
+                setSubmitted(false)
 
                 }
             }
