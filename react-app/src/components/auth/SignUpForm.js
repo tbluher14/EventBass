@@ -41,7 +41,7 @@ const SignUpForm = () => {
       errors.push("username: Username must be between 2 and 50 characters.")
     }
     if (!email.match(emailRegX)) {
-      errors.push("email: Email must be valid email address ( example@ex.com ).")
+      errors.push("email: Email must be valid email address (ex@ex.com).")
     }
     if (email.length < 2 || email.length > 50) {
       errors.push("email: Email must be between 2 and 50 characters.")
@@ -114,10 +114,10 @@ console.log("this is filtering", Object.values(users).filter(user => user.email 
   return (
     <div className='signup-form-outer-container'>
       <div className='signup-form-inputs-and-submit'>
-      <form onSubmit={onSignUp}>
+      <form onSubmit={onSignUp} className='signup-form'>
         <div className='signup-form-container'></div>
-        <div className='signup-form-header'>Sign Up and Host Your Next Event on eventBass</div>
-        <div className='form-input-container'>
+        <div className='signup-form-header'>Sign Up For eventBass</div>
+        <div className='signup-form-input-container'>
           <div className='sign_create_errors'>
             {submitted && errors.map((error, ind) => (
               <div className="signup-error-message-container" key={ind}>
@@ -129,7 +129,7 @@ console.log("this is filtering", Object.values(users).filter(user => user.email 
             <label className='form-label'>First Name:</label>
             <input
               type='text'
-              className="form-field"
+              className="signup-form-field"
               name='first_name'
               onChange={updateFirstname}
               value={first_name}
@@ -140,7 +140,7 @@ console.log("this is filtering", Object.values(users).filter(user => user.email 
             <label className='form-label'>Last Name:</label>
             <input
               type='text'
-              className="form-field"
+              className="signup-form-field"
               name='last_name'
               onChange={updateLastname}
               value={last_name}
@@ -151,7 +151,7 @@ console.log("this is filtering", Object.values(users).filter(user => user.email 
             <label className='form-label'>Username:</label>
             <input
               type='text'
-              className="form-field"
+              className="signup-form-field"
               name='username'
               onChange={updateUsername}
               value={username}
@@ -162,7 +162,7 @@ console.log("this is filtering", Object.values(users).filter(user => user.email 
             <label className='form-label'>Email:</label>
             <input
               type='text'
-              className="form-field"
+              className="signup-form-field"
               name='email'
               onChange={updateEmail}
               value={email}
@@ -173,7 +173,7 @@ console.log("this is filtering", Object.values(users).filter(user => user.email 
             <label className='form-label'>Password:</label>
             <input
               type='password'
-              className="form-field"
+              className="signup-form-field"
               name='password'
               onChange={updatePassword}
               value={password}
@@ -184,7 +184,7 @@ console.log("this is filtering", Object.values(users).filter(user => user.email 
             <label className='form-label'>Confirm Password:</label>
             <input
               type='password'
-              className="form-field"
+              className="signup-form-field"
               name='confirm_password'
               onChange={updateConfirmPassword}
               value={confirmPassword}
