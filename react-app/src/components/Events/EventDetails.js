@@ -178,7 +178,7 @@ const EventDetails = () => {
                         </div>
                      ))}
                      {sessionUser && <CreateComment />}
-                    
+
                 </div>
                 </div>
             </div>

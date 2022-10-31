@@ -1,9 +1,9 @@
 
 import { useDispatch, useSelector } from 'react-redux'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getAllUsersThunk } from '../../store/users';
-import { deleteCommentThunk } from '../../store/comment';
-import { useHistory } from 'react-router-dom';
+import { deleteCommentThunk, editCommentThunk, getAllCommentsThunk } from '../../store/comment';
+import { useHistory, useParams } from 'react-router-dom';
 
 const CommentCard = ({ comment }) => {
     const dispatch = useDispatch()
@@ -13,12 +13,44 @@ const CommentCard = ({ comment }) => {
     const commmentUser = allUsers[comment?.user_id]
     const history = useHistory()
 
-    
+    const {eventId} = useParams()
 
+    const [body, setBody]= useState(comment?.comment)
+    const [editing, setEditing] = useState(false)
+    const [errors, setErrors] = useState([])
+    const [submitted, setSubmitted] = useState(false)
+
+
+    useEffect((e) => {
+        let errors = []
+        if (body.length < 1 || body.length > 255){
+            errors.push("Please leave a comment between 1 and 255 characters")
+        }
+        setErrors(errors)
+    }, [body])
 
     useEffect(() => {
         dispatch(getAllUsersThunk())
     }, [])
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        setSubmitted(true)
+
+        const commentData = {
+            user_id: sessionUser.id,
+            event_id: eventId,
+            comment: body,
+        }
+
+        if (body.length > 0 && body.length< 255){
+            const awaitedComment = await dispatch(editCommentThunk(commentData, comment?.id))
+            dispatch(getAllCommentsThunk())
+            setEditing(false)
+        }
+    }
 
     return (
         <div className='comment-card-container'>
@@ -30,8 +62,8 @@ const CommentCard = ({ comment }) => {
                              {commmentUser?.username}
                         </div>
                         <div className='edit-delete-comment-container'>
-                            {sessionUser && sessionUser?.id == comment?.user_id && (
-                                <button className='comment-card-edit' onClick={() => history.push(`/comments/${comment?.id}/edit`)}>Edit</button>
+                        {sessionUser && sessionUser?.id == comment?.user_id && (
+                                <button className='comment-card-edit' onClick={() => setEditing(true)}>Edit</button>
                             )}
 
                         {   sessionUser && sessionUser?.id == comment?.user_id && (
@@ -40,9 +72,21 @@ const CommentCard = ({ comment }) => {
                         </div>
                     </div>
                 </div>
+                {editing ?
+                <form onSubmit={handleSubmit}>
+                    <textarea
+                    className='form-field'
+                    type='text'
+                    value={body}
+                    onChange={(e) => setBody(e.target.value)}
+                    />
+                <button className='edit-comment-button' type="submit">Edit Comment</button>
+                </form>
+             :
                 <div className='comment-card-body'>
                     {comment?.comment}
                 </div>
+            }
             </div>
         </div>
     )
