@@ -178,7 +178,7 @@ const EventDetails = () => {
                         </div>
                      ))}
                      {sessionUser && <CreateComment />}
-                     {/* <button className='add-comment' onClick={() => history.push(`/${currentEvent.id}/create_comment`)}>Add Comment</button> */}
+                    
                 </div>
                 </div>
             </div>

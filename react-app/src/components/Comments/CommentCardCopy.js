@@ -13,7 +13,7 @@ const CommentCard = ({ comment }) => {
     const commmentUser = allUsers[comment?.user_id]
     const history = useHistory()
 
-    
+
 
 
     useEffect(() => {
