@@ -224,8 +224,9 @@
 }
 
 .event-details-website-url{
-    color: gray;
+    color: blue;
     font-weight: 700;
+    font-size: 14px;
 }
 .event-details-about-this-event-descripton{
     color: black;

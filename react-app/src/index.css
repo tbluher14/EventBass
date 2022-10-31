@@ -190,8 +190,20 @@
 /* SIGN UP AND LOGIN STYLING ***********************************************************/
 
 
+@media screen and (min-width: 1436px){
+    .signup-image{
+        width: 70%;
+        height: 770px;
+        margin-left: 150px;
+    }
+    .login-image{
+        width: 120%;
+        height: 700px;
+        margin-left: 150px;
+    }
+}
 
-@media screen and (max-width: 2500px) and (min-width: 1025px) {
+@media screen and (max-width: 1435px) and (min-width: 1025px) {
     .login-image {
       width: 62%;
       height: 700px;
