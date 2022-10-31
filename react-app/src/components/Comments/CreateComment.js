@@ -29,8 +29,8 @@ const CreateComment = () => {
 
     useEffect(()=> {
         const errors = []
-        if (comment.length < 1 || comment.length  > 500) {
-            errors.push('Please enter a comment between 1 and 500 characters.')
+        if (comment.length < 2 || comment.length  > 500) {
+            errors.push('Please enter a comment between 2 and 500 characters.')
         }
         setErrors(errors)
     }, [comment])
@@ -48,7 +48,7 @@ const CreateComment = () => {
                     comment: comment
                 }
 
-                if (comment.length>0 && comment.length < 500) {
+                if (comment.length>=1 && comment.length < 500) {
                 const awaitedComment = await dispatch(createCommentThunk(commentData))
                 dispatch(getAllCommentsThunk())
                 setComment("")

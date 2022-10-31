@@ -23,8 +23,8 @@ const CommentCard = ({ comment }) => {
 
     useEffect((e) => {
         let errors = []
-        if (body.length < 1 || body.length > 255){
-            errors.push("Please leave a comment between 1 and 255 characters")
+        if (body.length < 2 || body.length > 255){
+            errors.push("Please leave a comment between 2 and 255 characters")
         }
         setErrors(errors)
     }, [body])
@@ -45,7 +45,7 @@ const CommentCard = ({ comment }) => {
             comment: body,
         }
 
-        if (body.length > 0 && body.length< 255){
+        if (body.length > 1 && body.length< 255){
             const awaitedComment = await dispatch(editCommentThunk(commentData, comment?.id))
             dispatch(getAllCommentsThunk())
             setEditing(false)

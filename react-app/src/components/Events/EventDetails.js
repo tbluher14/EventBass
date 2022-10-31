@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import { deleteEventThunk, editEventAV, getAllEventsThunk } from '../../store/event';
 import './EventDetails.css'
 import { getAllCommentsThunk } from '../../store/comment';
@@ -178,7 +178,7 @@ const EventDetails = () => {
                         </div>
                      ))}
                      {sessionUser && <CreateComment />}
-
+                    {!sessionUser && <Link to='/login' className='event-details-login-link'>Log In To Add A Comment</Link> }
                 </div>
                 </div>
             </div>
