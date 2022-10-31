@@ -80,6 +80,11 @@ const CommentCard = ({ comment }) => {
                     value={body}
                     onChange={(e) => setBody(e.target.value)}
                     />
+                <div>
+                    {submitted && errors.map(errors => (
+                        <div className='comment_errors'>{errors}</div>
+                    ))}
+                </div>
                 <button className='edit-comment-button' type="submit">Edit Comment</button>
                 </form>
              :

@@ -30,7 +30,7 @@ const CreateComment = () => {
     useEffect(()=> {
         const errors = []
         if (comment.length < 1 || comment.length  > 500) {
-            errors.push('Please enter a comment between 2 and 500 characters.')
+            errors.push('Please enter a comment between 1 and 500 characters.')
         }
         setErrors(errors)
     }, [comment])
@@ -48,7 +48,7 @@ const CreateComment = () => {
                     comment: comment
                 }
 
-                if (comment.length>2 && comment.length < 500) {
+                if (comment.length>0 && comment.length < 500) {
                 const awaitedComment = await dispatch(createCommentThunk(commentData))
                 dispatch(getAllCommentsThunk())
                 setComment("")
@@ -61,14 +61,14 @@ const CreateComment = () => {
 
     return (
         <div className='create-comment-container'>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="add-comment-form-container">
             <div className="add-comment-form-container">
                 <div className="form-input-container">
                 <h3 className="add_comment_header">
                     Add A Comment on {specificEvent?.name}
                 </h3>
                 </div>
-                <div className="input-container">
+                <div className="comment-input-container">
                     <label htmlFor="comment" className="form-label"></label>
                     <div className="comment_errors">
                         {submitted && errors.map((error, ind) => (

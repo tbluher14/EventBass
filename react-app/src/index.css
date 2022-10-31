@@ -32,6 +32,7 @@
     align-items: center;
     justify-content: center;
     width: 340px;
+    cursor: pointer;
     margin-bottom: 10px;
 
     /* height: 500px; */
@@ -502,10 +503,20 @@
 /* ****************************************************/
 /* Create/Edit Comment Styling */
 
+
+
 .create-comment-container{
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
+    width: 100%;
+}
+.add-comment-form-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .add-comment-form-field{
@@ -516,7 +527,7 @@
     justify-content: flex-start;
     padding: 8px;
     width: 500px;
-    height: 30px;
+    height: 70px;
     font-family: 'Montserrat', sans-serif
 }
 
@@ -533,7 +544,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70%;
+    width: 100%;
 }
 .form-field{
     font-family: 'Montserrat', sans-serif
@@ -601,10 +612,11 @@
 }
 
 .comment-card-container{
-    border: 1px solid gray;
+    border: 1px solid lightgray;
     padding: 10px;
     border-radius: 10px;
-    width: 50%;
+    margin-top: 10px;
+    width: 100%;
     word-wrap: break-word;
 
 }
@@ -658,8 +670,11 @@
 
 .edit-delete-comment-container{
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    left: 135px;
+    left: 550px;
 }
 
 .comment-card-user-name{
