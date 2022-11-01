@@ -30,7 +30,7 @@
 .event-card{
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     flex-direction: row;
     width: 340px;
     cursor: pointer;
@@ -55,6 +55,7 @@
     width: 10%;
 
 }
+
 .event-card-header{
     font-size: 16px;
     font-weight: 600;
@@ -74,7 +75,7 @@
     margin-bottom: 5px;
     margin-left: 3.5px;
     overflow: hidden;
-    width: 100%;
+    /* width: 100%; */
     text-overflow: ellipsis;
     white-space: nowrap;
 }
@@ -92,14 +93,15 @@
 .event-card-location-and-icon{
     display: flex;
     flex-direction: row;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 65%;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    /* text-overflow: ellipsis; */
+    /* white-space: nowrap; */
 }
 
 .event-card-container{
     /* width: 50%; */
+    /* width: 10%; */
 
 }
 #card-map{
@@ -116,6 +118,7 @@
 .event-card-date-and-icon{
     display: flex;
     flex-direction: row;
+    width: 50%;
 }
 
 .event-card-time{

@@ -124,7 +124,7 @@ const CreateEvent = () => {
             <div className='form-outer-container'>
                 <form onSubmit={handleSubmit}>
                     <div className='form-header'></div>
-                    <h2>Please Fill Out The Form Below To Create An Event:</h2>
+                    <h2>Please Fill Out All Fields Below To Create An Event:</h2>
                         <div className='form-container'>
                             <div className='form-input-container'>
                                 <div className='create_errors'>
