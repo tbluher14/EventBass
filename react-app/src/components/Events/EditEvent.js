@@ -94,11 +94,11 @@ const EditEvent = () => {
         if (end_time.length < 1) errors.push('Please enter an End Time for your event');
         if ((start_time<currentTime) && (start_date == currentDate())) errors.push('Please enter a Start Time in the future.')
         if (name.length < 2 || name.length>255) errors.push('Please enter a Name for your event between 2 and 255 characters');
-        if (venue_name < 2 || venue_name > 255) errors.push('Please enter a Venue Name between 2 and 255 Characters');
+        if (venue_name < 2 || venue_name > 50) errors.push('Please enter a Venue Name between 2 and 50 Characters');
         if (description.length < 1 || description.length>500) errors.push('Please enter a Description for your event between 2 and 255 Characters');
-        if (address.length < 2 || address.length > 255) errors.push('Please enter an Address for your event between 2 and 255 Characters');
-        if (city.length < 2 || city.length> 255) errors.push('Please enter a City for your Event between 2 and 255 Characters');
-        if (state.length < 2 || state.length > 255) errors.push('Please enter a State for your event between 2 and 255 Characters');
+        if (address.length < 2 || address.length > 50) errors.push('Please enter an Address for your event between 2 and 50 Characters');
+        if (city.length < 2 || city.length> 50) errors.push('Please enter a City for your Event between 2 and 50 Characters');
+        if (state.length < 2 || state.length > 50) errors.push('Please enter a State for your event between 2 and 50 Characters');
         if (zip_code.length !== 5) errors.push('Please enter a valid 5 digit Zip Code for your event');
         if (image_url.length < 1 || !image_url.split('?')[0].match(imageRegX)) errors.push('Please enter a valid Image Url for your event (jpg, jpeg, png, svg)');
         if (website.length < 1 || /^https:\/\//.test(website) === false && /^http:\/\//.test(website) === false){

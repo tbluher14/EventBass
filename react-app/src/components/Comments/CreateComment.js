@@ -65,7 +65,7 @@ const CreateComment = () => {
             <div className="add-comment-form-container">
                 <div className="form-input-container">
                 <h3 className="add_comment_header">
-                    Add A Comment on {specificEvent?.name}
+                    Add A Comment 
                 </h3>
                 </div>
                 <div className="comment-input-container">

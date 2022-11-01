@@ -156,8 +156,8 @@ const EventDetails = () => {
                         </div>
                         <div className='venue-location-section'>
                         <div className="event-details-location">{currentEvent?.venue_name}</div>
-                        <div className='event-details-when-and-where-city'>{currentEvent?.city}, {currentEvent?.state}</div>
-                        <div className='event-details-when-and-where-state'></div>
+                        <div className='event-details-when-and-where-city'>{currentEvent?.city},</div>
+                        <div className='event-details-when-and-where-state'> {currentEvent?.state}</div>
                         </div>
                     </div>
                 </div>
