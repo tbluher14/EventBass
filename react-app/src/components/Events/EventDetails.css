@@ -134,30 +134,32 @@
 
 .location-header-text{
     margin-left: 5px;
+    font-size: 17px;
 }
+
 .event-details-location{
-    word-wrap: break-word;
+
     align-items: center;
     justify-content: center;
     font-size: 14px;
     color: grey;
     font-weight: 600;
 }
+
 .event-details-when-and-where-city{
     font-size: 14px;
     color: grey;
     font-weight: 600;
-    /* margin-top: 5px; */
-    /* width: ; */
-    word-wrap: break-word;
+
 }
 
 .event-details-when-and-where-state{
     font-size: 14px;
     color: grey;
     font-weight: 600;
-    /* width: 100%; */
-    word-wrap: break-word;
+    overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .when-and-where-header-container{
@@ -175,7 +177,8 @@
     display: flex;
     flex-direction: column;
     width: 70%;
-    /* margin-left: 100px; */
+    /* overflow: scroll; */
+
 }
 
 .event-details-when-and-where-right{
@@ -184,8 +187,8 @@
     align-items: center;
     justify-content: center;
     width: 50%;
-    word-wrap: break-word;
-    /* margin-top: 5px; */
+
+
 
 }
 .event-details-when-and-where-container{
@@ -227,9 +230,18 @@
     color: blue;
     font-weight: 700;
     font-size: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 50%;
+    white-space: nowrap;
 }
+
 .event-details-about-this-event-descripton{
     color: black;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
 }
 
 
