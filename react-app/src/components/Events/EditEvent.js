@@ -79,31 +79,34 @@ const EditEvent = () => {
         const imageRegX = /\.(jpeg|jpg|png|svg)$/
         if (isLoaded){
             const errors = []
+            const zipRegX = /^\d{5}$/
             const currentTime = new Date().toString().slice(16,21)
 
             if (eventInFuture(start_date, currentDate()) == false){
                 errors.push("Event must happen in the future")
             }
-            if (start_date.length < 1) errors.push('Please enter a Start Date for your event');
-        if (start_time > end_time && start_date === end_date) errors.push('Please enter a Start Time before the event End Time');
-        if (start_date.length > 10) errors.push("Please enter a valid Start Date (MM-DD-YYYY)")
-        if (end_date.length > 10) errors.push("Please enter a valid End Date (MM-DD-YYYY)")
-        if (start_date>end_date) errors.push('Please enter a Start Date before the event End Date');
-        if (start_time.length < 1) errors.push('Please enter a Start Time for your event');
-        if (end_date.length < 1) errors.push('Please enter an End Date for your event');
-        if (end_time.length < 1) errors.push('Please enter an End Time for your event');
-        if ((start_time<currentTime) && (start_date == currentDate())) errors.push('Please enter a Start Time in the future.')
-        if (name.length < 2 || name.length>255) errors.push('Please enter a Name for your event between 2 and 255 characters');
-        if (venue_name < 2 || venue_name > 50) errors.push('Please enter a Venue Name between 2 and 50 Characters');
-        if (description.length < 1 || description.length>500) errors.push('Please enter a Description for your event between 2 and 255 Characters');
-        if (address.length < 2 || address.length > 50) errors.push('Please enter an Address for your event between 2 and 50 Characters');
-        if (city.length < 2 || city.length> 50) errors.push('Please enter a City for your Event between 2 and 50 Characters');
-        if (state.length < 2 || state.length > 50) errors.push('Please enter a State for your event between 2 and 50 Characters');
-        if (zip_code.length !== 5) errors.push('Please enter a valid 5 digit Zip Code for your event');
-        if (image_url.length < 1 || !image_url.split('?')[0].match(imageRegX)) errors.push('Please enter a valid Image Url for your event (jpg, jpeg, png, svg)');
-        if (website.length < 1 || /^https:\/\//.test(website) === false && /^http:\/\//.test(website) === false){
-             errors.push('Please enter a Website for your event (https or http)');
-            }
+            if (start_date.length < 1) errors.push('Start Date for your event is required');
+            if (start_time > end_time && start_date === end_date) errors.push('Start Time must be before event End Time on the same day');
+            if (start_date.length > 10) errors.push("Please enter a valid Start Date (MM-DD-YYYY)")
+            if (end_date.length > 10) errors.push("Please enter a valid End Date (MM-DD-YYYY)")
+            if (start_date>end_date) errors.push("Start Date must be before the event's End Date");
+            if (start_time.length < 1) errors.push('Start Time for your event is required');
+            if (end_date.length < 1) errors.push('End Date for your event is required');
+            if (end_time.length < 1) errors.push('End Time for your event is required');
+
+            if ((start_time<currentTime) && (start_date == currentDate())) errors.push('Please enter a Start Time in the future.')
+            if (name.length < 2 || name.length>255) errors.push('Event Name must be between 2 and 255 characters');
+            if (venue_name.length < 2 || venue_name.length > 50) errors.push('Venue Name must be between 2 and 255 Characters');
+            if (description.length < 1 || description.length>500) errors.push('Description for your event must be between 2 and 500 Characters');
+            if (address.length < 2 || address.length > 50) errors.push('Address for your event must be between 2 and 50 Characters');
+            if (city.length < 2 || city.length> 50) errors.push('City for your Event must be between 2 and 50 Characters');
+            if (state.length < 2 || state.length > 50) errors.push('State for your event must be between 2 and 50 Characters');
+            if (zip_code.length !== 5 || (!zip_code.match(zipRegX))) errors.push('Zip Code must be 5 digits');
+            if (image_url.length < 1 || !image_url.split('?')[0].match(imageRegX)) errors.push('Image Url for your event must be of type: jpg, jpeg, png, svg');
+            if (website.length < 1 || /^https:\/\//.test(website) === false && /^http:\/\//.test(website) === false){
+                 errors.push('Please enter a Website for your event (https or http)');
+                }
+
             setErrors(errors)
         }
 
@@ -112,6 +115,7 @@ const EditEvent = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        window.scrollTo(0,0)
         setSubmitted(true)
         if (errors.length === 0){
             const payload = {
@@ -142,7 +146,7 @@ const EditEvent = () => {
        isLoaded && <div className='form-outer-container'>
                 <form onSubmit={handleSubmit}>
                 <div className='form-container'>
-                    <h2>Edit Your Event: </h2>
+                    <h2 className='edit-event-header'>Edit Your Event: </h2>
                             <div className='form-input-container'>
                                 <div className='create_errors'>
                                     {submitted && errors.map((error, ind) => (
@@ -150,7 +154,7 @@ const EditEvent = () => {
                                         key={ind}
                                         className='error-message-container'
                                         >
-                                        <div className='error-message'>{error}</div>
+                                        <div className='edit_event_error-message'>{error}</div>
                                 </div>
                                     ))}
                                 </div>
@@ -312,7 +316,7 @@ const EditEvent = () => {
                                     </select>
                                     </div>
                                     <div className='create-event-button-container'>
-                                        <button className='create-event-form-button' type='submit'>Edit Event</button>
+                                        <button className='create-event-form-button' type='submit' >Edit Event</button>
                                     </div>
                                         </div>
                                     </div>
