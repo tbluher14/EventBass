@@ -93,10 +93,13 @@ const EventDetails = () => {
     }
 
     const deleteEvent = (eventId) => async (e) => {
-        e.preventDefault()
-        history.push('/all-events')
-        const res = await dispatch(deleteEventThunk(eventId))
-        .then(dispatch(getAllEventsThunk()))
+        const result = window.confirm("Are you sure you would like to delete this Event?")
+        if (result){
+            e.preventDefault()
+            history.push('/all-events')
+            const res = await dispatch(deleteEventThunk(eventId))
+            .then(dispatch(getAllEventsThunk()))
+        }
     }
 
     const editEvent = (eventId) => async (e) => {
@@ -137,6 +140,7 @@ const EventDetails = () => {
                     <button className='event-details-edit-button' onClick={editEvent(currentEvent?.id)}>Edit My Event</button>
                     )}
                 {sessionUser?.id === currentEvent?.owner_id && (
+                    // <button className="event-details-delete-button" onClick={deleteEvent(currentEvent?.id)}>Delete My Event</button>
                     <button className="event-details-delete-button" onClick={deleteEvent(currentEvent?.id)}>Delete My Event</button>
                     )}
                  </div>

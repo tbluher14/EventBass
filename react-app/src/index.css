@@ -94,7 +94,7 @@
     display: flex;
     flex-direction: row;
     /* overflow: hidden; */
-    width: 65%;
+    width: 63.5%;
     /* text-overflow: ellipsis; */
     /* white-space: nowrap; */
 }
@@ -634,7 +634,6 @@
 .comment-card-user-name{
     margin-left: 5px;
     margin-top: 5px;
-
 }
 
 .add-comment{
