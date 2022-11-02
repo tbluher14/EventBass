@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import '../../index.css';
+import brokenImage2 from '../assets/broken-image2.jpeg'
 
 
 const EventCard = ({ event }) => {
@@ -17,7 +18,11 @@ const EventCard = ({ event }) => {
                 <div className="event-card-container">
                     <div className="event-card-inner-container">
                         <div className="event-card-inner-container-left">
-                            <img src={event?.image_url} alt="event-card" className="event-card-image" />
+                            <img src={event?.image_url}
+                            alt="event-card"
+                            className="event-card-image"
+                            onError={e => {e.currentTarget.src = brokenImage2 }}
+                             />
                         </div>
                         <div className="event-card-inner-container-right">
                             <div className="event-card-header">{event?.name}</div>

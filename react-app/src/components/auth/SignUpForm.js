@@ -52,18 +52,18 @@ const SignUpForm = () => {
     if (password !== confirmPassword) {
       errors.push('password: Passwords must match.');
     }
-    const emailCheck = Object.values(users).filter(user => user.email === email)
+    // const emailCheck = Object.values(users).filter(user => user.email === email)
 
-    if (emailCheck.length > 0) errors.push("email: Email address already in use")
+    // if (emailCheck.length > 0) errors.push("email: Email address already in use")
 
-    const userCheck = Object.values(users).filter(user => user.username === username)
+    // const userCheck = Object.values(users).filter(user => user.username === username)
 
-    if ( userCheck.length > 0) errors.push("username: Username already in use")
+    // if ( userCheck.length > 0) errors.push("username: Username already in use")
 
     setErrors(errors);
   }, [first_name, last_name, email, username, password, confirmPassword]);
 
-console.log("this is filtering", Object.values(users).filter(user => user.email === email))
+
 
 
   const onSignUp = async (e) => {

@@ -124,6 +124,7 @@ const EventDetails = () => {
                     src={currentEvent?.image_url}
                     alt='event-detail-img'
                     className='event-blur-image'
+                    onError={e => {e.currentTarget.src = brokenImage2 }}
                     />
                 <div className='event-details-header-info-container'>
                 <div className='event-details-header-date'>{formatDate(currentEvent?.start_date)}</div>
