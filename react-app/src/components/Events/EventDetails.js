@@ -10,6 +10,7 @@ import { getAllUsersThunk } from '../../store/users';
 import { formatTime } from '../dateTimeRendering/timeRendering';
 import CreateComment from '../Comments/CreateComment';
 import '../../index.css'
+import brokenImage2 from '../assets/broken-image2.jpeg'
 
 
 const EventDetails = () => {
@@ -117,6 +118,7 @@ const EventDetails = () => {
                     src={currentEvent?.image_url}
                     alt='event-detail-img'
                     className='event-detail-image'
+                    onError={e => {e.currentTarget.src = brokenImage2 }}
                     />
                     <img
                     src={currentEvent?.image_url}
