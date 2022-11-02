@@ -1,6 +1,6 @@
 # Capstone Full Stack Project - eventBass
 
-This is my clone of EventBrite, eventBass, created for my App Academy Capstone Project.
+This is my clone of EventBrite, eventBass, created for App Academy's 24 week immersive program Capstone Project.
 
 Live Site: https://eventbass.herokuapp.com/
 
