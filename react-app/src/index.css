@@ -581,7 +581,8 @@
     padding: 8px;
     width: 500px;
     height: 70px;
-    font-family: 'Montserrat', sans-serif
+    font-family: 'Montserrat', sans-serif;
+    resize: none;
 }
 
 .comment_errors{
@@ -716,6 +717,10 @@
     align-items: center;
     justify-content: center;
 
+}
+
+.form-field{
+    resize: none
 }
 
 .comment-card-header{

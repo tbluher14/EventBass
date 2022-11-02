@@ -65,7 +65,7 @@ const CreateComment = () => {
             <div className="add-comment-form-container">
                 <div className="form-input-container">
                 <h3 className="add_comment_header">
-                    Add A Comment 
+                    Add A Comment
                 </h3>
                 </div>
                 <div className="comment-input-container">
@@ -81,6 +81,7 @@ const CreateComment = () => {
                     placeholder="Comment"
                     value={comment}
                     required
+                    resize={"none"}
                     onChange={(e) => setComment(e.target.value)} />
                 </div>
                 <div className="comment-button">

@@ -74,7 +74,7 @@ const CreateEvent = () => {
 
         if ((start_time<currentTime) && (start_date == currentDate())) errors.push('Please enter a Start Time in the future.')
         if (name.length < 2 || name.length>255) errors.push('Event Name must be between 2 and 255 characters');
-        if (venue_name.length < 2 || venue_name.length > 50) errors.push('Venue Name must be between 2 and 255 Characters');
+        if (venue_name.length < 2 || venue_name.length > 50) errors.push('Venue Name must be between 2 and 50 Characters');
         if (description.length < 1 || description.length>500) errors.push('Description for your event must be between 2 and 500 Characters');
         if (address.length < 2 || address.length > 50) errors.push('Address for your event must be between 2 and 50 Characters');
         if (city.length < 2 || city.length> 50) errors.push('City for your Event must be between 2 and 50 Characters');
@@ -84,10 +84,10 @@ const CreateEvent = () => {
         if (website.length < 1 || /^https:\/\//.test(website) === false && /^http:\/\//.test(website) === false){
              errors.push('Please enter a Website for your event (https or http)');
             }
-
+        
         setErrors(errors);
     }
- }, [name, description, address, city, state, zip_code, image_url, website, start_date, start_time, end_date, end_time])
+ }, [name, venue_name, description, address, city, state, zip_code, image_url, website, start_date, start_time, end_date, end_time])
 
 
     const handleSubmit = async (e) => {

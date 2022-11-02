@@ -76,6 +76,7 @@ const CommentCard = ({ comment }) => {
                 <form onSubmit={handleSubmit}>
                     <textarea
                     className='form-field'
+                    resize="none"
                     type='text'
                     value={body}
                     onChange={(e) => setBody(e.target.value)}
