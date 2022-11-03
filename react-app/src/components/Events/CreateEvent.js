@@ -71,7 +71,6 @@ const CreateEvent = () => {
         if (start_time.length < 1) errors.push('Start Time for your event is required');
         if (end_date.length < 1) errors.push('End Date for your event is required');
         if (end_time.length < 1) errors.push('End Time for your event is required');
-
         if ((start_time<currentTime) && (start_date == currentDate())) errors.push('Please enter a Start Time in the future.')
         if (name.length < 2 || name.length>255) errors.push('Event Name must be between 2 and 255 characters');
         if (venue_name.length < 2 || venue_name.length > 50) errors.push('Venue Name must be between 2 and 50 Characters');
