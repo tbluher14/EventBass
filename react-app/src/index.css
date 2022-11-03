@@ -732,10 +732,10 @@
 .edit-delete-comment-container{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    /* align-items: center;
     justify-content: center;
     position: relative;
-    left: 570px;
+    left: 570px; */
 }
 
 .comment-card-user-name{

@@ -63,7 +63,7 @@ const EditEvent = () => {
             setState(currentEvent?.state)
             setZipCode(currentEvent?.zip_code)
             setImage_url(currentEvent?.image_url)
-            setAddress(currentEvent?.website)
+            setAddress(currentEvent?.address)
             setStart_date(currentEvent?.start_date)
             setStart_time(currentEvent?.start_time)
             setWebsite(currentEvent?.website)
