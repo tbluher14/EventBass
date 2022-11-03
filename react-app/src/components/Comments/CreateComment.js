@@ -29,8 +29,8 @@ const CreateComment = () => {
 
     useEffect(()=> {
         const errors = []
-        if (comment.length < 2 || comment.length  > 500) {
-            errors.push('Please enter a comment between 2 and 500 characters.')
+        if (comment.length < 2 || comment.length  > 255) {
+            errors.push('Please enter a comment between 2 and 255 characters.')
         }
         setErrors(errors)
     }, [comment])
