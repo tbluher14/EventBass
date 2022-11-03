@@ -61,6 +61,7 @@ const CommentCard = ({ comment }) => {
                         <div className='comment-card-user-name'>
                              {commmentUser?.username}
                         </div>
+                        </div>
                         <div className='edit-delete-comment-container'>
                         {sessionUser && sessionUser?.id == comment?.user_id && (
                                 <button className='comment-card-edit' onClick={() => setEditing(true)}>Edit</button>
@@ -70,7 +71,7 @@ const CommentCard = ({ comment }) => {
                             <button onClick={()=> dispatch(deleteCommentThunk(comment?.id))} className='comment-card-delete'>Delete</button>
                             )}
                         </div>
-                    </div>
+
                 </div>
                 {editing ?
                 <form onSubmit={handleSubmit}>

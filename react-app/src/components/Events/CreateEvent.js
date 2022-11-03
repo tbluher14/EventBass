@@ -84,7 +84,7 @@ const CreateEvent = () => {
         if (website.length < 1 || /^https:\/\//.test(website) === false && /^http:\/\//.test(website) === false){
              errors.push('Please enter a Website for your event (https or http)');
             }
-        
+        ;
         setErrors(errors);
     }
  }, [name, venue_name, description, address, city, state, zip_code, image_url, website, start_date, start_time, end_date, end_time])
