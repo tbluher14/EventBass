@@ -15,6 +15,7 @@ const EditEvent = () => {
     const userId = useSelector(state => state.session.user.id)
     const eventOwner = currentEvent?.owner_id
 
+
     const [name, setName] = useState(currentEvent?.name)
     const [description, setDescription] = useState(currentEvent?.description)
     const [address, setAddress] = useState(currentEvent?.address)
@@ -52,13 +53,23 @@ const EditEvent = () => {
     }
 
     const userMatches = (userId, eventOwner) => {
+        console.log(userId, eventOwner)
         if (userId !== eventOwner){
             return history.push('/notyoevent')
         }
+        if (userId === eventOwner){
+            return history.push(`/events/${currentEvent.id}/edit`)
+        }
     }
     useEffect(() => {
-        userMatches(userId, eventOwner)
-    },[])
+
+        const eventOwner = currentEvent?.owner_id
+        if (currentEvent){
+
+            userMatches(userId, eventOwner)
+        }
+        // console.log("userId, eventowner in useeffect", userId, eventOwner)
+    },[currentEvent])
 
     useEffect(() => {
             dispatch(getAllEventsThunk())
