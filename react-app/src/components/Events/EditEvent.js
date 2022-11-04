@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {editEventThunk, getAllEventsThunk} from '../../store/event';
-import {useHistory, useParams} from 'react-router-dom';
+import {Redirect, useHistory, useParams} from 'react-router-dom';
+import FourOFour from '../404/Fof';
 
 
 const EditEvent = () => {
@@ -10,6 +11,9 @@ const EditEvent = () => {
     const {eventId} = useParams()
     const events = useSelector(state => state.events)
     const currentEvent = events[eventId]
+
+    const userId = useSelector(state => state.session.user.id)
+    const eventOwner = currentEvent?.owner_id
 
     const [name, setName] = useState(currentEvent?.name)
     const [description, setDescription] = useState(currentEvent?.description)
@@ -47,10 +51,20 @@ const EditEvent = () => {
         return year + '-'+ month + '-' + day
     }
 
+    const userMatches = (userId, eventOwner) => {
+        if (userId !== eventOwner){
+            return history.push('/fdaksljf;adsj')
+        }
+    }
+    useEffect(() => {
+        userMatches(userId, eventOwner)
+
+    },[])
 
     useEffect(() => {
-        dispatch(getAllEventsThunk())
-        .then(setIsLoaded(true))
+            dispatch(getAllEventsThunk())
+            .then(setIsLoaded(true))
+
     },[dispatch])
 
     useEffect(() => {
