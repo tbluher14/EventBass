@@ -53,12 +53,11 @@ const EditEvent = () => {
 
     const userMatches = (userId, eventOwner) => {
         if (userId !== eventOwner){
-            return history.push('/fdaksljf;adsj')
+            return history.push('/notyoevent')
         }
     }
     useEffect(() => {
         userMatches(userId, eventOwner)
-
     },[])
 
     useEffect(() => {
