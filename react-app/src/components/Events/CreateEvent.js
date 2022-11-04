@@ -74,7 +74,7 @@ const CreateEvent = () => {
         if ((start_time<currentTime) && (start_date == currentDate())) errors.push('Please enter a Start Time in the future.')
         if (name.length < 2 || name.length>255) errors.push('Event Name must be between 2 and 255 characters');
         if (venue_name.length < 2 || venue_name.length > 50) errors.push('Venue Name must be between 2 and 50 Characters');
-        if (description.length < 1 || description.length>500) errors.push('Description for your event must be between 2 and 500 Characters');
+        if (description.length < 2 || description.length>500) errors.push('Description for your event must be between 2 and 500 Characters');
         if (address.length < 2 || address.length > 50) errors.push('Address for your event must be between 2 and 50 Characters');
         if (city.length < 2 || city.length> 50) errors.push('City for your Event must be between 2 and 50 Characters');
         if (state.length < 2 || state.length > 50) errors.push('State for your event must be between 2 and 50 Characters');

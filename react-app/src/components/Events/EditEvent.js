@@ -96,14 +96,14 @@ const EditEvent = () => {
 
             if ((start_time<currentTime) && (start_date == currentDate())) errors.push('Please enter a Start Time in the future.')
             if (name.length < 2 || name.length>255) errors.push('Event Name must be between 2 and 255 characters');
-            if (venue_name.length < 2 || venue_name.length > 50) errors.push('Venue Name must be between 2 and 255 Characters');
-            if (description.length < 1 || description.length>500) errors.push('Description for your event must be between 2 and 500 Characters');
+            if (venue_name.length < 2 || venue_name.length > 50) errors.push('Venue Name must be between 2 and 50 Characters');
+            if (description.length < 2 || description.length>500) errors.push('Description for your event must be between 2 and 500 Characters');
             if (address.length < 2 || address.length > 50) errors.push('Address for your event must be between 2 and 50 Characters');
             if (city.length < 2 || city.length> 50) errors.push('City for your Event must be between 2 and 50 Characters');
             if (state.length < 2 || state.length > 50) errors.push('State for your event must be between 2 and 50 Characters');
             if (zip_code.length !== 5 || (!zip_code.match(zipRegX))) errors.push('Zip Code must be 5 digits');
-            if (image_url.length < 1 || !image_url.split('?')[0].match(imageRegX)) errors.push('Image Url for your event must be of type: jpg, jpeg, png, svg');
-            if (website.length < 1 || /^https:\/\//.test(website) === false && /^http:\/\//.test(website) === false){
+            if (image_url.length < 2 || !image_url.split('?')[0].match(imageRegX)) errors.push('Image Url for your event must be of type: jpg, jpeg, png, svg');
+            if (website.length < 2 || /^https:\/\//.test(website) === false && /^http:\/\//.test(website) === false){
                  errors.push('Please enter a Website for your event (https or http)');
                 }
 
