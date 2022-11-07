@@ -18,7 +18,7 @@ const EventDetails = () => {
     const dispatch= useDispatch()
     const history = useHistory()
     const { eventId } = useParams()
-    console.log("eventId", eventId)
+    // console.log("eventId", eventId)
     const [isLoaded, setIsLoaded] = useState(false)
 
     const currentEvent = useSelector(state => state.events[eventId])
