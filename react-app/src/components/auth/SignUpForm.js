@@ -31,16 +31,16 @@ const SignUpForm = () => {
   useEffect(() => {
     let errors = [];
 
-    if (first_name.length < 2 || first_name.length > 50) {
-      errors.push("first name: First Name must be between 2 and 50 characters.")
+    if (first_name.length < 2 || first_name.length > 50 || first_name.includes("  ")) {
+      errors.push("first name: First Name must be between 2 and 50 characters without double spaces")
     }
-    if (last_name.length < 2 || last_name.length > 50) {
-      errors.push("last name: Last Name must be between 2 and 50 characters.")
+    if (last_name.length < 2 || last_name.length > 50 || last_name.includes("  ")) {
+      errors.push("last name: Last Name must be between 2 and 50 characters without double spaces")
     }
-    if (username.length < 2 || username.length > 50) {
-      errors.push("username: Username must be between 2 and 50 characters.")
+    if (username.length < 2 || username.length > 50 || username.includes("  ")) {
+      errors.push("username: Username must be between 2 and 50 characters without double spaces.")
     }
-    if (!email.match(emailRegX)) {
+    if (!email.match(emailRegX) || email.includes("  ")) {
       errors.push("email: Email must be valid email address (ex@ex.com).")
     }
     if (email.length < 2 || email.length > 50) {
@@ -75,10 +75,17 @@ const SignUpForm = () => {
 
 
     if (password === confirmPassword) {
-      const data = await dispatch(signUp(username, email, password, first_name, last_name));
+      const user = {
+        username: username.trimStart().trimEnd(),
+        email: email.trimStart().trimEnd(),
+        password: password.trimStart().trimEnd(),
+        first_name: first_name.trimStart().trimEnd(),
+        last_name: last_name.trimStart().trimEnd()
+      }
+      const data = await dispatch(signUp(user));
       if (data) {
         setErrors(Object.values(data));
-        console.log(Object.values(data))
+        // console.log(Object.values(data))
       }
     }
   };
