@@ -125,7 +125,7 @@ const EditEvent = () => {
             if (address.length < 2 || address.length > 50) errors.push('Address for your event must be between 2 and 50 Characters');
             if (city.length < 2 || city.length> 50) errors.push('City for your Event must be between 2 and 50 Characters');
             if (state.length < 2 || state.length > 50) errors.push('State for your event must be between 2 and 50 Characters');
-            if (zip_code.length !== 5 || (!zip_code.match(zipRegX))) errors.push('Zip Code must be 5 digits');
+            if (zip_code.length !== 5 || (!zip_code.match(zipRegX))) errors.push('Zip Code must be 5 digits in length');
             if (image_url.length < 2 || !image_url.split('?')[0].match(imageRegX)) errors.push('Image Url for your event must be of type: jpg, jpeg, png, svg');
             if (website.length < 2 || /^https:\/\//.test(website) === false && /^http:\/\//.test(website) === false){
                  errors.push('Please enter a Website for your event (https or http)');
@@ -171,17 +171,17 @@ const EditEvent = () => {
                 <form onSubmit={handleSubmit}>
                 <div className='form-container'>
                     <h2 className='edit-event-header'>Edit Your Event: </h2>
-                            <div className='form-input-container'>
-                                <div className='create_errors'>
+                                {/* <div className='create_errors'> */}
                                     {submitted && errors.map((error, ind) => (
-                                        <div
-                                        key={ind}
-                                        className='error-message-container'
-                                        >
-                                        <div className='edit_event_error-message'>{error}</div>
-                                </div>
+                                        // <div
+                                        // key={ind}
+                                        // className='error-message-container'
+                                        // >
+                                        <div className='edit_event_error-message' key={ind}>{error}</div>
+                                // </div>
                                     ))}
-                                </div>
+                                {/* </div> */}
+                            <div className='form-input-container'>
                                     <div className='input-container'>
                                         <div className='info-header'>
                                         <h2>What is it? </h2>
