@@ -87,8 +87,7 @@ Database:
 
 ## Edit/Delete A Comment:
 
-<img width="897" alt="Screen Shot 2022-10-29 at 11 20 12 AM" src="https://user-images.githubusercontent.com/97054477/198844852-85abd8fd-4579-45d9-8fff-2f2f3b398108.png">
-
+<img width="951" alt="Screen Shot 2022-11-07 at 8 36 08 AM" src="https://user-images.githubusercontent.com/97054477/200350789-9b7e079d-bbc5-443c-8092-e6471d1ae431.png">
 
 - If you change your mind on an event and would like to change or remove your comment, no worries, just click edit or delete review! 
 
