@@ -209,7 +209,7 @@
 
 .edit_event_error-message{
     color: red;
-    margin-left: 70px;
+
     font-size: 12px;
     display: flex;
     justify-content: center;
@@ -217,7 +217,8 @@
 }
 
 .edit-event-header{
-    margin-bottom: 0px;
+    margin-bottom: 5px;
+
 }
 
 .create_event_header{
