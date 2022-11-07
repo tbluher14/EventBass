@@ -81,8 +81,7 @@ Database:
 
 ## Create Comment
 
-![Screen Shot 2022-10-31 at 10 25 15 AM](https://user-images.githubusercontent.com/97054477/199058648-06286515-fd32-4c1c-83e6-91f828ac142b.png)
-
+<img width="983" alt="Screen Shot 2022-11-07 at 8 34 14 AM" src="https://user-images.githubusercontent.com/97054477/200350271-90f83a3d-3ecf-42ac-9256-8c913eb7b751.png">
 
 - To add a comment to an event, make sure you're logged in, and simply click "add comment" and let the organizers know how stoked you are for their event!
 
