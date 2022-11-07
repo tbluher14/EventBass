@@ -126,17 +126,17 @@ const CreateEvent = () => {
                     <div className='form-header'></div>
                     <h2 className='create_event_header'>Please Fill Out All Fields Below To Create An Event:</h2>
                         <div className='form-container'>
-                            <div className='form-input-container'>
-                                <div className='create_errors'>
+                                {/* <div className='create_errors'> */}
                                     {submitted && errors.map((error, ind) => (
-                                        <div
-                                        key={ind}
-                                        className='error-message-container'
-                                        >
+                                        // <div
+                                        // key={ind}
+                                        // className='error-message-container'
+                                        // >
                                         <div className='create_event_error-message'>{error}</div>
-                                </div>
+                                // </div>
                                     ))}
-                                </div>
+                                {/* </div> */}
+                            <div className='form-input-container'>
                                     <div className='input-container'>
                                         <div className='info-header'>
                                         <h2>What is it? </h2>
