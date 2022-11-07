@@ -23,8 +23,8 @@ const CommentCard = ({ comment }) => {
 
     useEffect((e) => {
         let errors = []
-        if (body.length === 1 || body.length > 255 || body.length === 0){
-            errors.push("Please leave a comment between 2 and 255 characters")
+        if (body.length === 1 || body.length > 255 || body.length === 0 || body.includes("  ")){
+            errors.push("Please leave a comment between 2 and 255 characters with no double spaces.")
         }
         setErrors(errors)
     }, [body])
@@ -42,10 +42,10 @@ const CommentCard = ({ comment }) => {
         const commentData = {
             user_id: sessionUser.id,
             event_id: eventId,
-            comment: body,
+            comment: body.trimStart().trimEnd(),
         }
 
-        if (body.length > 1 && body.length < 256){
+        if (body.length > 1 && body.length < 256 && !body.includes("  ")){
             const awaitedComment = await dispatch(editCommentThunk(commentData, comment?.id))
             dispatch(getAllCommentsThunk())
             setEditing(false)
@@ -74,7 +74,7 @@ const CommentCard = ({ comment }) => {
 
                 </div>
                 {editing ?
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className="edit-comment-form">
                     <textarea
                     className='form-field'
                     resize="none"
@@ -84,7 +84,7 @@ const CommentCard = ({ comment }) => {
                     />
                 <div>
                     {submitted && errors.map(errors => (
-                        <div className='comment_errors'>{errors}</div>
+                        <div className='edit_comment_errors'>{errors}</div>
                     ))}
                 </div>
                 <button className='edit-comment-button' type="submit">Edit Comment</button>

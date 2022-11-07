@@ -29,8 +29,8 @@ const CreateComment = () => {
 
     useEffect(()=> {
         const errors = []
-        if (comment.length === 1 || comment.length  > 255 || comment.length === 0) {
-            errors.push('Please enter a comment between 2 and 255 characters.')
+        if (comment.length === 1 || comment.length  > 255 || comment.length === 0 || comment.includes('  ')) {
+            errors.push('Please enter a comment between 2 and 255 characters, with no double spaces.')
         }
         setErrors(errors)
     }, [comment])
@@ -45,10 +45,10 @@ const CreateComment = () => {
             const commentData = {
                     user_id: sessionUser.id,
                     event_id: eventId,
-                    comment: comment
+                    comment: comment.trimStart().trimEnd()
                 }
 
-                if (comment.length>=1 && comment.length < 500) {
+                if (comment.length>=1 && comment.length < 500 && !comment.includes("  ")) {
                 const awaitedComment = await dispatch(createCommentThunk(commentData))
                 dispatch(getAllCommentsThunk())
                 setComment("")
