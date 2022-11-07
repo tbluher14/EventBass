@@ -21,9 +21,7 @@ const LoginForm = () => {
     let errors = []
 
     const emailCheck = Object.values(users).filter(user => user.email !== email)
-    // const userCheck = Object.values(users).filter(user => user.username !== username)
-
-    // if (emailCheck.length==0){errors.push("Email does not exist in our records")}
+    if (email.includes("  ")){errors.push("email: Email must not contain spaces")}
     setErrors(errors)
 
   }, [email])
@@ -31,9 +29,15 @@ const LoginForm = () => {
 
   const onLogin = async (e) => {
     e.preventDefault();
-    const data = await dispatch(login(email, password));
-    if (data) {
-      setErrors(data);
+    const user = {
+      email: email.trimStart().trimEnd(),
+      password
+    }
+    if (!email.includes("  ")){
+      const data = await dispatch(login(user));
+      if (data) {
+        setErrors(data);
+      }
     }
   };
 
