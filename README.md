@@ -5,7 +5,7 @@ This is my clone of EventBrite, eventBass, created for App Academy's 24 week imm
 Live Site: https://eventbass.herokuapp.com/
 
 <img width="1431" alt="Screen Shot 2022-10-29 at 11 03 14 AM" src="https://user-images.githubusercontent.com/97054477/198844049-9c1ff89f-8992-4369-ab12-48436fc9e0f8.png">
-
+  
 
 eventBass is a full-stack clone of https://www.eventbrite.com . Users can add, edit, and delete their events, add comments to other user's events, as well as edit and delete their comments. 
 
