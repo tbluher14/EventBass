@@ -5,7 +5,7 @@ This is my clone of EventBrite, eventBass, created for App Academy's 24 week imm
 Live Site: https://eventbass.herokuapp.com/
 
 <img width="1431" alt="Screen Shot 2022-10-29 at 11 03 14 AM" src="https://user-images.githubusercontent.com/97054477/198844049-9c1ff89f-8992-4369-ab12-48436fc9e0f8.png">
-
+  
 
 eventBass is a full-stack clone of https://www.eventbrite.com . Users can add, edit, and delete their events, add comments to other user's events, as well as edit and delete their comments. 
 
@@ -17,7 +17,7 @@ Frontend:
 ![image](https://user-images.githubusercontent.com/20654267/192156881-268b4f35-02b2-4113-861b-c2ea54b6ff87.png)
 ![image](https://user-images.githubusercontent.com/20654267/192156890-ca8a0612-9350-4d10-88f7-cc09dd740865.png)
 ![image](https://user-images.githubusercontent.com/20654267/192156892-eddb0af2-29cc-46bf-9d6d-fc0ead32005b.png)
-
+ 
 
 Backend:
 
@@ -81,15 +81,13 @@ Database:
 
 ## Create Comment
 
-![Screen Shot 2022-10-31 at 10 25 15 AM](https://user-images.githubusercontent.com/97054477/199058648-06286515-fd32-4c1c-83e6-91f828ac142b.png)
-
+<img width="983" alt="Screen Shot 2022-11-07 at 8 34 14 AM" src="https://user-images.githubusercontent.com/97054477/200350271-90f83a3d-3ecf-42ac-9256-8c913eb7b751.png">
 
 - To add a comment to an event, make sure you're logged in, and simply click "add comment" and let the organizers know how stoked you are for their event!
 
 ## Edit/Delete A Comment:
 
-<img width="897" alt="Screen Shot 2022-10-29 at 11 20 12 AM" src="https://user-images.githubusercontent.com/97054477/198844852-85abd8fd-4579-45d9-8fff-2f2f3b398108.png">
-
+<img width="951" alt="Screen Shot 2022-11-07 at 8 36 08 AM" src="https://user-images.githubusercontent.com/97054477/200350789-9b7e079d-bbc5-443c-8092-e6471d1ae431.png">
 
 - If you change your mind on an event and would like to change or remove your comment, no worries, just click edit or delete review! 
 
