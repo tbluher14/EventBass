@@ -21,6 +21,7 @@ def create_event():
     form = CreateEventForm()
     form['csrf_token'].data = request.cookies['csrf_token']
 
+
     if form.validate_on_submit():
         eventData = Event(
             owner_id=current_user.id,
@@ -39,6 +40,7 @@ def create_event():
             end_time= form.data['end_time'],
             refunds=form.data['refund_policy']
         )
+        
         db.session.add(eventData)
         db.session.commit()
         return jsonify(eventData.to_dict()), 200
