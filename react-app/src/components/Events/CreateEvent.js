@@ -37,24 +37,24 @@ const CreateEvent = () => {
 
     // Time Functions
 
-    console.log("this is start date state variable", start_date)
-    console.log("this is end date state variable", end_date)
-    console.log("this is start time state variable", start_time)
-    console.log("this is end time state variable", end_time)
+    // console.log("this is start date state variable", start_date)
+    // console.log("this is end date state variable", end_date)
+    // console.log("this is start time state variable", start_time)
+    // console.log("this is end time state variable", end_time)
 
     const eventInFuture = (sTime, eTime) => {
         sTime = new Date(sTime)
-        console.log("this is sTime in event in future", sTime)
+        // console.log("this is sTime in event in future", sTime)
         eTime = new Date(eTime)
-        console.log("This is eTime in event in future", eTime)
+        // console.log("This is eTime in event in future", eTime)
         return sTime.getTime() >= eTime.getTime()
     }
 
     const currentDate = () => {
         const currentDate = new Date()
-        console.log("This is current date", currentDate)
+        // console.log("This is current date", currentDate)
         const day = currentDate.getDate().toString().padStart(2, '0')
-        console.log("this is day in current date", day)
+        // console.log("this is day in current date", day)
         const month = (currentDate.getMonth()+ 1).toString().padStart(2, '0')
         // console.log("this is month", currentDate.getMonth())
         // console.log("this is month in current date", month)
