@@ -8,6 +8,7 @@ import '../../index.css'
 const CreateEvent = () => {
     const history = useHistory();
     const dispatch = useDispatch();
+    // console.log("this is dispatch", dispatch)
 
     const user = useSelector(state => state.session.user);
 
@@ -33,19 +34,33 @@ const CreateEvent = () => {
 
 
     const imageRegX = /\.(jpeg|jpg|png|svg)$/
+
     // Time Functions
+
+    console.log("this is start date state variable", start_date)
+    console.log("this is end date state variable", end_date)
+    console.log("this is start time state variable", start_time)
+    console.log("this is end time state variable", end_time)
 
     const eventInFuture = (sTime, eTime) => {
         sTime = new Date(sTime)
+        console.log("this is sTime in event in future", sTime)
         eTime = new Date(eTime)
+        console.log("This is eTime in event in future", eTime)
         return sTime.getTime() >= eTime.getTime()
     }
 
     const currentDate = () => {
         const currentDate = new Date()
+        console.log("This is current date", currentDate)
         const day = currentDate.getDate().toString().padStart(2, '0')
+        console.log("this is day in current date", day)
         const month = (currentDate.getMonth()+ 1).toString().padStart(2, '0')
+        // console.log("this is month", currentDate.getMonth())
+        // console.log("this is month in current date", month)
         const year = currentDate.getFullYear()
+        // console.log("this is year", currentDate.getFullYear())
+        // console.log("this is year in current date", year)
         return year + '-'+ month + '-' + day
     }
 
@@ -53,6 +68,7 @@ const CreateEvent = () => {
     useEffect(()=> {
         const errors = [];
         const currentTime = new Date().toString().slice(16,21)
+        // console.log("this is current time", currentTime)
         const zipRegX = /^\d{5}$/
 
         if (!user) {

@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import '../../index.css';
 import brokenImage2 from '../assets/broken-image2.jpeg'
@@ -8,10 +8,13 @@ const EventCard = ({ event }) => {
     const history = useHistory();
     const dispatch = useDispatch()
 
+
     const dateLogic = new Date(event.start_date)
     const dateArr = dateLogic.toString().split(' ')
-    const date = dateArr[0] + ", " + dateArr[1] + " " + dateArr[2] + ", " + dateArr[3]
-
+    const dateParse = parseInt(dateArr[2]) + 1
+    // console.log(dateParse + 1)
+    const date = dateArr[0] + ", " + dateArr[1] + " " + dateParse + ", " + dateArr[3]
+    // console.log(date)
     return (
         <div className="event-card">
             <div onClick={() => history.push(`/events/${event?.id}`)}>
