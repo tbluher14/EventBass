@@ -6,15 +6,15 @@ import {
   deleteEventThunk,
   getAllEventsThunk
 } from '../../store/event'
-import './EventDetails.css'
 import { getAllCommentsThunk } from '../../store/comment'
 import { getAllUsersThunk } from '../../store/users'
 import { getAllLikesThunk } from '../../store/like'
+import LikeButton from '../likes/LikeButton'
 import CommentCard from '../Comments/CommentCard'
 import CreateComment from '../Comments/CreateComment'
 import brokenImage2 from '../assets/broken-image2.jpeg'
+import './EventDetails.css'
 import '../../index.css'
-import LikeButton from '../likes/LikeButton'
 
 const EventDetails = () => {
   const dispatch = useDispatch()
