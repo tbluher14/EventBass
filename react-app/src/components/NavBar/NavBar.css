@@ -206,3 +206,18 @@
     background-color: 	#DCDCDC;
     cursor: pointer;
   }
+
+  .my_likes_button{
+    background-color: white;
+    border: none;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  .my_likes_button:hover{
+    background-color: 	#DCDCDC;
+    cursor: pointer;
+  }

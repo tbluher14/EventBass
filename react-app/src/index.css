@@ -559,8 +559,6 @@
 /* ****************************************************/
 /* Create/Edit Comment Styling */
 
-
-
 .create-comment-container{
     display: flex;
     align-items: flex-start;
@@ -783,4 +781,23 @@
     border: none;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
+}
+
+
+/* ****************************************************/
+/* User Likes */
+
+.userlikes-events-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.liked-events-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
 }

@@ -36,6 +36,7 @@ function ProfileButton({ user }) {
   };
 
   const showUsersEvents = (e) => {history.push('/my-events')};
+  const showUserLikes = (e) => {history.push('/my-likes')};
 //   const showUsersReviews = (e) => {
 //     e.preventDefault()
 //     history.push('/')};
@@ -59,6 +60,7 @@ function ProfileButton({ user }) {
           {/* <button onClick={showUsersReviews} className="userReviews_button">My Reviews</button> */}
           <button onClick={() => history.push('/all-events')} className='browse-events'>Browse Events</button>
           <button onClick={showUsersEvents} className="my_events_button">Manage My Events</button>
+          <button onClick={showUserLikes} className="my_likes_button">My Liked Events</button>
           <button onClick={logout} className="profile_logout_button">
             Log Out
           </button>

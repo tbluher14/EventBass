@@ -6,19 +6,17 @@ import { getAllUsersThunk } from '../../store/users';
 import { useHistory, useParams } from 'react-router-dom';
 import { getAllCommentsThunk } from "../../store/comment";
 import EventCard from '../Events/EventCard';
-// import './UserLikes.css'
+import '../../index.css'
 
 const UserLikes = () => {
 
   const dispatch = useDispatch();
-  const history = useHistory();
 
 
   const sessionUser = useSelector((state) => state.session.user)
   const events = useSelector((state) => state.events)
-  const comments = useSelector(state => state.comments)
   const likes = useSelector((state) => state.likes)
-  const users = useSelector((state) => state.users)
+
 
   const likesArr = Object.values(likes)
   const userLikes = likesArr.filter(like => like?.user_id === sessionUser?.id)
@@ -52,7 +50,8 @@ const UserLikes = () => {
       <div className='mylikes-outer-container'>
         <div className="userlikes-container">
           <div className="userlikes-inner-container">
-            <div className="userlikes-images-container">
+            <h2 className='liked-events-header'>Your Liked Events</h2>
+            <div className="userlikes-events-container">
               {userLikedEvents.map((event) => {
                 return (
                   <>
