@@ -15,6 +15,7 @@ import EditEvent from './components/Events/EditEvent';
 import MyEvents from './components/Events/MyEvents';
 import SplashPage from './components/SplashPage';
 import FourOFour from './components/404/Fof';
+import UserLikes from './components/likes/UserLikes';
 
 
 function App() {
@@ -65,6 +66,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute exact={true} path='/my-events'>
             <MyEvents />
+        </ProtectedRoute>
+        <ProtectedRoute exact={true} path='/my-likes'>
+          <UserLikes/>
         </ProtectedRoute>
         <Route>
           <FourOFour></FourOFour>
