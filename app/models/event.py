@@ -27,6 +27,7 @@ class Event (db.Model):
 
     organizer = db.relationship('User', back_populates='event_owner')
     comments = db.relationship('Comment', back_populates='event_comments', cascade='all, delete')
+    likes = db.relationship('Like', back_populates='event', cascade='all, delete')
 
     def to_dict(self):
 
@@ -50,5 +51,6 @@ class Event (db.Model):
             'created_at': self.created_at,
             'updated_at': self.updated_at,
             'refunds': self.refunds,
-            'owner_id': self.owner_id
+            'owner_id': self.owner_id,
+            'likes': [like.to_dict() for like in self.likes],
         }

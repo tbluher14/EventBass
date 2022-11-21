@@ -4,12 +4,14 @@ import commentReducer from './comment';
 import eventReducer from './event';
 import session from './session'
 import usersReducer from './users';
+import likesReducer from './like';
 
 const rootReducer = combineReducers({
   session,
   events: eventReducer,
   comments: commentReducer,
-  users: usersReducer
+  users: usersReducer,
+  likes: likesReducer
 });
 
 

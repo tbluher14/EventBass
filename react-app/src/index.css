@@ -15,6 +15,7 @@
     object-fit: cover;
     align-items: center;
     display: flex;
+    border-radius: 10px;
     justify-content: center;
 }
 
@@ -35,6 +36,7 @@
     width: 340px;
     cursor: pointer;
     margin-bottom: 10px;
+    border-radius: 10px;
 
     /* height: 500px; */
 }
