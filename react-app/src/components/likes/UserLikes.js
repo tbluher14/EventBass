@@ -21,12 +21,7 @@ const UserLikes = () => {
   const users = useSelector((state) => state.users)
 
   const likesArr = Object.values(likes)
-console.log("likes arr", likesArr)
-console.log('session user', sessionUser)
-    const userLikes = likesArr.filter(like => like?.user_id === sessionUser?.id)
-console.log("user likes", userLikes)
-
-
+  const userLikes = likesArr.filter(like => like?.user_id === sessionUser?.id)
   let likesEventsIdArr = [];
 
   for (let i = 0; i < userLikes.length; i++) {
@@ -54,7 +49,7 @@ console.log("user likes", userLikes)
 
   if (userLikedEvents.length > 0) {
     renderEvents = (
-      <div className='youPage-outer-container'>
+      <div className='mylikes-outer-container'>
         <div className="userlikes-container">
           <div className="userlikes-inner-container">
             <div className="userlikes-images-container">
@@ -70,35 +65,20 @@ console.log("user likes", userLikes)
         </div>
       </div>
     )
-}
-//   } else if ((userLikedEvents.length) === 0 && (currentUser?.id === ?.id)) {
-//     renderEvents = (
-//       <div className='youPage-outer-container'>
-//         <div className='youPage-none-container'>
-//           <div className='youPage-text-container'>
-//             <div className='youPage-text-top'>You have no liked events.</div>
-//             <div className='youPage-text-inner-container'>
-//               <div className='youPage-text-middle'>{`You currently have no liked photos. Explore other photos uploaded by users in the explore page.`}</div>
-
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     )
-//   } else if ((userLikedEvents.length) === 0 && (currentUser?.id !== user?.id)) {
-//     renderEvents = (
-//       <div className='youPage-outer-container'>
-//         <div className='youPage-none-container'>
-//           <div className='youPage-text-container'>
-//             <div className='youPage-text-top'>{`${currentUser?.first_name} ${currentUser?.last_name} does not have any liked photos.`}</div>
-//             <div className='youPage-text-inner-container'>
-//               <div className='youPage-text-middle'>{`${currentUser?.first_name} ${currentUser?.last_name} currently has no liked photos. Explore other photos uploaded by users in the explore page.`}</div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     )
-//   }
+  } else if ((userLikedEvents.length) === 0 && (sessionUser)) {
+    renderEvents = (
+      <div className='mylikes-outer-container'>
+        <div className='mylikes-none-container'>
+          <div className='mylikes-text-container'>
+            <div className='mylikes-text-top'>You have no liked events.</div>
+            <div className='mylikes-text-inner-container'>
+              <div className='mylikes-text-middle'>{`You currently have no liked events. Explore Events uploaded by users on the Browse Events page.`}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <>
