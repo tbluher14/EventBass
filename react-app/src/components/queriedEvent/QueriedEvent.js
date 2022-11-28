@@ -1,9 +1,9 @@
 import { useEffect  } from 'react'
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
-import { searchEventThunk } from '../../store/queryEvent'
+import { searchEventThunk } from '../../store/queriedEvent'
 import EventCard from '../Events/EventCard';
-import './QueriedBusiness.css'
+// import './QueriedBusiness.css'
 
 
 const QueriedEvent = () => {

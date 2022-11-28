@@ -1,25 +1,24 @@
 
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import LogoutButton from '../auth/LogoutButton';
 import { useHistory } from 'react-router-dom';
-import './NavBar.css';
-import logo from './logo.png'
+import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import ProfileButton from './ProfileButton';
 import { searchEventThunk } from '../../store/queriedEvent';
+import ProfileButton from './ProfileButton';
+import './NavBar.css';
 
 
 
 const NavBar = () => {
 
   const sessionUser = useSelector(state => state.session.user);
+  const dispatch = useDispatch();
   const history = useHistory()
   const [search, setSearch] = useState("")
 
   const handleSearch = (e) => {
     e.preventDefault();
-    dispatchEvent(searchEventThunk(search))
+    dispatch(searchEventThunk(search))
 
     const url = `/search?name=${search}`
     setSearch("")
