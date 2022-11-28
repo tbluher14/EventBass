@@ -7,7 +7,7 @@ export const searchEventAC = (events) => ({
 })
 
 // search thunk
-export const searchBusinessThunk = (name) => async (dispatch) => {
+export const searchEventThunk = (name) => async (dispatch) => {
   const res = await fetch(`/api/events/search?name=${name}`)
   if (res.ok) {
       const events = await res.json()

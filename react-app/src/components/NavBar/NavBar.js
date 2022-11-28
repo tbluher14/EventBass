@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import { useHistory } from 'react-router-dom';
@@ -7,6 +7,7 @@ import './NavBar.css';
 import logo from './logo.png'
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
+import { searchEventThunk } from '../../store/queriedEvent';
 
 
 
@@ -14,7 +15,16 @@ const NavBar = () => {
 
   const sessionUser = useSelector(state => state.session.user);
   const history = useHistory()
+  const [search, setSearch] = useState("")
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+    dispatchEvent(searchEventThunk(search))
+
+    const url = `/search?name=${search}`
+    setSearch("")
+    history.push(url)
+  }
 
   return (
     <nav className='nav-container'>
@@ -22,16 +32,26 @@ const NavBar = () => {
 
         <div className='outter-nav-bar-container'>
       <div className="navbar-logo-container">
-          {/* <img
-          className='navbar-logo'
-          src={logo} alt="logo"
-          onClick={() => history.push('/')} /> */}
           <h2
           className='navbar-eventbass'
           onClick={() => history.push('/')} >
           eventBass
           </h2>
         </div>
+        <div className='navbar-search-container'>
+        <input
+          className='navbar-search-box'
+          type="text"
+          placeholder="Search Event Name"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          onKeyPress={(e) => {if (e.key === "Enter") {handleSearch(e)}}}>
+        </input>
+
+        <button onClick={handleSearch} className='navbar-search-button'>
+          <i className="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
 
       <div className="nav-bar-right">
          {sessionUser && (
