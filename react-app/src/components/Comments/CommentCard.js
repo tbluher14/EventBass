@@ -33,6 +33,14 @@ const CommentCard = ({ comment }) => {
         dispatch(getAllUsersThunk())
     }, [])
 
+    const handleDelete = async (e) => {
+        e.preventDefault()
+        const result = window.confirm("Are you sure you want to delete this comment?")
+        if (result) {
+            await dispatch(deleteCommentThunk(comment?.id))
+            history.push(`/events/${eventId}`)
+        }
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -68,7 +76,7 @@ const CommentCard = ({ comment }) => {
                             )}
 
                         {   sessionUser && sessionUser?.id == comment?.user_id && (
-                            <button onClick={()=> dispatch(deleteCommentThunk(comment?.id))} className='comment-card-delete'>Delete</button>
+                            <button onClick={handleDelete} className='comment-card-delete'>Delete</button>
                             )}
                         </div>
 
