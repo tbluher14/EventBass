@@ -5,13 +5,15 @@ import eventReducer from './event';
 import session from './session'
 import usersReducer from './users';
 import likesReducer from './like';
+import queryEventReducer from './queriedEvent';
 
 const rootReducer = combineReducers({
   session,
   events: eventReducer,
   comments: commentReducer,
   users: usersReducer,
-  likes: likesReducer
+  likes: likesReducer,
+  queryEvent: queryEventReducer,
 });
 
 

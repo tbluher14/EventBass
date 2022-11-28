@@ -40,7 +40,7 @@ def create_event():
             end_time= form.data['end_time'],
             refunds=form.data['refund_policy']
         )
-        
+
         db.session.add(eventData)
         db.session.commit()
         return jsonify(eventData.to_dict()), 200
@@ -85,3 +85,12 @@ def delete_event(event_id):
     db.session.delete(event)
     db.session.commit()
     return {'message': 'Event deleted successfully'}
+
+
+#****************************************************************************************************
+# search event route
+@event_routes.route("/search")
+def search_events():
+    query_name = request.args.get("name")
+    events = Event.query.filter(Event.name.ilike(f"%{query_name}%")).all()
+    return {"events": [event.to_dict() for event in events]}
