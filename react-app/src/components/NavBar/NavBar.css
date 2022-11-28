@@ -3,6 +3,7 @@
     width: 60px;
     cursor: pointer;
     height: 60px;
+    margin-bottom: 20px;
 }
 
 .navbar-logo-container{
@@ -33,7 +34,7 @@
     margin-left: 20px;
     font-family: 'Kanit', sans-serif;
     font-size: 28px;
-    margin-bottom: -5px;
+    margin-bottom: 10px;
 
 }
 .navbar-myevents{
@@ -220,4 +221,33 @@
   .my_likes_button:hover{
     background-color: 	#DCDCDC;
     cursor: pointer;
+  }
+
+
+  .navbar-search-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    /* margin-right: 20px; */
+    margin-top: 10px;
+    margin-left: 130px;
+
+  }
+
+  .navbar-search-box{
+    width: 250px;
+    height: 20px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    padding: 5px;
+    font-size: 14px;
+    /* margin-right: 10px; */
+  }
+
+  .navbar-search-button{
+    height: 30px;
+    border-radius: 3px;
+    border: 1px solid grey;
+    background-color: white;
   }
