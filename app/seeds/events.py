@@ -106,6 +106,24 @@ def seed_events():
         owner_id=4,
         refunds=True
     )
+    ott = Event (
+        name='Ott w/ Mark Farina',
+        description='Ott is a Canadian electronic musician, composer, and producer. He is known for his unique blend of electronic music, jazz, and world music. He has released over 20 albums and EPs, and has collaborated with a number of artists, including Mike Patton, Amon Tobin, and Mike Oldfield. He has also produced music for film and television, including the soundtrack for the 2007 film The Fountain.',
+        venue_name="Mission Ballroom",
+        address='4242 Wynkoop Street',
+        city='Denver',
+        state='Colorado',
+        zip_code='80216',
+        image_url="https://www.party-guru.com/wp-content/uploads/2022/11/LS-Liquid-Stranger-Mission-Ballroom-11-18-22__-3-of-25-scaled.jpg",
+        website='https://www.missionballroom.com/event/451224-mission-ballroom-denver-tickets',
+        start_date='2023-04-04',
+        start_time=time(18, 00),
+        end_date='2023-04-05',
+        end_time=time(2,00),
+        owner_id=3,
+        refunds=False
+
+    )
     event5 = Event (
         name='Mersiv Rocks w/ Daily Bread & Astrolizard & Smoakland & Honeycomb',
         description='AEG Presents are thrilled to announce MERSIV live with Daily Bread, Astrolizard (debut), Smoakland present Liquid Smoak, and Honeycomb at Red Rocks Amphitheatre Thursday, April 6th, 2023. ',
@@ -159,14 +177,35 @@ def seed_events():
         refunds=False
     )
 
+    event6 = Event (
+        name='The Disco Biscuits w/ The Floozies & The Main Squeeze',
+        description='AEG Presents are thrilled to announce THE DISCO BISCUITS live at Red Rocks Amphitheatre Saturday, May 6th, 2023. ',
+        venue_name="Red Rocks Amphitheatre",
+        address='18300 W Alameda Pkwy',
+        city='Morrison',
+        state='Colorado',
+        zip_code='80456',
+        image_url="https://media.cntraveler.com/photos/5d9511fd6168d9000af15d12/16:9/w_2560,c_limit/redrocksampitheater-denver-2019-GettyImages-695093358.jpg",
+        website='https://www.redrocksonline.com/events/the-disco-biscuits-1/',
+        start_date='2023-05-06',
+        start_time=time(17, 00),
+        end_date='2023-05-07',
+        end_time=time(1,00),
+        owner_id=4,
+        refunds=False
+    )
+
+
     db.session.add(buku)
     db.session.add(event3)
     db.session.add(sodown)
     db.session.add(ofthetrees)
     db.session.add(event4)
+    db.session.add(ott)
     db.session.add(event5)
     db.session.add(subtronics)
     db.session.add(griz)
+    db.session.add(event6)
 
 
     db.session.commit()
