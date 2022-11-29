@@ -2,57 +2,7 @@ from app.models import db, Event
 from datetime import time
 
 def seed_events():
-    event = Event (
-        name='SLANDER Thrive On The Rocks w/ Virtual Riot',
-        description='AEG Presents is thrilled to announce SLANDER live at Red Rocks Amphitheatre on Wednesday, November 9th, 2022. ',
-        venue_name="Red Rocks Amphitheatre",
-        address='18300 W Alameda Pkwy',
-        city='Morrison',
-        state='Colorado',
-        zip_code='80456',
-        image_url='https://therooster.com/files/inline/images/slander_redrocks_mike-31.jpg',
-        website='https://www.redrocksonline.com/events/slander-11-9-442527/',
-        start_date='2022-11-09',
-        start_time=time(17, 00),
-        end_date='2022-11-10',
-        end_time=time(1,00),
-        owner_id=3,
-        refunds=True
-    )
-    event1 = Event (
-        name='Liquid Stranger',
-        description='In an ever-evolving universe, the art of maintaining complete and total fluidity is the most necessary key for survival. Renowned for his metamorphic capabilities and expertly crafted sonic adventures, Liquid Stranger has mastered his ability to slip in and out of genres all while honing his own personal style. Liquid Stranger has earned his reputation for exuding incommensurable talent and taking audiences on a soul-stirring aural journey of genre-bending beats on the dance floor.',
-        venue_name='Mission Ballroom',
-        address='4242 Wynkoop St',
-        city='Denver',
-        state='Colorado',
-        zip_code='80216',
-        image_url='https://freshmusicfreaks.com/wp-content/uploads/2019/11/martin.jpg',
-        website='https://liquidstranger.com/',
-        start_date='2022-11-17',
-        start_time=time(21, 00),
-        end_date='2022-11-18',
-        end_time=time(2,00),
-        owner_id=1,
-        refunds=False
-    )
-    event2 = Event (
-        name='Duke Dumont',
-        description='A dynamo whose has produced a stunning back catalogue that includes international chart No.1 hits , Multi Grammy nominations and bumpin’ Chicago-influenced underground productions, Duke Dumont is a contemporary electronic music powerhouse. Deeply committed to creating high quality music imbued with emotional depth,  Dumont is versatile, extremely adept and hard working.',
-        venue_name='Mission Ballroom',
-        address='4242 Wynkoop Street',
-        city='Denver',
-        state='Colorado',
-        zip_code='80216',
-        image_url='https://images.squarespace-cdn.com/content/v1/5e5c72d426341f1a10215614/1583551329667-9MUCSXP4ONQ0OXPKR5KY/TameImpalaMissionBallroom2019-01.jpg',
-        website='https://dukedumont.com',
-        start_date='2022-11-26',
-        start_time=time(20, 00),
-        end_date='2022-11-27',
-        end_time=time(2,00),
-        owner_id=2,
-        refunds=False
-    )
+
     buku = Event(
         name='WAKAAN Presents: Dual Continuum Tour w/ Buku & G-Rex',
         venue_name='Ogden Theater',
@@ -153,7 +103,7 @@ def seed_events():
         start_time=time(17, 00),
         end_date='2023-04-02',
         end_time=time(1,00),
-        owner_id=2,
+        owner_id=4,
         refunds=True
     )
     event5 = Event (
@@ -169,6 +119,23 @@ def seed_events():
         start_date='2023-04-06',
         start_time=time(17, 00),
         end_date='2023-04-07',
+        end_time=time(1,00),
+        owner_id=4,
+        refunds=False
+    )
+    subtronics = Event (
+        name='Subtronics w/ Space Jesus & G Jones & Ganz',
+        description='AEG Presents are thrilled to announce SUBTRONICS live at Red Rocks Amphitheatre Saturday, April 8th, 2023. ',
+        venue_name="Red Rocks Amphitheatre",
+        address='18300 W Alameda Pkwy',
+        city='Morrison',
+        state='Colorado',
+        zip_code='80456',
+        image_url='https://consciouselectronic.com/wp-content/uploads/2020/05/subtronics-wakaan.jpg',
+        website='https://www.redrocksonline.com/events/subtronics-454486/',
+        start_date='2023-04-13',
+        start_time=time(17, 00),
+        end_date='2023-04-14',
         end_time=time(1,00),
         owner_id=4,
         refunds=False
@@ -192,15 +159,13 @@ def seed_events():
         refunds=False
     )
 
-    db.session.add(event)
-    db.session.add(event1)
-    db.session.add(event2)
     db.session.add(buku)
     db.session.add(event3)
     db.session.add(sodown)
     db.session.add(ofthetrees)
     db.session.add(event4)
     db.session.add(event5)
+    db.session.add(subtronics)
     db.session.add(griz)
 
 
