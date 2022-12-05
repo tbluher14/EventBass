@@ -239,7 +239,7 @@
 /* SIGN UP AND LOGIN STYLING ***********************************************************/
 
 
-@media screen and (min-width: 1436px){
+/* @media screen and (min-width: 1436px){
     .signup-image{
         width: 70%;
         height: 770px;
@@ -250,19 +250,19 @@
         height: 700px;
         margin-left: 50px;
     }
-}
+} */
 
-@media screen and (max-width: 1435px) and (min-width: 1025px) {
-    .login-image {
+/* @media screen and (max-width: 1435px) and (min-width: 1025px) { */
+    /* .login-image {
       /* width: 59%; */
-      width: auto;
-      height: 700px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-    }
-    .signup-image{
+      /* width: auto; */
+      /* height: 700px; */
+      /* display: flex; */
+      /* flex-direction: row; */
+      /* align-items: center; */
+      /* justify-content: center; */
+    /* } */
+    /* .signup-image{
         width: 63%;
         height: 770px;
         margin-left: 150px;
@@ -271,9 +271,9 @@
         align-items: center;
         justify-content: center;
     }
-  }
+  } */
 
-  @media screen and (max-width: 1024px) {
+  /* @media screen and (max-width: 1024px) {
     .login-image {
       width: 45%;
       height: 690px;
@@ -283,7 +283,24 @@
         height: 840px;
         margin-left: 70px;
     }
-  }
+  } */
+
+.signup-image{
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1.25/1;
+    margin-left: 100px;
+}
+
+.login-image{
+    width: 59%;
+    height: 665px;
+    aspect-ratio: 2/1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 
 .signup-link{
     color: black;

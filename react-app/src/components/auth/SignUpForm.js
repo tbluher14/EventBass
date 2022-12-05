@@ -196,7 +196,7 @@ const SignUpForm = () => {
           <Link to='/login' className='login-link'>Have An Account? Log In Here</Link>
           </form>
           </div>
-          <img src={image}
+          <img src= "https://media1.giphy.com/media/lmjzmEcZLkcMLtVrWi/giphy.gif?cid=ecf05e47lroi8qzf5il23o7cjwad7hh6q55uucyf3hd0rwmy&rid=giphy.gif&ct=g"
           className='signup-image'
           alt='signup-pic'
           />
