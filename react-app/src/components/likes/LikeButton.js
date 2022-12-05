@@ -56,7 +56,11 @@ const LikeButton = ({ event_id }) => {
           <i className='fa-solid fa-heart fa-2xl delete-like-button' id="delete-like-button"></i>
       </div>
     )
-  } else {
+  }
+  else if (!user) {
+    return null
+  }
+  else {
     conditional = (
       <div onClick={handleCreateLike}>
         <i className='fa-regular fa-heart fa-2xl create-like-button' id="create-like-button"></i>
