@@ -159,7 +159,7 @@ const EventDetails = () => {
                 {formatDate(currentEvent?.start_date)}
               <div className="event_details_likes">
               <div className="event_details_likes_container">
-                <LikeButton event_id={eventId} />
+               <LikeButton event_id={eventId} />
                 <div className='event_details_like_count'>
                 {specificLikes.length} Likes
                 </div>

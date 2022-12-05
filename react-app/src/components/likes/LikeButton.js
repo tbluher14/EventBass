@@ -22,7 +22,7 @@ const LikeButton = ({ event_id }) => {
     e.preventDefault()
 
     const data = {
-      user_id: user.id,
+      user_id: user?.id,
       event_id: event_id
     }
 

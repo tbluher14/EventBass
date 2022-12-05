@@ -37,30 +37,19 @@ const CreateEvent = () => {
 
     // Time Functions
 
-    // console.log("this is start date state variable", start_date)
-    // console.log("this is end date state variable", end_date)
-    // console.log("this is start time state variable", start_time)
-    // console.log("this is end time state variable", end_time)
+
 
     const eventInFuture = (sTime, eTime) => {
         sTime = new Date(sTime)
-        // console.log("this is sTime in event in future", sTime)
         eTime = new Date(eTime)
-        // console.log("This is eTime in event in future", eTime)
         return sTime.getTime() >= eTime.getTime()
     }
 
     const currentDate = () => {
         const currentDate = new Date()
-        // console.log("This is current date", currentDate)
         const day = currentDate.getDate().toString().padStart(2, '0')
-        // console.log("this is day in current date", day)
         const month = (currentDate.getMonth()+ 1).toString().padStart(2, '0')
-        // console.log("this is month", currentDate.getMonth())
-        // console.log("this is month in current date", month)
         const year = currentDate.getFullYear()
-        // console.log("this is year", currentDate.getFullYear())
-        // console.log("this is year in current date", year)
         return year + '-'+ month + '-' + day
     }
 
@@ -68,7 +57,6 @@ const CreateEvent = () => {
     useEffect(()=> {
         const errors = [];
         const currentTime = new Date().toString().slice(16,21)
-        // console.log("this is current time", currentTime)
         const zipRegX = /^\d{5}$/
 
         if (!user) {
@@ -141,16 +129,12 @@ const CreateEvent = () => {
                     <div className='form-header'></div>
                     <h2 className='create_event_header'>Please Fill Out All Fields Below To Create An Event:</h2>
                         <div className='form-container'>
-                                {/* <div className='create_errors'> */}
                                     {submitted && errors.map((error, ind) => (
-                                        // <div
-                                        // key={ind}
-                                        // className='error-message-container'
-                                        // >
+
                                         <div className='create_event_error-message'>{error}</div>
-                                // </div>
+
                                     ))}
-                                {/* </div> */}
+                    
                             <div className='form-input-container'>
                                     <div className='input-container'>
                                         <div className='info-header'>

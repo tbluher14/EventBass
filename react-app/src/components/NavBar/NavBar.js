@@ -29,7 +29,8 @@ const NavBar = () => {
     <nav className='nav-container'>
       <div className='nav-bar-container'>
 
-        <div className='outter-nav-bar-container'>
+      <div className='outter-nav-bar-container'>
+      <div className='nav-bar-left'>
       <div className="navbar-logo-container">
           <h2
           className='navbar-eventbass'
@@ -46,10 +47,11 @@ const NavBar = () => {
           onChange={(e) => setSearch(e.target.value)}
           onKeyPress={(e) => {if (e.key === "Enter") {handleSearch(e)}}}>
         </input>
-
         <button onClick={handleSearch} className='navbar-search-button'>
-          <i className="fa-solid fa-magnifying-glass"></i>
+          <i className="fa-solid fa-magnifying-glass" id="mag-glass"></i>
         </button>
+
+      </div>
       </div>
 
       <div className="nav-bar-right">
