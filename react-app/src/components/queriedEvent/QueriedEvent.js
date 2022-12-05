@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { searchEventThunk } from '../../store/queriedEvent'
 import EventCard from '../Events/EventCard';
 // import './QueriedBusiness.css'
-
+import '../../index.css'
 
 const QueriedEvent = () => {
   const dispatch = useDispatch();
@@ -25,17 +25,26 @@ const QueriedEvent = () => {
 
   if (queriedEventArr.length === 0) {
     queriedResults = (
+      <div>
+      <div className='queriedevents-header'>
+      {queriedEventArr.length} Event found for "{query}"
+      </div>
     <div className='all-events-container'>
       <div className='queriedevents-results'>
-        0 Events found for name: "{query}"
       </div>
+    </div>
     </div>
     )
   } else if (queriedEventArr.length === 1) {
     queriedResults = (
+      <div>
+        <div className='queriedevents-header'>
+        {queriedEventArr.length} Event found for "{query}"
+        </div>
       <div className='all-events-container'>
         <div className='queriedevents-results'>
-          {queriedEventArr.length} Events found for "{query}"
+          <div className='queriedevents-header'>
+          </div>
         </div>
           {queriedEventArr.map((event) => (
             <div className='all-events-card-container' key={event}>
@@ -43,18 +52,23 @@ const QueriedEvent = () => {
             </div>
           ))}
       </div>
+      </div>
     )
   } else if (queriedEventArr.length > 1) {
     queriedResults = (
+      <div>
+        <div className='queriedevents-header'>
+        {queriedEventArr.length} Events found for "{query}"
+          </div>
     <div className='all-events-container'>
       <div className='queriedevents-results'>
-        {queriedEventArr.length} Events found for "{query}"
       </div>
         {queriedEventArr.map((event) => (
           <div className='all-events-card-container'>
             <EventCard event={event}/>
           </div>
         ))}
+    </div>
     </div>
     )
   }
