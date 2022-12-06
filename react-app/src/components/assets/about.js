@@ -19,11 +19,11 @@ const About = () => {
                     I am currently looking for a full-time position as a software engineer.
                 </div>
                 <div className='about-body-text'>
-                    My favorite technologies include React and Redux, but I also enjoy database engineering with technologies like PostgreSQL.
+                    My favorite technologies include React and Redux, but I also enjoy database engineering with technologies like SQLAlchemy.
                     In my free time, I enjoy hiking with my dog, snowboarding, and going to concerts around Denver. I am very passionate about
                     music and the outdoors, and in 2019 I started a camping and music festival in Colorado called The Kaia Project. Since 2019,
                     we have grown the festival to about 600 people, with 32 musical acts across two stages, local 15 Art Vendors, and 10 Colorado
-                    based sponsors. This application is a culmination of my passion for music and software engineering.
+                    based sponsors. This application is a culmination of my passion for music and software engineering, coming to life in the form of an EDM-influenced event calendar for the greater Denver area.
                 </div>
                 <div className="github-linkedin-logos">
                     <a href='https://github.com/tbluher14' target="_blank">

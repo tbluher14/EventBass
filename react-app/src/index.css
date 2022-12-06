@@ -918,6 +918,8 @@
 .page-header{
     text-shadow: 1px 1px 1px lightgray;
     color: black;
+    text-decoration: underline;
+    text-decoration-line: 1px;
 }
 
 .github-linkedin-logos{
