@@ -63,14 +63,9 @@ const About = () => {
                     className='about-technologies-image'
                     alt='js'
                     />
-                    <img
-                    src = "https://user-images.githubusercontent.com/20654267/192156876-64b1afdd-e93f-4f6b-a0ff-2d7e9b75258a.png"
-                    className='about-technologies-image'
-                    alt='js'
-                    />
                 </div>
                 <div className='about-technologies-header'>
-                    Back End Technologies Used In This Project:
+                    Back End/Hosting Technologies Used In This Project:
                     </div>
                     <div className='about-technologies-image-container'>
                     <img

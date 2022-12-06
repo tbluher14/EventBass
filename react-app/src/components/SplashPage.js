@@ -31,15 +31,6 @@ const SplashPage = () => {
                 <div className='homepage-bottom-links'>
                     <div className='homepage-links-tom'>
                         <Link to ='/about' className='homepage-about'>About Me!</Link>
-                    {/* <div className='homepage-first-last-name'>Meet the Dev: Tom Bluher</div> */}
-                {/* <div>
-                    <a href='https://github.com/tbluher14' target="_blank">
-                    <img className='home-page-github' src={github}></img>
-                    </a>
-                    <a href='https://www.linkedin.com/in/tom-bluher-172321115/' target="_blank">
-                    <img className='home-page-linkedin' src={linkedin}></img>
-                    </a>
-                </div> */}
                     </div>
                 </div>
             </div>

@@ -61,6 +61,7 @@ function ProfileButton({ user }) {
           <button onClick={() => history.push('/all-events')} className='browse-events'>Browse Events</button>
           <button onClick={showUsersEvents} className="my_events_button">Manage My Events</button>
           <button onClick={showUserLikes} className="my_likes_button">My Liked Events</button>
+          <button onClick={() => history.push('/about')} className="my_likes_button">Meet the Dev</button>
           <button onClick={logout} className="profile_logout_button">
             Log Out
           </button>
