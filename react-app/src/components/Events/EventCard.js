@@ -9,12 +9,14 @@ const EventCard = ({ event }) => {
     const dispatch = useDispatch()
 
 
-    const dateLogic = new Date(event.start_date)
+    const dateLogic = (new Date(event.start_date) + 0)
+    console.log(dateLogic)
     const dateArr = dateLogic.toString().split(' ')
+    console.log(dateArr)
     const dateParse = parseInt(dateArr[2]) + 1
-    // console.log(dateParse + 1)
-    const date = dateArr[0] + ", " + dateArr[1] + " " + dateParse + ", " + dateArr[3]
-    // console.log(date)
+    console.log(dateParse + 1)
+    const date =  dateArr[1] + " " + dateParse + ", " + dateArr[3]
+
     return (
         <div className="event-card">
             <div onClick={() => history.push(`/events/${event?.id}`)}>
