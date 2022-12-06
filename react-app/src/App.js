@@ -17,6 +17,7 @@ import SplashPage from './components/SplashPage';
 import FourOFour from './components/404/Fof';
 import UserLikes from './components/likes/UserLikes';
 import QueriedEvent from './components/queriedEvent/QueriedEvent';
+import About from './components/assets/about';
 
 
 function App() {
@@ -68,6 +69,9 @@ function App() {
         </ProtectedRoute>
         <Route path='/search'>
           <QueriedEvent />
+        </Route>
+        <Route exact path='/about'>
+          <About></About>
         </Route>
         <Route>
           <FourOFour></FourOFour>

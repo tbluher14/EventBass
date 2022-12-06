@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import splashImage from '../components/assets/splashimage.jpeg'
-import github from '../components/github.png'
-import linkedin from '../components/linkedin.png'
+
+// import github from '../components/github.png'
+// import linkedin from '../components/linkedin.png'
 import './SplashPage.css'
 //
 
@@ -29,15 +30,16 @@ const SplashPage = () => {
             <div className='homepage-bottom-container'>
                 <div className='homepage-bottom-links'>
                     <div className='homepage-links-tom'>
-                    <div className='homepage-first-last-name'>Meet the Dev: Tom Bluher</div>
-                <div>
+                        <Link to ='/about' className='homepage-about'>About</Link>
+                    {/* <div className='homepage-first-last-name'>Meet the Dev: Tom Bluher</div> */}
+                {/* <div>
                     <a href='https://github.com/tbluher14' target="_blank">
                     <img className='home-page-github' src={github}></img>
                     </a>
                     <a href='https://www.linkedin.com/in/tom-bluher-172321115/' target="_blank">
                     <img className='home-page-linkedin' src={linkedin}></img>
                     </a>
-                </div>
+                </div> */}
                     </div>
                 </div>
             </div>
