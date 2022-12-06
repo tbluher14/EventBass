@@ -819,6 +819,23 @@
 
 }
 
+.mylikes-text-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* margin-left: 60px; */
+}
+
+.mylikes-text-top{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+
+}
+
 
 /* ****************************************************/
 /* Queried Events */

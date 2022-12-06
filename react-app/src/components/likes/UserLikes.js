@@ -65,7 +65,7 @@ const UserLikes = () => {
       <div className='mylikes-outer-container'>
         <div className='mylikes-none-container'>
           <div className='mylikes-text-container'>
-            <div className='mylikes-text-top'>You have no liked events.</div>
+            <div className='mylikes-text-top'>You have no liked events (T_T)</div>
             <div className='mylikes-text-inner-container'>
               <div className='mylikes-text-middle'>{`You currently have no liked events. Explore Events uploaded by users on the Browse Events page.`}</div>
             </div>
