@@ -31,6 +31,7 @@ const SplashPage = () => {
                 <div className='homepage-bottom-links'>
                     <div className='homepage-links-tom'>
                         <Link to ='/about' className='homepage-about'>About Me!</Link>
+                    <i className="fas fa-user-circle user_icon" id="profile-icon-id-splash"> </i>
                     </div>
                 </div>
             </div>
