@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
-import logo from "../Navigation/staticAssets/logo.jpeg"
-import github from '../About/github.png'
-import linkedin from '../About/linkedin.png'
+// import logo from "../assets/logo.jpeg"
+import github from '../assets/github.png'
+import linkedin from '../assets/linkedin.png'
 import './footer.css'
 
 const Footer = () => {
@@ -11,11 +11,11 @@ const Footer = () => {
         <div className="footer__container">
             <div className="footer__left">
             <div className="footer__left__logo">
-                <img src={logo} alt
-                ="logo" className='footer_logo' />
+                {/* <img src={} alt
+                ="logo" className='footer_logo' /> */}
             </div>
             <div className="footer__left__text">
-                <p>© 2022 bestBnB, Inc. All rights reserved</p>
+                <p>© 2022 eventBass, Inc. All rights reserved</p>
             </div>
             </div>
             <div className="footer__right">

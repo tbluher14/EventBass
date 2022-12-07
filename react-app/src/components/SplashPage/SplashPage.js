@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import splashImage from '../../components/assets/splashimage.jpeg'
+import Footer from './footer'
 
 // import github from '../components/github.png'
 // import linkedin from '../components/linkedin.png'
@@ -30,7 +31,7 @@ const SplashPage = () => {
             <div className='homepage-bottom-container'>
                 <div className='homepage-bottom-links'>
                     <div className='homepage-links-tom'>
-
+                        <Footer />
 
                     </div>
                 </div>
