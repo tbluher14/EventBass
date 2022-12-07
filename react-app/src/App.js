@@ -13,7 +13,7 @@ import CreateEvent from './components/Events/CreateEvent';
 import EventDetails from './components/Events/EventDetails';
 import EditEvent from './components/Events/EditEvent';
 import MyEvents from './components/Events/MyEvents';
-import SplashPage from './components/SplashPage';
+import SplashPage from './components/SplashPage/SplashPage';
 import FourOFour from './components/404/Fof';
 import UserLikes from './components/likes/UserLikes';
 import QueriedEvent from './components/queriedEvent/QueriedEvent';
