@@ -30,8 +30,7 @@ const QueriedEvent = () => {
       {queriedEventArr.length} Event found for "{query}"
       </div>
     <div className='all-events-container'>
-      <div className='queriedevents-results'>
-      </div>
+
     </div>
     </div>
     )
@@ -41,7 +40,7 @@ const QueriedEvent = () => {
         <div className='queriedevents-header'>
         {queriedEventArr.length} Event found for "{query}"
         </div>
-      <div className='all-events-container'>
+      <div className='queried-events-container'>
         <div className='queriedevents-results'>
           <div className='queriedevents-header'>
           </div>
@@ -60,7 +59,7 @@ const QueriedEvent = () => {
         <div className='queriedevents-header'>
         {queriedEventArr.length} Events found for "{query}"
           </div>
-    <div className='all-events-container'>
+    <div className='queried-events-container'>
       <div className='queriedevents-results'>
       </div>
         {queriedEventArr.map((event) => (
