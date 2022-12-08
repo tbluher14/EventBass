@@ -100,5 +100,7 @@ Database:
 
 - To access your liked events, make sure you are signed in and navigate to the "My Liked Events" page from the drop down menu 
 
+<img width="1271" alt="Screen Shot 2022-12-08 at 2 56 08 PM" src="https://user-images.githubusercontent.com/97054477/206575958-e48e9f1d-af4e-446e-8103-a2a46991d3b6.png">
 
+- From this page you can renavigate to events you may have saved for later, or just want to show your support on! 
 
