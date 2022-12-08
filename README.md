@@ -43,12 +43,13 @@ Database:
 ## Features: 
 ## Login or Signup as a New User: 
 
-<img width="1332" alt="Screen Shot 2022-10-29 at 11 07 58 AM" src="https://user-images.githubusercontent.com/97054477/198844230-360fcc4a-761b-4949-9bfd-c8addce31ce7.png">
+<img width="1417" alt="Screen Shot 2022-12-08 at 2 54 49 PM" src="https://user-images.githubusercontent.com/97054477/206575583-3e03c40a-ff02-4703-9428-c2520fa904a2.png">
 
 
-- Sign up for our site with a valid email and user name and have access to all of eventBass's functionality
+- Sign up for the site with a valid email and user name and have access to all of eventBass's functionality
 
-<img width="1351" alt="Screen Shot 2022-10-29 at 11 08 31 AM" src="https://user-images.githubusercontent.com/97054477/198844254-4e58d73d-31ba-421c-8f97-e12c0c08b4b9.png">
+
+<img width="1430" alt="Screen Shot 2022-12-08 at 2 54 33 PM" src="https://user-images.githubusercontent.com/97054477/206575605-262b3142-f1d4-4bef-9a6a-c55aefd882a7.png">
 
 - You can use you newly created account to log in
 - Or you can log in as a demo user 
