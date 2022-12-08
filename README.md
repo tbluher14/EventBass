@@ -92,3 +92,13 @@ Database:
 
 - If you change your mind on an event and would like to change or remove your comment, no worries, just click edit or delete review! 
 
+
+## Liked Events:
+
+<img width="302" alt="Screen Shot 2022-12-08 at 2 56 17 PM" src="https://user-images.githubusercontent.com/97054477/206575847-0062fb37-c652-4cf1-a5bb-92ee63945a1f.png">
+
+
+- To access your liked events, make sure you are signed in and navigate to the "My Liked Events" page from the drop down menu 
+
+
+
