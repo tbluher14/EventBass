@@ -19,6 +19,10 @@ const SplashPage = () => {
                 alt="splash"
                 className='splash-image'
                 />
+                <img src={splashImage}
+                alt="splash"
+                className='splash-image-blur'
+                />
                 <div className='splash-page-button'>
                     <button
                     className='all-events-button'
