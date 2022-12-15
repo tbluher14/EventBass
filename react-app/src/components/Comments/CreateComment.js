@@ -48,7 +48,7 @@ const CreateComment = () => {
                     comment: comment
                 }
 
-                if (comment.length>=1 && comment.length < 500) {
+                if (comment.length>=1 && comment.length < 256) {
                 const awaitedComment = await dispatch(createCommentThunk(commentData))
                 dispatch(getAllCommentsThunk())
                 setComment("")
