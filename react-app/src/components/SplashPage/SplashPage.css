@@ -5,6 +5,7 @@
     margin-top: 20px;
     /* min-width: 1024px; */
     /* min-height: 900px; */
+    border-radius: 20px;
 
 }
 .splash-page-button-image-container{
@@ -26,11 +27,12 @@
   right: 0%;
   filter: blur(.7em);
   z-index: -100;
+  border: 1px solid grey;
 }
 
 .all-events-button{
     left: 75%;
-    bottom: 55%;
+    bottom: 54%;
     right: 200px;
     height: 50px;
     width: 215px;
