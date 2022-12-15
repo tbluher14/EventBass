@@ -19,13 +19,12 @@ Frontend:
 ![image](https://user-images.githubusercontent.com/20654267/192156892-eddb0af2-29cc-46bf-9d6d-fc0ead32005b.png)
  
 
-Backend:
+Backend & Hosting:
 
 ![image](https://camo.githubusercontent.com/a1b2dac5667822ee0d98ae6d799da61987fd1658dfeb4d2ca6e3c99b1535ebd8/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f707974686f6e2d3336373041303f7374796c653d666f722d7468652d6261646765266c6f676f3d707974686f6e266c6f676f436f6c6f723d666664643534)
 ![image](https://camo.githubusercontent.com/43c40e9f61f01e780f4cfed5dafda9e3494310ba1b6ea11e20c4949e556a47c3/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f666c61736b2d2532333030302e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d666c61736b266c6f676f436f6c6f723d7768697465)
-
-Database: 
-
+![image](https://camo.githubusercontent.com/281c069a2703e948b536500b9fd808cb4fb2496b3b66741db4013a2c89e91986/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f506f737467726553514c2d3331363139323f7374796c653d666f722d7468652d6261646765266c6f676f3d706f737467726573716c266c6f676f436f6c6f723d7768697465)
+![image](https://camo.githubusercontent.com/d18f98a93a8ca015503870e592f96dbdf86f41048e9de1fbbbd4b2dcc7c456b1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6865726f6b752d2532333433303039382e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d6865726f6b75266c6f676f436f6c6f723d7768697465)
 ![image](https://camo.githubusercontent.com/f48e6e8822dbed2b14a693017b364d00813b7872df67d95e5844aa3cf94ec482/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f53514c416c6368656d792d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d73716c266c6f676f436f6c6f723d424131323132266c6162656c436f6c6f723d41443030303026636f6c6f723d413930303030)
 
 <br>
@@ -43,12 +42,13 @@ Database:
 ## Features: 
 ## Login or Signup as a New User: 
 
-<img width="1332" alt="Screen Shot 2022-10-29 at 11 07 58 AM" src="https://user-images.githubusercontent.com/97054477/198844230-360fcc4a-761b-4949-9bfd-c8addce31ce7.png">
+<img width="1417" alt="Screen Shot 2022-12-08 at 2 54 49 PM" src="https://user-images.githubusercontent.com/97054477/206575583-3e03c40a-ff02-4703-9428-c2520fa904a2.png">
 
 
-- Sign up for our site with a valid email and user name and have access to all of eventBass's functionality
+- Sign up for the site with a valid email and user name and have access to all of eventBass's functionality
 
-<img width="1351" alt="Screen Shot 2022-10-29 at 11 08 31 AM" src="https://user-images.githubusercontent.com/97054477/198844254-4e58d73d-31ba-421c-8f97-e12c0c08b4b9.png">
+
+<img width="1430" alt="Screen Shot 2022-12-08 at 2 54 33 PM" src="https://user-images.githubusercontent.com/97054477/206575605-262b3142-f1d4-4bef-9a6a-c55aefd882a7.png">
 
 - You can use you newly created account to log in
 - Or you can log in as a demo user 
@@ -90,4 +90,16 @@ Database:
 <img width="951" alt="Screen Shot 2022-11-07 at 8 36 08 AM" src="https://user-images.githubusercontent.com/97054477/200350789-9b7e079d-bbc5-443c-8092-e6471d1ae431.png">
 
 - If you change your mind on an event and would like to change or remove your comment, no worries, just click edit or delete review! 
+
+
+## Liked Events:
+
+<img width="302" alt="Screen Shot 2022-12-08 at 2 56 17 PM" src="https://user-images.githubusercontent.com/97054477/206575847-0062fb37-c652-4cf1-a5bb-92ee63945a1f.png">
+
+
+- To access your liked events, make sure you are signed in and navigate to the "My Liked Events" page from the drop down menu 
+
+<img width="1271" alt="Screen Shot 2022-12-08 at 2 56 08 PM" src="https://user-images.githubusercontent.com/97054477/206575958-e48e9f1d-af4e-446e-8103-a2a46991d3b6.png">
+
+- From this page you can renavigate to events you may have saved for later, or just want to show your support on! 
 
