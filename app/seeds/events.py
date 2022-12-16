@@ -89,6 +89,24 @@ def seed_events():
         owner_id=1,
         refunds=False
     )
+
+    wooli = Event(
+        name='Wooli Present IMPACT',
+        venue_name='Mission Ballroom',
+        description='Wooli is a producer and DJ from Los Angeles, CA. He has been producing for 5 years and has been DJing for 3 years. He has been featured on the Billboard charts and has been featured on the cover of EDM.com. He has played at festivals such as EDC Las Vegas, EDC Orlando, EDC Mexico, and more. He has also played at venues such as The Shrine Expo Hall, The Observatory, and more. He has also played at venues such as The Shrine Expo Hall, The Observatory, and more.',
+        address='4242 Wynkoop Street',
+        city='Denver',
+        state='Colorado',
+        zip_code='80216',
+        image_url='https://edm.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTgxNTU4Mzg2NTQ0ODc5NTQy/wooli---smf-2021---brphotoco-9.jpg',
+        website='missionballroom.com/event/457028-mission-ballroom-denver-tickets',
+        start_date='2023-03-11',
+        start_time=time(20, 00),
+        end_date='2023-03-12',
+        end_time=time(2,00),
+        owner_id=1,
+        refunds=False
+    )
     event4= Event(
         name='Dom Dolla w/ CJ + Shady Jones + Thatz Hot',
         description='AEG Presents are thrilled to announce DOM DOLLA live at Red Rocks Amphitheatre Saturday, April 1st, 2023. ',
@@ -200,12 +218,14 @@ def seed_events():
     db.session.add(event3)
     db.session.add(sodown)
     db.session.add(ofthetrees)
+    db.session.add(wooli)
     db.session.add(event4)
     db.session.add(ott)
     db.session.add(event5)
     db.session.add(subtronics)
     db.session.add(griz)
     db.session.add(event6)
+
 
 
     db.session.commit()
