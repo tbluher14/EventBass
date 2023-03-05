@@ -75,7 +75,7 @@ const EventDetails = () => {
       const day = datesArray[2]
       return (
         <>
-          {month} {day}
+          {month} {day + 1}
         </>
       )
     }
