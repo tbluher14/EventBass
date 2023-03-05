@@ -13,7 +13,7 @@ const EventCard = ({ event }) => {
     console.log(dateLogic)
     const dateArr = dateLogic.toString().split(' ')
     console.log(dateArr)
-    const dateParse = parseInt(dateArr[2]) + 1
+    const dateParse = parseInt(dateArr[2]) 
     console.log(dateParse + 1)
     const date =  dateArr[1] + " " + dateParse + ", " + dateArr[3]
 
